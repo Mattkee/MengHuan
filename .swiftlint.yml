@@ -1,0 +1,6 @@
+disabled_rules:
+- line_length
+- shorthand_operator
+- weak_delegate
+- type_level
+- nesting

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="faf-I4-hDe">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Table View Controller-->
+        <scene sceneID="U79-vu-hNW">
+            <objects>
+                <tableViewController id="faf-I4-hDe" customClass="HomeTableViewController" customModule="MengHuan" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Jz4-un-FTr">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="0LQ-jC-gMd">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Virtuel reality" translatesAutoresizingMaskIntoConstraints="NO" id="4GM-hu-bdy">
+                                    <rect key="frame" x="0.0" y="-50" width="414" height="300"/>
+                                </imageView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="fel-8a-Z6b">
+                                    <rect key="frame" x="82" y="42" width="250" height="166"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="250" id="Nrf-wz-c8V"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="4GM-hu-bdy" secondAttribute="bottom" id="LKB-va-Qom"/>
+                                <constraint firstAttribute="trailing" secondItem="4GM-hu-bdy" secondAttribute="trailing" id="LLX-NI-euk"/>
+                                <constraint firstItem="fel-8a-Z6b" firstAttribute="centerX" secondItem="0LQ-jC-gMd" secondAttribute="centerX" id="SWk-cH-fwa"/>
+                                <constraint firstItem="4GM-hu-bdy" firstAttribute="top" secondItem="0LQ-jC-gMd" secondAttribute="top" constant="-50" id="TuJ-TG-OwX"/>
+                                <constraint firstItem="fel-8a-Z6b" firstAttribute="centerY" secondItem="0LQ-jC-gMd" secondAttribute="centerY" id="eMf-yM-O42"/>
+                                <constraint firstItem="4GM-hu-bdy" firstAttribute="leading" secondItem="0LQ-jC-gMd" secondAttribute="leading" id="sGi-Me-ow8"/>
+                            </constraints>
+                        </view>
+                        <sections>
+                            <tableViewSection id="Yrk-ng-Nrs">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="es5-Me-oJO">
+                                        <rect key="frame" x="0.0" y="250" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="es5-Me-oJO" id="I72-nm-oLk">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Solar system" translatesAutoresizingMaskIntoConstraints="NO" id="LZK-LC-Nfp">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Système solaire" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2r-tm-q9g">
+                                                    <rect key="frame" x="40" y="22" width="334" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="i2r-tm-q9g" firstAttribute="leading" secondItem="I72-nm-oLk" secondAttribute="leadingMargin" constant="20" id="1bc-a5-h6P"/>
+                                                <constraint firstItem="i2r-tm-q9g" firstAttribute="centerX" secondItem="I72-nm-oLk" secondAttribute="centerX" id="7xU-Ox-m6N"/>
+                                                <constraint firstItem="i2r-tm-q9g" firstAttribute="centerY" secondItem="I72-nm-oLk" secondAttribute="centerY" id="ZhX-us-jky"/>
+                                                <constraint firstAttribute="bottom" secondItem="LZK-LC-Nfp" secondAttribute="bottom" id="aru-G5-fOQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="LZK-LC-Nfp" secondAttribute="trailing" id="lTs-KU-a0a"/>
+                                                <constraint firstItem="LZK-LC-Nfp" firstAttribute="leading" secondItem="I72-nm-oLk" secondAttribute="leading" id="nog-Y1-HSW"/>
+                                                <constraint firstItem="LZK-LC-Nfp" firstAttribute="top" secondItem="I72-nm-oLk" secondAttribute="top" id="yzq-v7-6sg"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Z66-Li-HpA" kind="presentation" modalTransitionStyle="flipHorizontal" id="lJo-TA-hj5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="aQL-IF-bSi">
+                                        <rect key="frame" x="0.0" y="330" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aQL-IF-bSi" id="G9h-gc-Al4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth Planet" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-v8-dCE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planète Terre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG9-cf-yFX">
+                                                    <rect key="frame" x="40" y="22" width="334" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YO1-v8-dCE" firstAttribute="leading" secondItem="G9h-gc-Al4" secondAttribute="leading" id="HvP-0z-Tbq"/>
+                                                <constraint firstItem="aG9-cf-yFX" firstAttribute="centerX" secondItem="G9h-gc-Al4" secondAttribute="centerX" id="Lwq-tC-x1n"/>
+                                                <constraint firstItem="aG9-cf-yFX" firstAttribute="centerY" secondItem="G9h-gc-Al4" secondAttribute="centerY" id="POb-91-ZhA"/>
+                                                <constraint firstAttribute="bottom" secondItem="YO1-v8-dCE" secondAttribute="bottom" id="eox-hZ-UgP"/>
+                                                <constraint firstAttribute="trailing" secondItem="YO1-v8-dCE" secondAttribute="trailing" id="fq3-dw-Ae1"/>
+                                                <constraint firstItem="YO1-v8-dCE" firstAttribute="top" secondItem="G9h-gc-Al4" secondAttribute="top" id="qHD-e8-AtD"/>
+                                                <constraint firstItem="aG9-cf-yFX" firstAttribute="leading" secondItem="G9h-gc-Al4" secondAttribute="leadingMargin" constant="20" id="vV8-Yg-Hoi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="8b3-3Q-Q2e">
+                                        <rect key="frame" x="0.0" y="410" width="414" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8b3-3Q-Q2e" id="oni-l0-Sar">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tyranosaurus" translatesAutoresizingMaskIntoConstraints="NO" id="ind-Ui-PQo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tyranosaure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV1-M4-ao0">
+                                                    <rect key="frame" x="40" y="22" width="334" height="36"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ind-Ui-PQo" firstAttribute="top" secondItem="oni-l0-Sar" secondAttribute="top" id="6n8-bQ-GPH"/>
+                                                <constraint firstAttribute="trailing" secondItem="ind-Ui-PQo" secondAttribute="trailing" id="J7D-En-4V5"/>
+                                                <constraint firstItem="ind-Ui-PQo" firstAttribute="leading" secondItem="oni-l0-Sar" secondAttribute="leading" id="PDP-Wu-VRj"/>
+                                                <constraint firstItem="QV1-M4-ao0" firstAttribute="centerY" secondItem="oni-l0-Sar" secondAttribute="centerY" id="Tv4-ch-5JM"/>
+                                                <constraint firstAttribute="bottom" secondItem="ind-Ui-PQo" secondAttribute="bottom" id="eM2-xS-bjV"/>
+                                                <constraint firstItem="QV1-M4-ao0" firstAttribute="leading" secondItem="oni-l0-Sar" secondAttribute="leadingMargin" constant="20" id="qYQ-X8-IkI"/>
+                                                <constraint firstItem="QV1-M4-ao0" firstAttribute="centerX" secondItem="oni-l0-Sar" secondAttribute="centerX" id="re6-oh-sPX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Lb8-WD-brr" kind="presentation" modalTransitionStyle="flipHorizontal" id="oSj-pk-W2l"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="faf-I4-hDe" id="RfY-UP-zfd"/>
+                            <outlet property="delegate" destination="faf-I4-hDe" id="pYY-jC-YHY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="1FN-ZL-nkM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lhq-i6-iKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-526" y="139"/>
+        </scene>
+        <!--SolarSystem-->
+        <scene sceneID="eo7-FP-XWb">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SolarSystem" id="Z66-Li-HpA" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aod-pL-GXA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="277" y="139"/>
+        </scene>
+        <!--Dinosaur-->
+        <scene sceneID="URk-OT-ibp">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dinosaur" id="Lb8-WD-brr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="81Q-4E-WCV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="276" y="202"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Earth Planet" width="658" height="659"/>
+        <image name="Logo" width="637" height="166"/>
+        <image name="Solar system" width="960" height="600"/>
+        <image name="Tyranosaurus" width="1421" height="800"/>
+        <image name="Virtuel reality" width="960" height="640"/>
+    </resources>
+</document>

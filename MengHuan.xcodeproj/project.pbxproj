@@ -1,0 +1,875 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF0D73F62284271E0005E377 /* irex teeth Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73E92284271D0005E377 /* irex teeth Normal.png */; };
+		AF0D73F72284271E0005E377 /* irex eye Membrane Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73EA2284271D0005E377 /* irex eye Membrane Normal.png */; };
+		AF0D73F82284271E0005E377 /* irex Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73EB2284271D0005E377 /* irex Specular.png */; };
+		AF0D73F92284271E0005E377 /* irex claw spiked Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73EC2284271D0005E377 /* irex claw spiked Diffuse.png */; };
+		AF0D73FA2284271E0005E377 /* irex eye Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73ED2284271D0005E377 /* irex eye Diffuse.png */; };
+		AF0D73FB2284271E0005E377 /* irex eye Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73EE2284271D0005E377 /* irex eye Normal.png */; };
+		AF0D73FC2284271E0005E377 /* irex tongue Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73EF2284271D0005E377 /* irex tongue Diffuse.png */; };
+		AF0D73FD2284271E0005E377 /* irex teeth Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73F02284271D0005E377 /* irex teeth Diffuse.png */; };
+		AF0D73FE2284271E0005E377 /* irex tongue Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73F12284271D0005E377 /* irex tongue Normal.png */; };
+		AF0D73FF2284271E0005E377 /* irex claw spiked Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73F22284271D0005E377 /* irex claw spiked Normal.png */; };
+		AF0D74002284271E0005E377 /* irex Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73F32284271D0005E377 /* irex Normal.png */; };
+		AF0D74012284271E0005E377 /* irex eye Membrane Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73F42284271E0005E377 /* irex eye Membrane Diffuse.png */; };
+		AF0D74022284271E0005E377 /* irex Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF0D73F52284271E0005E377 /* irex Diffuse.png */; };
+		AF150B562265D92900AF0155 /* Dinosaur.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AF150B552265D92900AF0155 /* Dinosaur.scnassets */; };
+		AF150B5C2265D97A00AF0155 /* Tyrex Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AF150B572265D97700AF0155 /* Tyrex Specular.png */; };
+		AF150B5D2265D97A00AF0155 /* Tyrex Phong Diffuse Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF150B582265D97700AF0155 /* Tyrex Phong Diffuse Normal.png */; };
+		AF150B5E2265D97A00AF0155 /* Tyrex Normal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B592265D97A00AF0155 /* Tyrex Normal.jpg */; };
+		AF150B5F2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B5A2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg */; };
+		AF150B602265D97A00AF0155 /* Tyrex Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B5B2265D97A00AF0155 /* Tyrex Diffuse.jpg */; };
+		AF150B642265E38300AF0155 /* PopoverSelectorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF150B632265E38300AF0155 /* PopoverSelectorTableViewController.swift */; };
+		AF150B6D2266364000AF0155 /* Dilpoh Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B652266363E00AF0155 /* Dilpoh Specular.jpg */; };
+		AF150B6E2266364000AF0155 /* Dilpoh Eye Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B662266363E00AF0155 /* Dilpoh Eye Diffuse.jpg */; };
+		AF150B6F2266364000AF0155 /* Dilpoh Frill Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B672266363E00AF0155 /* Dilpoh Frill Specular.jpg */; };
+		AF150B702266364000AF0155 /* Dilpoh Frill Normal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B682266363E00AF0155 /* Dilpoh Frill Normal.jpg */; };
+		AF150B712266364000AF0155 /* Dilpoh Frill Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B692266363E00AF0155 /* Dilpoh Frill Diffuse.jpg */; };
+		AF150B722266364000AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B6A2266363F00AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg */; };
+		AF150B732266364000AF0155 /* Dilpoh Normal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B6B2266363F00AF0155 /* Dilpoh Normal.jpg */; };
+		AF150B742266364000AF0155 /* Dilpoh Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B6C2266364000AF0155 /* Dilpoh Diffuse.jpg */; };
+		AF150B8F226640DF00AF0155 /* Deinonychus Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AF150B8B226640DD00AF0155 /* Deinonychus Specular.png */; };
+		AF150B90226640DF00AF0155 /* Deinonychus Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF150B8C226640DE00AF0155 /* Deinonychus Normal.png */; };
+		AF150B91226640DF00AF0155 /* Deinonychus Displacement.png in Resources */ = {isa = PBXBuildFile; fileRef = AF150B8D226640DE00AF0155 /* Deinonychus Displacement.png */; };
+		AF150B92226640DF00AF0155 /* Deinonychus Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF150B8E226640DF00AF0155 /* Deinonychus Diffuse.png */; };
+		AF150B942266413800AF0155 /* Deinonychus Eye.JPG in Resources */ = {isa = PBXBuildFile; fileRef = AF150B932266413800AF0155 /* Deinonychus Eye.JPG */; };
+		AF150B962266415400AF0155 /* Deinonychus Eye2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B952266415400AF0155 /* Deinonychus Eye2.jpg */; };
+		AF1C5E7322647F9700296E6D /* Dinosaur.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1C5E7222647F9700296E6D /* Dinosaur.storyboard */; };
+		AF1C5E75226484DC00296E6D /* SolarSystem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1C5E74226484DC00296E6D /* SolarSystem.storyboard */; };
+		AF8311B92257615C004D3426 /* SolarSystem.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8311B82257615C004D3426 /* SolarSystem.scnassets */; };
+		AF8311BB225777D4004D3426 /* InformationPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8311BA225777D4004D3426 /* InformationPopUpViewController.swift */; };
+		AF84627922786ED600D9BE12 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF84627822786ED600D9BE12 /* PopUpView.swift */; };
+		AF94D11222575EC7005D2B25 /* InformationPopUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF94D11122575EC7005D2B25 /* InformationPopUp.storyboard */; };
+		AF9587D122671ACF00E7FDBB /* PopoverTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9587D022671ACF00E7FDBB /* PopoverTableViewCell.swift */; };
+		AF9A9AF9225C8D1C00975672 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A9AF8225C8D1C00975672 /* UIViewController + Extension.swift */; };
+		AF9A9AFC225C8E1800975672 /* DisplayAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A9AFB225C8E1800975672 /* DisplayAlert.swift */; };
+		AF9A9AFE225C95A900975672 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A9AFD225C95A900975672 /* Constant.swift */; };
+		AF9A9B00225C971F00975672 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9A9AFF225C971F00975672 /* UIImage + Extension.swift */; };
+		AF9EA7A522817C3E001E5E71 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = AF9EA7A422817C3E001E5E71 /* .swiftlint.yml */; };
+		AF9EA7A72281D2BC001E5E71 /* DinosaurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EA7A62281D2BC001E5E71 /* DinosaurView.swift */; };
+		AF9EA7A92281D35D001E5E71 /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EA7A82281D35D001E5E71 /* StatusView.swift */; };
+		AF9EA7AE2281D7FC001E5E71 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EA7AD2281D7FC001E5E71 /* StatusViewController.swift */; };
+		AF9FDF9F22590525009E58C7 /* SolarSystemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9FDF9E22590525009E58C7 /* SolarSystemService.swift */; };
+		AF9FDFA1225909BE009E58C7 /* WikiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */; };
+		AFCAEBBC22830ECD0079EE26 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */; };
+		AFD2BC92225628A800292DFE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC91225628A800292DFE /* ParameterEncoding.swift */; };
+		AFD2BC94225628DA00292DFE /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */; };
+		AFD2BC962256290E00292DFE /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC952256290E00292DFE /* JSONParameterEncoder.swift */; };
+		AFD2BC982256295E00292DFE /* WikiAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC972256295E00292DFE /* WikiAPI.swift */; };
+		AFD2BC9A2256298600292DFE /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC992256298600292DFE /* EndPointType.swift */; };
+		AFD2BC9C225629A300292DFE /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC9B225629A300292DFE /* HTTPMethod.swift */; };
+		AFD2BC9E225629BF00292DFE /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC9D225629BF00292DFE /* HTTPTask.swift */; };
+		AFD2BCA0225629E000292DFE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC9F225629E000292DFE /* NetworkManager.swift */; };
+		AFD2BCA2225629FD00292DFE /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BCA1225629FD00292DFE /* NetworkRouter.swift */; };
+		AFD2BCA422562A1E00292DFE /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BCA322562A1E00292DFE /* Router.swift */; };
+		AFF16FFA22534904008F8414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF16FF922534904008F8414 /* AppDelegate.swift */; };
+		AFF16FFE22534904008F8414 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */; };
+		AFF1700122534904008F8414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF16FFF22534904008F8414 /* Main.storyboard */; };
+		AFF1700322534907008F8414 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFF1700222534907008F8414 /* Assets.xcassets */; };
+		AFF1700622534907008F8414 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF1700422534907008F8414 /* LaunchScreen.storyboard */; };
+		AFF17023225365C4008F8414 /* Saturn Ring Alpha.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17013225365C1008F8414 /* Saturn Ring Alpha.png */; };
+		AFF17024225365C4008F8414 /* Stars.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17014225365C1008F8414 /* Stars.png */; };
+		AFF17025225365C4008F8414 /* Earth Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17015225365C1008F8414 /* Earth Specular.png */; };
+		AFF17026225365C4008F8414 /* Moon.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17016225365C2008F8414 /* Moon.png */; };
+		AFF17027225365C4008F8414 /* Mercury.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17017225365C2008F8414 /* Mercury.png */; };
+		AFF17028225365C4008F8414 /* Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17018225365C2008F8414 /* Sun.png */; };
+		AFF17029225365C4008F8414 /* Uranus.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17019225365C2008F8414 /* Uranus.png */; };
+		AFF1702A225365C4008F8414 /* Venus Emission.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF1701A225365C2008F8414 /* Venus Emission.png */; };
+		AFF1702B225365C4008F8414 /* Jupiter.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF1701B225365C2008F8414 /* Jupiter.png */; };
+		AFF1702C225365C4008F8414 /* Neptune.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF1701C225365C2008F8414 /* Neptune.png */; };
+		AFF1702D225365C4008F8414 /* Saturn.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF1701D225365C3008F8414 /* Saturn.png */; };
+		AFF1702E225365C4008F8414 /* Mars.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF1701E225365C3008F8414 /* Mars.png */; };
+		AFF1702F225365C4008F8414 /* Earth Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF1701F225365C3008F8414 /* Earth Normal.png */; };
+		AFF17030225365C4008F8414 /* Earth Emission.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17020225365C3008F8414 /* Earth Emission.png */; };
+		AFF17031225365C4008F8414 /* Earth Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17021225365C3008F8414 /* Earth Diffuse.png */; };
+		AFF17032225365C4008F8414 /* Venus Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17022225365C4008F8414 /* Venus Diffuse.png */; };
+		AFF17034225366D5008F8414 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = AFF17033225366D5008F8414 /* spark.png */; };
+		AFF1703622536A12008F8414 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1703522536A12008F8414 /* HomeTableViewController.swift */; };
+		AFF1703822536A4D008F8414 /* PlanetEarthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1703722536A4D008F8414 /* PlanetEarthViewController.swift */; };
+		AFF1703A22536A60008F8414 /* DinosaurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1703922536A60008F8414 /* DinosaurViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AF0D73E92284271D0005E377 /* irex teeth Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex teeth Normal.png"; sourceTree = "<group>"; };
+		AF0D73EA2284271D0005E377 /* irex eye Membrane Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex eye Membrane Normal.png"; sourceTree = "<group>"; };
+		AF0D73EB2284271D0005E377 /* irex Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex Specular.png"; sourceTree = "<group>"; };
+		AF0D73EC2284271D0005E377 /* irex claw spiked Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex claw spiked Diffuse.png"; sourceTree = "<group>"; };
+		AF0D73ED2284271D0005E377 /* irex eye Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex eye Diffuse.png"; sourceTree = "<group>"; };
+		AF0D73EE2284271D0005E377 /* irex eye Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex eye Normal.png"; sourceTree = "<group>"; };
+		AF0D73EF2284271D0005E377 /* irex tongue Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex tongue Diffuse.png"; sourceTree = "<group>"; };
+		AF0D73F02284271D0005E377 /* irex teeth Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex teeth Diffuse.png"; sourceTree = "<group>"; };
+		AF0D73F12284271D0005E377 /* irex tongue Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex tongue Normal.png"; sourceTree = "<group>"; };
+		AF0D73F22284271D0005E377 /* irex claw spiked Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex claw spiked Normal.png"; sourceTree = "<group>"; };
+		AF0D73F32284271D0005E377 /* irex Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex Normal.png"; sourceTree = "<group>"; };
+		AF0D73F42284271E0005E377 /* irex eye Membrane Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex eye Membrane Diffuse.png"; sourceTree = "<group>"; };
+		AF0D73F52284271E0005E377 /* irex Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex Diffuse.png"; sourceTree = "<group>"; };
+		AF150B552265D92900AF0155 /* Dinosaur.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Dinosaur.scnassets; sourceTree = "<group>"; };
+		AF150B572265D97700AF0155 /* Tyrex Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tyrex Specular.png"; sourceTree = "<group>"; };
+		AF150B582265D97700AF0155 /* Tyrex Phong Diffuse Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tyrex Phong Diffuse Normal.png"; sourceTree = "<group>"; };
+		AF150B592265D97A00AF0155 /* Tyrex Normal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tyrex Normal.jpg"; sourceTree = "<group>"; };
+		AF150B5A2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tyrex eyes Diffuse.jpg"; sourceTree = "<group>"; };
+		AF150B5B2265D97A00AF0155 /* Tyrex Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Tyrex Diffuse.jpg"; sourceTree = "<group>"; };
+		AF150B632265E38300AF0155 /* PopoverSelectorTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverSelectorTableViewController.swift; sourceTree = "<group>"; };
+		AF150B652266363E00AF0155 /* Dilpoh Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Specular.jpg"; sourceTree = "<group>"; };
+		AF150B662266363E00AF0155 /* Dilpoh Eye Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Eye Diffuse.jpg"; sourceTree = "<group>"; };
+		AF150B672266363E00AF0155 /* Dilpoh Frill Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Frill Specular.jpg"; sourceTree = "<group>"; };
+		AF150B682266363E00AF0155 /* Dilpoh Frill Normal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Frill Normal.jpg"; sourceTree = "<group>"; };
+		AF150B692266363E00AF0155 /* Dilpoh Frill Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Frill Diffuse.jpg"; sourceTree = "<group>"; };
+		AF150B6A2266363F00AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Mouth & Webbing Diffuse.jpg"; sourceTree = "<group>"; };
+		AF150B6B2266363F00AF0155 /* Dilpoh Normal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Normal.jpg"; sourceTree = "<group>"; };
+		AF150B6C2266364000AF0155 /* Dilpoh Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Dilpoh Diffuse.jpg"; sourceTree = "<group>"; };
+		AF150B8B226640DD00AF0155 /* Deinonychus Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deinonychus Specular.png"; sourceTree = "<group>"; };
+		AF150B8C226640DE00AF0155 /* Deinonychus Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deinonychus Normal.png"; sourceTree = "<group>"; };
+		AF150B8D226640DE00AF0155 /* Deinonychus Displacement.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deinonychus Displacement.png"; sourceTree = "<group>"; };
+		AF150B8E226640DF00AF0155 /* Deinonychus Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Deinonychus Diffuse.png"; sourceTree = "<group>"; };
+		AF150B932266413800AF0155 /* Deinonychus Eye.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Deinonychus Eye.JPG"; sourceTree = "<group>"; };
+		AF150B952266415400AF0155 /* Deinonychus Eye2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Deinonychus Eye2.jpg"; sourceTree = "<group>"; };
+		AF1C5E7222647F9700296E6D /* Dinosaur.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dinosaur.storyboard; sourceTree = "<group>"; };
+		AF1C5E74226484DC00296E6D /* SolarSystem.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SolarSystem.storyboard; sourceTree = "<group>"; };
+		AF8311B82257615C004D3426 /* SolarSystem.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SolarSystem.scnassets; sourceTree = "<group>"; };
+		AF8311BA225777D4004D3426 /* InformationPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPopUpViewController.swift; sourceTree = "<group>"; };
+		AF84627822786ED600D9BE12 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
+		AF94D11122575EC7005D2B25 /* InformationPopUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InformationPopUp.storyboard; sourceTree = "<group>"; };
+		AF9587D022671ACF00E7FDBB /* PopoverTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverTableViewCell.swift; sourceTree = "<group>"; };
+		AF9A9AF8225C8D1C00975672 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		AF9A9AFB225C8E1800975672 /* DisplayAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayAlert.swift; sourceTree = "<group>"; };
+		AF9A9AFD225C95A900975672 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		AF9A9AFF225C971F00975672 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		AF9EA7A422817C3E001E5E71 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		AF9EA7A62281D2BC001E5E71 /* DinosaurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurView.swift; sourceTree = "<group>"; };
+		AF9EA7A82281D35D001E5E71 /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
+		AF9EA7AD2281D7FC001E5E71 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		AF9FDF9E22590525009E58C7 /* SolarSystemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemService.swift; sourceTree = "<group>"; };
+		AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfo.swift; sourceTree = "<group>"; };
+		AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
+		AFD2BC91225628A800292DFE /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
+		AFD2BC952256290E00292DFE /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
+		AFD2BC972256295E00292DFE /* WikiAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPI.swift; sourceTree = "<group>"; };
+		AFD2BC992256298600292DFE /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		AFD2BC9B225629A300292DFE /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		AFD2BC9D225629BF00292DFE /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
+		AFD2BC9F225629E000292DFE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		AFD2BCA1225629FD00292DFE /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		AFD2BCA322562A1E00292DFE /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		AFF16FF622534904008F8414 /* MengHuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MengHuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFF16FF922534904008F8414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
+		AFF1700022534904008F8414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AFF1700222534907008F8414 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AFF1700522534907008F8414 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AFF1700722534907008F8414 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFF17013225365C1008F8414 /* Saturn Ring Alpha.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Saturn Ring Alpha.png"; sourceTree = "<group>"; };
+		AFF17014225365C1008F8414 /* Stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stars.png; sourceTree = "<group>"; };
+		AFF17015225365C1008F8414 /* Earth Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Earth Specular.png"; sourceTree = "<group>"; };
+		AFF17016225365C2008F8414 /* Moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Moon.png; sourceTree = "<group>"; };
+		AFF17017225365C2008F8414 /* Mercury.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mercury.png; sourceTree = "<group>"; };
+		AFF17018225365C2008F8414 /* Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sun.png; sourceTree = "<group>"; };
+		AFF17019225365C2008F8414 /* Uranus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uranus.png; sourceTree = "<group>"; };
+		AFF1701A225365C2008F8414 /* Venus Emission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Venus Emission.png"; sourceTree = "<group>"; };
+		AFF1701B225365C2008F8414 /* Jupiter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Jupiter.png; sourceTree = "<group>"; };
+		AFF1701C225365C2008F8414 /* Neptune.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neptune.png; sourceTree = "<group>"; };
+		AFF1701D225365C3008F8414 /* Saturn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Saturn.png; sourceTree = "<group>"; };
+		AFF1701E225365C3008F8414 /* Mars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Mars.png; sourceTree = "<group>"; };
+		AFF1701F225365C3008F8414 /* Earth Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Earth Normal.png"; sourceTree = "<group>"; };
+		AFF17020225365C3008F8414 /* Earth Emission.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Earth Emission.png"; sourceTree = "<group>"; };
+		AFF17021225365C3008F8414 /* Earth Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Earth Diffuse.png"; sourceTree = "<group>"; };
+		AFF17022225365C4008F8414 /* Venus Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Venus Diffuse.png"; sourceTree = "<group>"; };
+		AFF17033225366D5008F8414 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
+		AFF1703522536A12008F8414 /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		AFF1703722536A4D008F8414 /* PlanetEarthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetEarthViewController.swift; sourceTree = "<group>"; };
+		AFF1703922536A60008F8414 /* DinosaurViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinosaurViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFF16FF322534904008F8414 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF150B522265D84F00AF0155 /* SolarSystem */ = {
+			isa = PBXGroup;
+			children = (
+				AFF170122253657C008F8414 /* Textures */,
+				AF8311B82257615C004D3426 /* SolarSystem.scnassets */,
+			);
+			path = SolarSystem;
+			sourceTree = "<group>";
+		};
+		AF150B532265D87F00AF0155 /* Dinosaur */ = {
+			isa = PBXGroup;
+			children = (
+				AF150B542265D90100AF0155 /* Textures */,
+				AF150B552265D92900AF0155 /* Dinosaur.scnassets */,
+			);
+			path = Dinosaur;
+			sourceTree = "<group>";
+		};
+		AF150B542265D90100AF0155 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				AF0D73EC2284271D0005E377 /* irex claw spiked Diffuse.png */,
+				AF0D73F22284271D0005E377 /* irex claw spiked Normal.png */,
+				AF0D73F52284271E0005E377 /* irex Diffuse.png */,
+				AF0D73ED2284271D0005E377 /* irex eye Diffuse.png */,
+				AF0D73F42284271E0005E377 /* irex eye Membrane Diffuse.png */,
+				AF0D73EA2284271D0005E377 /* irex eye Membrane Normal.png */,
+				AF0D73EE2284271D0005E377 /* irex eye Normal.png */,
+				AF0D73F32284271D0005E377 /* irex Normal.png */,
+				AF0D73EB2284271D0005E377 /* irex Specular.png */,
+				AF0D73F02284271D0005E377 /* irex teeth Diffuse.png */,
+				AF0D73E92284271D0005E377 /* irex teeth Normal.png */,
+				AF0D73EF2284271D0005E377 /* irex tongue Diffuse.png */,
+				AF0D73F12284271D0005E377 /* irex tongue Normal.png */,
+				AF150B952266415400AF0155 /* Deinonychus Eye2.jpg */,
+				AF150B932266413800AF0155 /* Deinonychus Eye.JPG */,
+				AF150B8E226640DF00AF0155 /* Deinonychus Diffuse.png */,
+				AF150B8D226640DE00AF0155 /* Deinonychus Displacement.png */,
+				AF150B8C226640DE00AF0155 /* Deinonychus Normal.png */,
+				AF150B8B226640DD00AF0155 /* Deinonychus Specular.png */,
+				AF150B6C2266364000AF0155 /* Dilpoh Diffuse.jpg */,
+				AF150B662266363E00AF0155 /* Dilpoh Eye Diffuse.jpg */,
+				AF150B692266363E00AF0155 /* Dilpoh Frill Diffuse.jpg */,
+				AF150B682266363E00AF0155 /* Dilpoh Frill Normal.jpg */,
+				AF150B672266363E00AF0155 /* Dilpoh Frill Specular.jpg */,
+				AF150B6A2266363F00AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg */,
+				AF150B6B2266363F00AF0155 /* Dilpoh Normal.jpg */,
+				AF150B652266363E00AF0155 /* Dilpoh Specular.jpg */,
+				AF150B5B2265D97A00AF0155 /* Tyrex Diffuse.jpg */,
+				AF150B5A2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg */,
+				AF150B592265D97A00AF0155 /* Tyrex Normal.jpg */,
+				AF150B582265D97700AF0155 /* Tyrex Phong Diffuse Normal.png */,
+				AF150B572265D97700AF0155 /* Tyrex Specular.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		AF9A9AF7225C8CB500975672 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				AF9A9AF8225C8D1C00975672 /* UIViewController + Extension.swift */,
+				AF9A9AFF225C971F00975672 /* UIImage + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		AF9A9AFA225C8DE400975672 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				AF9A9AFB225C8E1800975672 /* DisplayAlert.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
+		AF9EA7AA2281D6C3001E5E71 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AF84627822786ED600D9BE12 /* PopUpView.swift */,
+				AFF16FFF22534904008F8414 /* Main.storyboard */,
+				AFF1700422534907008F8414 /* LaunchScreen.storyboard */,
+				AF94D11122575EC7005D2B25 /* InformationPopUp.storyboard */,
+				AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */,
+				AF9587D022671ACF00E7FDBB /* PopoverTableViewCell.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AF9EA7AB2281D6F6001E5E71 /* DinosaurView */ = {
+			isa = PBXGroup;
+			children = (
+				AF1C5E7222647F9700296E6D /* Dinosaur.storyboard */,
+				AF9EA7A62281D2BC001E5E71 /* DinosaurView.swift */,
+				AF9EA7A82281D35D001E5E71 /* StatusView.swift */,
+			);
+			path = DinosaurView;
+			sourceTree = "<group>";
+		};
+		AF9EA7AC2281D738001E5E71 /* SolarSystemView */ = {
+			isa = PBXGroup;
+			children = (
+				AF1C5E74226484DC00296E6D /* SolarSystem.storyboard */,
+			);
+			path = SolarSystemView;
+			sourceTree = "<group>";
+		};
+		AF9FDF9D225904C0009E58C7 /* Solar system */ = {
+			isa = PBXGroup;
+			children = (
+				AF9FDF9E22590525009E58C7 /* SolarSystemService.swift */,
+				AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */,
+			);
+			path = "Solar system";
+			sourceTree = "<group>";
+		};
+		AFD2BC8D2255E26300292DFE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				AFD2BC902255E27F00292DFE /* Service */,
+				AFD2BC8F2255E27700292DFE /* Encoding */,
+				AFD2BC8E2255E26E00292DFE /* EndPoint */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		AFD2BC8E2255E26E00292DFE /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				AFD2BC972256295E00292DFE /* WikiAPI.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		AFD2BC8F2255E27700292DFE /* Encoding */ = {
+			isa = PBXGroup;
+			children = (
+				AFD2BC91225628A800292DFE /* ParameterEncoding.swift */,
+				AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */,
+				AFD2BC952256290E00292DFE /* JSONParameterEncoder.swift */,
+			);
+			path = Encoding;
+			sourceTree = "<group>";
+		};
+		AFD2BC902255E27F00292DFE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				AFD2BC992256298600292DFE /* EndPointType.swift */,
+				AFD2BC9B225629A300292DFE /* HTTPMethod.swift */,
+				AFD2BC9D225629BF00292DFE /* HTTPTask.swift */,
+				AFD2BC9F225629E000292DFE /* NetworkManager.swift */,
+				AFD2BCA1225629FD00292DFE /* NetworkRouter.swift */,
+				AFD2BCA322562A1E00292DFE /* Router.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		AFF16FED22534904008F8414 = {
+			isa = PBXGroup;
+			children = (
+				AFF16FF822534904008F8414 /* MengHuan */,
+				AFF16FF722534904008F8414 /* Products */,
+				AF9EA7A422817C3E001E5E71 /* .swiftlint.yml */,
+			);
+			sourceTree = "<group>";
+		};
+		AFF16FF722534904008F8414 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFF16FF622534904008F8414 /* MengHuan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFF16FF822534904008F8414 /* MengHuan */ = {
+			isa = PBXGroup;
+			children = (
+				AFF170102253499B008F8414 /* Model */,
+				AFF1700F2253498F008F8414 /* View */,
+				AFF1700E22534982008F8414 /* Controller */,
+				AFF17011225349B0008F8414 /* ARKit */,
+				AF9A9AF7225C8CB500975672 /* Extension */,
+				AFF1700D22534963008F8414 /* Supporting Files */,
+			);
+			path = MengHuan;
+			sourceTree = "<group>";
+		};
+		AFF1700D22534963008F8414 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AF9A9AFD225C95A900975672 /* Constant.swift */,
+				AFF16FF922534904008F8414 /* AppDelegate.swift */,
+				AFF1700222534907008F8414 /* Assets.xcassets */,
+				AFF1700722534907008F8414 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFF1700E22534982008F8414 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AFFCAF58226F18250086E770 /* CommonController */,
+				AFFCAF55226F17330086E770 /* SolarSystemController */,
+				AFFCAF56226F17650086E770 /* PlanetEarthController */,
+				AFFCAF57226F17DA0086E770 /* DinosaurController */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AFF1700F2253498F008F8414 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF9EA7AA2281D6C3001E5E71 /* Common */,
+				AF9EA7AC2281D738001E5E71 /* SolarSystemView */,
+				AF9EA7AB2281D6F6001E5E71 /* DinosaurView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AFF170102253499B008F8414 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF9FDF9D225904C0009E58C7 /* Solar system */,
+				AFD2BC8D2255E26300292DFE /* Networking */,
+				AF9A9AFA225C8DE400975672 /* Alert */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AFF17011225349B0008F8414 /* ARKit */ = {
+			isa = PBXGroup;
+			children = (
+				AF150B532265D87F00AF0155 /* Dinosaur */,
+				AF150B522265D84F00AF0155 /* SolarSystem */,
+			);
+			path = ARKit;
+			sourceTree = "<group>";
+		};
+		AFF170122253657C008F8414 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				AFF17033225366D5008F8414 /* spark.png */,
+				AFF17021225365C3008F8414 /* Earth Diffuse.png */,
+				AFF17020225365C3008F8414 /* Earth Emission.png */,
+				AFF1701F225365C3008F8414 /* Earth Normal.png */,
+				AFF17015225365C1008F8414 /* Earth Specular.png */,
+				AFF1701B225365C2008F8414 /* Jupiter.png */,
+				AFF1701E225365C3008F8414 /* Mars.png */,
+				AFF17017225365C2008F8414 /* Mercury.png */,
+				AFF17016225365C2008F8414 /* Moon.png */,
+				AFF1701C225365C2008F8414 /* Neptune.png */,
+				AFF17013225365C1008F8414 /* Saturn Ring Alpha.png */,
+				AFF1701D225365C3008F8414 /* Saturn.png */,
+				AFF17014225365C1008F8414 /* Stars.png */,
+				AFF17018225365C2008F8414 /* Sun.png */,
+				AFF17019225365C2008F8414 /* Uranus.png */,
+				AFF17022225365C4008F8414 /* Venus Diffuse.png */,
+				AFF1701A225365C2008F8414 /* Venus Emission.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		AFFCAF55226F17330086E770 /* SolarSystemController */ = {
+			isa = PBXGroup;
+			children = (
+				AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */,
+			);
+			path = SolarSystemController;
+			sourceTree = "<group>";
+		};
+		AFFCAF56226F17650086E770 /* PlanetEarthController */ = {
+			isa = PBXGroup;
+			children = (
+				AFF1703722536A4D008F8414 /* PlanetEarthViewController.swift */,
+			);
+			path = PlanetEarthController;
+			sourceTree = "<group>";
+		};
+		AFFCAF57226F17DA0086E770 /* DinosaurController */ = {
+			isa = PBXGroup;
+			children = (
+				AFF1703922536A60008F8414 /* DinosaurViewController.swift */,
+				AF150B632265E38300AF0155 /* PopoverSelectorTableViewController.swift */,
+				AF9EA7AD2281D7FC001E5E71 /* StatusViewController.swift */,
+			);
+			path = DinosaurController;
+			sourceTree = "<group>";
+		};
+		AFFCAF58226F18250086E770 /* CommonController */ = {
+			isa = PBXGroup;
+			children = (
+				AFF1703522536A12008F8414 /* HomeTableViewController.swift */,
+				AF8311BA225777D4004D3426 /* InformationPopUpViewController.swift */,
+			);
+			path = CommonController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFF16FF522534904008F8414 /* MengHuan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFF1700A22534907008F8414 /* Build configuration list for PBXNativeTarget "MengHuan" */;
+			buildPhases = (
+				AFF16FF222534904008F8414 /* Sources */,
+				AFF16FF322534904008F8414 /* Frameworks */,
+				AFF16FF422534904008F8414 /* Resources */,
+				AF9EA7A322817B80001E5E71 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MengHuan;
+			productName = MengHuan;
+			productReference = AFF16FF622534904008F8414 /* MengHuan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFF16FEE22534904008F8414 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Mattkee;
+				TargetAttributes = {
+					AFF16FF522534904008F8414 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = AFF16FF122534904008F8414 /* Build configuration list for PBXProject "MengHuan" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFF16FED22534904008F8414;
+			productRefGroup = AFF16FF722534904008F8414 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFF16FF522534904008F8414 /* MengHuan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFF16FF422534904008F8414 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF0D73F62284271E0005E377 /* irex teeth Normal.png in Resources */,
+				AFF17028225365C4008F8414 /* Sun.png in Resources */,
+				AFF17030225365C4008F8414 /* Earth Emission.png in Resources */,
+				AF9EA7A522817C3E001E5E71 /* .swiftlint.yml in Resources */,
+				AF0D74002284271E0005E377 /* irex Normal.png in Resources */,
+				AFF1702F225365C4008F8414 /* Earth Normal.png in Resources */,
+				AFF1702D225365C4008F8414 /* Saturn.png in Resources */,
+				AF150B5E2265D97A00AF0155 /* Tyrex Normal.jpg in Resources */,
+				AF0D73FD2284271E0005E377 /* irex teeth Diffuse.png in Resources */,
+				AF150B962266415400AF0155 /* Deinonychus Eye2.jpg in Resources */,
+				AF1C5E7322647F9700296E6D /* Dinosaur.storyboard in Resources */,
+				AF0D73FE2284271E0005E377 /* irex tongue Normal.png in Resources */,
+				AF0D74012284271E0005E377 /* irex eye Membrane Diffuse.png in Resources */,
+				AF8311B92257615C004D3426 /* SolarSystem.scnassets in Resources */,
+				AFF17023225365C4008F8414 /* Saturn Ring Alpha.png in Resources */,
+				AFF17025225365C4008F8414 /* Earth Specular.png in Resources */,
+				AF150B712266364000AF0155 /* Dilpoh Frill Diffuse.jpg in Resources */,
+				AFF1700622534907008F8414 /* LaunchScreen.storyboard in Resources */,
+				AFF17026225365C4008F8414 /* Moon.png in Resources */,
+				AF0D74022284271E0005E377 /* irex Diffuse.png in Resources */,
+				AFF1700322534907008F8414 /* Assets.xcassets in Resources */,
+				AF150B6F2266364000AF0155 /* Dilpoh Frill Specular.jpg in Resources */,
+				AF1C5E75226484DC00296E6D /* SolarSystem.storyboard in Resources */,
+				AF150B5D2265D97A00AF0155 /* Tyrex Phong Diffuse Normal.png in Resources */,
+				AF150B722266364000AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg in Resources */,
+				AF0D73FF2284271E0005E377 /* irex claw spiked Normal.png in Resources */,
+				AF150B942266413800AF0155 /* Deinonychus Eye.JPG in Resources */,
+				AF150B6E2266364000AF0155 /* Dilpoh Eye Diffuse.jpg in Resources */,
+				AF0D73F82284271E0005E377 /* irex Specular.png in Resources */,
+				AF150B91226640DF00AF0155 /* Deinonychus Displacement.png in Resources */,
+				AF94D11222575EC7005D2B25 /* InformationPopUp.storyboard in Resources */,
+				AF150B90226640DF00AF0155 /* Deinonychus Normal.png in Resources */,
+				AFF17034225366D5008F8414 /* spark.png in Resources */,
+				AF0D73F72284271E0005E377 /* irex eye Membrane Normal.png in Resources */,
+				AF0D73FA2284271E0005E377 /* irex eye Diffuse.png in Resources */,
+				AF150B702266364000AF0155 /* Dilpoh Frill Normal.jpg in Resources */,
+				AFCAEBBC22830ECD0079EE26 /* Popover.storyboard in Resources */,
+				AFF1702C225365C4008F8414 /* Neptune.png in Resources */,
+				AFF17029225365C4008F8414 /* Uranus.png in Resources */,
+				AF150B742266364000AF0155 /* Dilpoh Diffuse.jpg in Resources */,
+				AFF17027225365C4008F8414 /* Mercury.png in Resources */,
+				AFF17031225365C4008F8414 /* Earth Diffuse.png in Resources */,
+				AF150B6D2266364000AF0155 /* Dilpoh Specular.jpg in Resources */,
+				AF150B562265D92900AF0155 /* Dinosaur.scnassets in Resources */,
+				AF0D73FB2284271E0005E377 /* irex eye Normal.png in Resources */,
+				AFF1702B225365C4008F8414 /* Jupiter.png in Resources */,
+				AFF1702A225365C4008F8414 /* Venus Emission.png in Resources */,
+				AFF1700122534904008F8414 /* Main.storyboard in Resources */,
+				AF150B732266364000AF0155 /* Dilpoh Normal.jpg in Resources */,
+				AF150B602265D97A00AF0155 /* Tyrex Diffuse.jpg in Resources */,
+				AF150B92226640DF00AF0155 /* Deinonychus Diffuse.png in Resources */,
+				AF150B5F2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg in Resources */,
+				AF0D73F92284271E0005E377 /* irex claw spiked Diffuse.png in Resources */,
+				AFF1702E225365C4008F8414 /* Mars.png in Resources */,
+				AFF17024225365C4008F8414 /* Stars.png in Resources */,
+				AF150B5C2265D97A00AF0155 /* Tyrex Specular.png in Resources */,
+				AF150B8F226640DF00AF0155 /* Deinonychus Specular.png in Resources */,
+				AFF17032225365C4008F8414 /* Venus Diffuse.png in Resources */,
+				AF0D73FC2284271E0005E377 /* irex tongue Diffuse.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AF9EA7A322817B80001E5E71 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFF16FF222534904008F8414 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF9EA7AE2281D7FC001E5E71 /* StatusViewController.swift in Sources */,
+				AF9587D122671ACF00E7FDBB /* PopoverTableViewCell.swift in Sources */,
+				AFD2BC9E225629BF00292DFE /* HTTPTask.swift in Sources */,
+				AF9EA7A92281D35D001E5E71 /* StatusView.swift in Sources */,
+				AFD2BC962256290E00292DFE /* JSONParameterEncoder.swift in Sources */,
+				AFD2BC92225628A800292DFE /* ParameterEncoding.swift in Sources */,
+				AFD2BCA0225629E000292DFE /* NetworkManager.swift in Sources */,
+				AFF1703622536A12008F8414 /* HomeTableViewController.swift in Sources */,
+				AFD2BC9C225629A300292DFE /* HTTPMethod.swift in Sources */,
+				AFF1703822536A4D008F8414 /* PlanetEarthViewController.swift in Sources */,
+				AF9A9AFC225C8E1800975672 /* DisplayAlert.swift in Sources */,
+				AF150B642265E38300AF0155 /* PopoverSelectorTableViewController.swift in Sources */,
+				AF84627922786ED600D9BE12 /* PopUpView.swift in Sources */,
+				AF9FDF9F22590525009E58C7 /* SolarSystemService.swift in Sources */,
+				AFD2BCA422562A1E00292DFE /* Router.swift in Sources */,
+				AF9FDFA1225909BE009E58C7 /* WikiInfo.swift in Sources */,
+				AF8311BB225777D4004D3426 /* InformationPopUpViewController.swift in Sources */,
+				AFF16FFE22534904008F8414 /* SolarSystemViewController.swift in Sources */,
+				AFD2BC94225628DA00292DFE /* URLParameterEncoder.swift in Sources */,
+				AF9A9AFE225C95A900975672 /* Constant.swift in Sources */,
+				AFF16FFA22534904008F8414 /* AppDelegate.swift in Sources */,
+				AF9EA7A72281D2BC001E5E71 /* DinosaurView.swift in Sources */,
+				AFD2BC982256295E00292DFE /* WikiAPI.swift in Sources */,
+				AF9A9AF9225C8D1C00975672 /* UIViewController + Extension.swift in Sources */,
+				AFD2BC9A2256298600292DFE /* EndPointType.swift in Sources */,
+				AF9A9B00225C971F00975672 /* UIImage + Extension.swift in Sources */,
+				AFF1703A22536A60008F8414 /* DinosaurViewController.swift in Sources */,
+				AFD2BCA2225629FD00292DFE /* NetworkRouter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AFF16FFF22534904008F8414 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFF1700022534904008F8414 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AFF1700422534907008F8414 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFF1700522534907008F8414 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AFF1700822534907008F8414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AFF1700922534907008F8414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFF1700B22534907008F8414 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/MengHuan/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattkee.MengHuan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFF1700C22534907008F8414 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/MengHuan/Supporting Files/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattkee.MengHuan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFF16FF122534904008F8414 /* Build configuration list for PBXProject "MengHuan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFF1700822534907008F8414 /* Debug */,
+				AFF1700922534907008F8414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFF1700A22534907008F8414 /* Build configuration list for PBXNativeTarget "MengHuan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFF1700B22534907008F8414 /* Debug */,
+				AFF1700C22534907008F8414 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AFF16FEE22534904008F8414 /* Project object */;
+}

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Solar System View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="SolarSystemViewController" customModule="MengHuan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-mP-3tu">
+                                <rect key="frame" x="30" y="54" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RCp-mP-3tu" secondAttribute="height" multiplier="1:1" id="OOx-I7-Ngg"/>
+                                    <constraint firstAttribute="width" constant="45" id="PtG-OA-seL"/>
+                                    <constraint firstAttribute="height" constant="45" id="fl3-qh-40H"/>
+                                </constraints>
+                                <state key="normal" title="Return" image="Back Button"/>
+                                <connections>
+                                    <action selector="backAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="gNr-pg-m43"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u8-1W-YlO">
+                                <rect key="frame" x="339" y="54" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="AV8-e6-xdS"/>
+                                    <constraint firstAttribute="width" constant="45" id="HBL-AG-ds1"/>
+                                    <constraint firstAttribute="width" secondItem="5u8-1W-YlO" secondAttribute="height" multiplier="1:1" id="mue-nH-e0R"/>
+                                </constraints>
+                                <state key="normal" title="Play Button" image="Pause Button"/>
+                                <connections>
+                                    <action selector="playPauseAction:" destination="BV1-FR-VrT" eventType="touchUpInside" id="qhF-dn-H6F"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0D-Oh-cHb">
+                                <rect key="frame" x="184.5" y="54" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="nYV-yg-7rE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="SXd-8e-v0H" kind="popoverPresentation" identifier="showPopover" popoverAnchorView="M0D-Oh-cHb" id="xDb-Hq-6J9">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="M0D-Oh-cHb" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="10" id="1Gb-lP-urw"/>
+                            <constraint firstItem="RCp-mP-3tu" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="30" id="GN9-Xr-RYn"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="5u8-1W-YlO" secondAttribute="trailing" constant="30" id="SLB-VZ-vvT"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="5u8-1W-YlO" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="10" id="Yy3-hm-zRE"/>
+                            <constraint firstItem="RCp-mP-3tu" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="10" id="jsf-M0-VMl"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
+                            <constraint firstItem="M0D-Oh-cHb" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="rOa-r6-m6F"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="nuD-ef-FXE"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="playButton" destination="5u8-1W-YlO" id="DTj-nq-GpN"/>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <segue destination="ILM-jb-tdf" kind="presentation" identifier="wiki Information" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="oYo-gj-HiI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="CKb-Bz-sb3">
+                    <connections>
+                        <action selector="panGesture:" destination="BV1-FR-VrT" id="JAG-PF-5o6"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pinchGestureRecognizer id="n9X-VH-kyh">
+                    <connections>
+                        <action selector="pinch:" destination="BV1-FR-VrT" id="eaE-Vw-RNl"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <tapGestureRecognizer id="JYZ-Dg-cgX">
+                    <connections>
+                        <action selector="tapped:" destination="BV1-FR-VrT" id="YHn-ah-yyP"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="283" y="139"/>
+        </scene>
+        <!--Popover-->
+        <scene sceneID="pJk-33-OKe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Popover" id="SXd-8e-v0H" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jfS-Uh-Zxo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="968" y="-19"/>
+        </scene>
+        <!--InformationPopUp-->
+        <scene sceneID="DNk-ky-V0p">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InformationPopUp" id="ILM-jb-tdf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qQB-Tp-Te2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Back Button" width="47" height="47"/>
+        <image name="Pause Button" width="47" height="47"/>
+    </resources>
+</document>
