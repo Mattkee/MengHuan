@@ -63,7 +63,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
 
         // Show statistics such as fps and timing information
-        sceneView.showsStatistics = true
+//        sceneView.showsStatistics = true
 
         // Create a new scene
         scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn")
@@ -91,6 +91,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         guard let sceneViewTappedOn = sender.view as? SCNView else { return }
+        print("ok")
         let touchCoordinates = sender.location(in: sceneViewTappedOn)
         let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
         if !hitTest.isEmpty {
@@ -99,25 +100,13 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
             guard let name = node.name else {return}
             guard let pageId = Constant.idDictio[name] else {return}
             self.pageId = pageId
-            performSegue(withIdentifier: "wiki Information", sender: self)
+            performSegue(withIdentifier: "wikiInformation", sender: self)
         } else {
             print("didn't touch anything")
         }
     }
 
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
-        //        let sceneView = sender.view as! ARSCNView
-        //        let pinchLocation = sender.location(in: sceneView)
-        //        let hitTest = sceneView.hitTest(pinchLocation)
-        //
-        //        if !hitTest.isEmpty {
-        //            let results = hitTest.first!
-        //            let node = results.node
-        //            let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
-        //            print(sender.scale)
-        //            node.runAction(pinchAction)
-        //            sender.scale = 1.0
-        //        }
         guard let node = nodes["System"] else { return }
         let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
         node.runAction(pinchAction)
@@ -126,8 +115,9 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     @IBAction func panGesture(_ sender: UIPanGestureRecognizer) {
         if sender.state == .began {
-            let translation = sender.translation(in: sender.view)
-
+            let translation = sender.translation(in: sceneView)
+            
+//            let move = SCNAction.move(by: SCNVector3, duration: <#T##TimeInterval#>)
             guard let node = nodes["System"] else { return }
             node.transform = SCNMatrix4MakeTranslation(Float(translation.x), Float(translation.y), 0)
         }
@@ -139,12 +129,10 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     @IBAction func playPauseAction(_ sender: UIButton) {
         if sender.isSelected {
-            sceneView.scene.isPaused = true
-            print("ok")
+            sceneView.scene.isPaused = false
             sender.isSelected = false
         } else {
-            sceneView.scene.isPaused = false
-            print("stop")
+            sceneView.scene.isPaused = true
             sender.isSelected = true
         }
     }
@@ -178,6 +166,7 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
 
     enum SegueIdentifier: String {
         case showPopover
+        case wikiInformation
     }
 
     // MARK: - UIPopoverPresentationControllerDelegate
@@ -192,15 +181,20 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
             popoverController.sourceView = button
             popoverController.sourceRect = button.bounds
         }
-        if segue.identifier == "showPopover" {
-            guard let popup = segue.destination as? PopoverSelectorTableViewController else { return }
-            popup.isSolarSystem = true
-            popup.solarSystem = self.solarSystem
-            popup.planetSelected = { [weak self] data in
+        switch segue.identifier {
+        case "showPopover":
+            guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
+            popover.isSolarSystem = true
+            popover.solarSystem = self.solarSystem
+            popover.planetSelected = { [weak self] data in
                 self?.planet = data
             }
+        case "wikiInformation":
+            guard let popup = segue.destination as? InformationPopUpViewController else { return }
+            popup.pageId = self.pageId
+        default :
+            print("error")
         }
-
         guard let identifier = segue.identifier,
             let segueIdentifer = SegueIdentifier(rawValue: identifier),
             segueIdentifer == .showPopover else { return }

@@ -276,10 +276,10 @@
 		AF9EA7AA2281D6C3001E5E71 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				AF84627822786ED600D9BE12 /* PopUpView.swift */,
 				AFF16FFF22534904008F8414 /* Main.storyboard */,
 				AFF1700422534907008F8414 /* LaunchScreen.storyboard */,
 				AF94D11122575EC7005D2B25 /* InformationPopUp.storyboard */,
+				AF84627822786ED600D9BE12 /* PopUpView.swift */,
 				AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */,
 				AF9587D022671ACF00E7FDBB /* PopoverTableViewCell.swift */,
 			);

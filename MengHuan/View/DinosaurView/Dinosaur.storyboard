@@ -56,6 +56,7 @@
                         <connections>
                             <outlet property="dinosaurSelectButton" destination="ijc-CM-uAm" id="WWT-Y1-Shw"/>
                             <outletCollection property="gestureRecognizers" destination="o8e-ls-2C1" appends="YES" id="jE1-9p-hPh"/>
+                            <outletCollection property="gestureRecognizers" destination="fUr-LT-8is" appends="YES" id="J50-xY-Prn"/>
                         </connections>
                     </view>
                     <connections>
@@ -64,6 +65,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iki-QQ-uLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fUr-LT-8is">
+                    <connections>
+                        <action selector="tapped:" destination="vjh-rJ-Qd1" id="gJ4-Io-QRY"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="o8e-ls-2C1">
                     <rectEdge key="edges" left="YES"/>
                     <connections>

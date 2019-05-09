@@ -50,6 +50,22 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
+        guard let sceneViewTappedOn = sender.view as? SCNView else { return }
+        let touchCoordinates = sender.location(in: sceneViewTappedOn)
+        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+        if !hitTest.isEmpty {
+            guard let results = hitTest.first else {return}
+            let node = results.node
+            guard let name = node.name else {return}
+            guard let pageId = Constant.idDictio[name] else {return}
+//            self.pageId = pageId
+            performSegue(withIdentifier: "wikiInformation", sender: self)
+        } else {
+            print("didn't touch anything")
+        }
+    }
+    
     @IBAction func returnToHome(_ sender: UIScreenEdgePanGestureRecognizer) {
         dismiss(animated: false, completion: nil)
     }

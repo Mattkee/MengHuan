@@ -20,6 +20,11 @@
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="L3T-Wc-Xhy"/>
+                                    <outletCollection property="gestureRecognizers" destination="n9X-VH-kyh" appends="YES" id="nqX-d5-Xmh"/>
+                                    <outletCollection property="gestureRecognizers" destination="CKb-Bz-sb3" appends="YES" id="hUU-7c-lVP"/>
+                                </connections>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-mP-3tu">
                                 <rect key="frame" x="30" y="54" width="45" height="45"/>
@@ -71,17 +76,12 @@
                             <constraint firstItem="M0D-Oh-cHb" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="rOa-r6-m6F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="nuD-ef-FXE"/>
-                            <outletCollection property="gestureRecognizers" destination="n9X-VH-kyh" appends="YES" id="VkK-V1-2v8"/>
-                            <outletCollection property="gestureRecognizers" destination="CKb-Bz-sb3" appends="YES" id="7Vu-dK-RUS"/>
-                        </connections>
                     </view>
                     <connections>
                         <outlet property="playButton" destination="5u8-1W-YlO" id="DTj-nq-GpN"/>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
                         <outlet property="selectedPlanetButton" destination="M0D-Oh-cHb" id="Cgi-h2-ZI7"/>
-                        <segue destination="ILM-jb-tdf" kind="presentation" identifier="wiki Information" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="oYo-gj-HiI"/>
+                        <segue destination="ILM-jb-tdf" kind="presentation" identifier="wikiInformation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="oYo-gj-HiI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
