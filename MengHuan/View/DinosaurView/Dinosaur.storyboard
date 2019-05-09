@@ -55,6 +55,7 @@
                         <viewLayoutGuide key="safeArea" id="ox1-5i-8ee"/>
                         <connections>
                             <outlet property="dinosaurSelectButton" destination="ijc-CM-uAm" id="WWT-Y1-Shw"/>
+                            <outletCollection property="gestureRecognizers" destination="o8e-ls-2C1" appends="YES" id="jE1-9p-hPh"/>
                         </connections>
                     </view>
                     <connections>
@@ -64,6 +65,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iki-QQ-uLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="o8e-ls-2C1">
+                    <rectEdge key="edges" left="YES"/>
                     <connections>
                         <action selector="returnToHome:" destination="vjh-rJ-Qd1" id="afc-Us-bsW"/>
                     </connections>

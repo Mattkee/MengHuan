@@ -77,11 +77,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
         guard let centerPoint = center else { return }
-        let hitTest = sceneView.hitTest(centerPoint, types: .featurePoint)
-        let result = hitTest.last
-        guard let transform = result?.worldTransform else {return}
-        let thirdColumn = transform.columns.3
-        let position = SCNVector3Make(thirdColumn.x, thirdColumn.y, thirdColumn.z)
+        let position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
         positions.append(position)
         let lastTenPositions = positions.suffix(10)
         focus.position = getAveragePosition(from: lastTenPositions)

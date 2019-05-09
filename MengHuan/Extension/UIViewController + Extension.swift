@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import SceneKit
+import ARKit
 
 // MARK: - Alerts
 extension UIViewController: DisplayAlert {
@@ -17,5 +19,14 @@ extension UIViewController: DisplayAlert {
         let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
         alerteVC.addAction(action)
         present(alerteVC, animated: true, completion: nil)
+    }
+
+    func centerPosition(sceneView: ARSCNView, centerPoint: CGPoint) -> SCNVector3 {
+        let hitTest = sceneView.hitTest(centerPoint, types: .featurePoint)
+        let result = hitTest.last
+        guard let transform = result?.worldTransform else { return SCNVector3(0, 0, 0) }
+        let thirdColumn = transform.columns.3
+        let position = SCNVector3Make(thirdColumn.x, thirdColumn.y, thirdColumn.z)
+        return position
     }
 }

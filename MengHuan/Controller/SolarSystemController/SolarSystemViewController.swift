@@ -14,10 +14,29 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var selectedPlanetButton: UIButton!
 
     var nodes = [String: SCNNode]()
+    var center: CGPoint?
     var scene: SCNScene?
-    var planet: String?
+    var planet: String? {
+        didSet {
+            if selectedPlanetButton.currentTitle == "System" {
+                guard let globalNode = scene?.rootNode.childNode(withName: "System", recursively: false) else { return }
+                globalNode.removeFromParentNode()
+            } else {
+                guard let oldPlanet = oldValue else { return }
+                guard let deleteNode = scene?.rootNode.childNode(withName: oldPlanet, recursively: false) else { return }
+                deleteNode.removeFromParentNode()
+            }
+            guard let nodeName = self.planet else { return }
+            guard let node = nodes[nodeName] else { return }
+            guard let centerPoint = center else { return }
+            node.position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
+            scene?.rootNode.addChildNode(node)
+            selectedPlanetButton.setTitle(self.planet, for: .normal)
+        }
+    }
 
     private let solarSystemService = SolarSystemService()
 
@@ -37,6 +56,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        center = view.center
         playButton.setImage(#imageLiteral(resourceName: "Pause Button"), for: .normal)
         playButton.setImage(#imageLiteral(resourceName: "Play Button"), for: .selected)
         // Set the view's delegate
@@ -119,16 +139,14 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     @IBAction func playPauseAction(_ sender: UIButton) {
         if sender.isSelected {
-            guard let newScene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
-            sceneView.scene = newScene
+            sceneView.scene.isPaused = true
             print("ok")
             sender.isSelected = false
         } else {
-            sceneView.scene.rootNode.removeAllAnimations()
+            sceneView.scene.isPaused = false
             print("stop")
             sender.isSelected = true
         }
-        performSegue(withIdentifier: "wiki Information", sender: sender)
     }
 
     func session(_ session: ARSession, didFailWithError error: Error) {

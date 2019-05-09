@@ -479,7 +479,6 @@
 			isa = PBXGroup;
 			children = (
 				AFF1703922536A60008F8414 /* DinosaurViewController.swift */,
-				AF150B632265E38300AF0155 /* PopoverSelectorTableViewController.swift */,
 				AF9EA7AD2281D7FC001E5E71 /* StatusViewController.swift */,
 			);
 			path = DinosaurController;
@@ -490,6 +489,7 @@
 			children = (
 				AFF1703522536A12008F8414 /* HomeTableViewController.swift */,
 				AF8311BA225777D4004D3426 /* InformationPopUpViewController.swift */,
+				AF150B632265E38300AF0155 /* PopoverSelectorTableViewController.swift */,
 			);
 			path = CommonController;
 			sourceTree = "<group>";

@@ -22,7 +22,9 @@ class PopoverTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        if selected {
+            self.accessoryType = .checkmark
+        }
         // Configure the view for the selected state
     }
 
