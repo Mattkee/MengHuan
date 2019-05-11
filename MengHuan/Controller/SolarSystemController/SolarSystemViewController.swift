@@ -18,22 +18,22 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     var nodes = [String: SCNNode]()
     var center: CGPoint?
-    var scene: SCNScene?
     var planet: String? {
         didSet {
-            if selectedPlanetButton.currentTitle == "System" {
-                guard let globalNode = scene?.rootNode.childNode(withName: "System", recursively: false) else { return }
-                globalNode.removeFromParentNode()
+            if self.planet == "System" {
+                guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
+                sceneView.scene = scene
             } else {
-                guard let oldPlanet = oldValue else { return }
-                guard let deleteNode = scene?.rootNode.childNode(withName: oldPlanet, recursively: false) else { return }
-                deleteNode.removeFromParentNode()
+                guard let system = sceneView.scene.rootNode.childNode(withName: "System", recursively: false) else { return }
+                system.enumerateChildNodes { (node, _) in
+                    node.removeFromParentNode()
+                }
+                guard let nodeName = self.planet else { return }
+                guard let node = nodes[nodeName] else { return }
+                node.position = SCNVector3(0, 0, -1)
+                node.scale = SCNVector3(1, 1, 1)
+                system.addChildNode(node)
             }
-            guard let nodeName = self.planet else { return }
-            guard let node = nodes[nodeName] else { return }
-            guard let centerPoint = center else { return }
-            node.position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
-            scene?.rootNode.addChildNode(node)
             selectedPlanetButton.setTitle(self.planet, for: .normal)
         }
     }
@@ -64,12 +64,10 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
         // Show statistics such as fps and timing information
 //        sceneView.showsStatistics = true
-
+        guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
         // Create a new scene
-        scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn")
-        guard let newScene = scene else {return}
         // Set the scene to the view
-        sceneView.scene = newScene
+        sceneView.scene = scene
         nameNodes()
     }
 
@@ -106,29 +104,41 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     }
 
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
-        guard let node = nodes["System"] else { return }
-        let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
-        node.runAction(pinchAction)
-        sender.scale = 1.0
+        if planet != nil && planet != "System" {
+            guard let sceneView = sender.view as? ARSCNView else { return }
+            let pinchLocation = sender.location(in: sceneView)
+            let hitTest = sceneView.hitTest(pinchLocation)
+            guard let results = hitTest.first else { return }
+            let node = results.node
+            if sceneView.scene.isPaused == true {
+                node.scale = SCNVector3(sender.scale, sender.scale, sender.scale)
+            } else {
+                if !hitTest.isEmpty {
+                    let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
+                    node.runAction(pinchAction)
+                    sender.scale = 1.0
+                }
+            }
+        }
     }
 
     @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
-        guard let senderView = sender.view as? ARSCNView else { return }
-        let touch = sender.location(in: senderView)
-        var selectedNode: SCNNode?
-        if sender.state == .began {
-            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
-            guard let hitNode = hitTestResult.first?.node else { return }
-            selectedNode = hitNode
-            //            let translation = sender.translation(in: sceneView)
-            //            guard let node = nodes["System"] else { return }
-            //            node.transform = SCNMatrix4MakeTranslation(Float(translation.x), Float(translation.y), 0)
-        } else if sender.state == .changed {
-            guard let hitNode = selectedNode else { return }
-            let hitTestPlane = self.sceneView.hitTest(touch, types: .existingPlane)
-            guard let hitPlane = hitTestPlane.first else { return }
-            hitNode.position = SCNVector3(hitPlane.worldTransform.columns.3.x, hitNode.position.y, hitPlane.worldTransform.columns.3.z)
-        }
+//        guard let senderView = sender.view as? ARSCNView else { return }
+//        let touch = sender.location(in: senderView)
+//        var selectedNode: SCNNode?
+//        if sender.state == .began {
+//            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
+//            guard let hitNode = hitTestResult.first?.node else { return }
+//            selectedNode = hitNode
+//            //            let translation = sender.translation(in: sceneView)
+//            //            guard let node = nodes["System"] else { return }
+//            //            node.transform = SCNMatrix4MakeTranslation(Float(translation.x), Float(translation.y), 0)
+//        } else if sender.state == .changed {
+//            guard let hitNode = selectedNode else { return }
+//            let hitTestPlane = self.sceneView.hitTest(touch, types: .existingPlane)
+//            guard let hitPlane = hitTestPlane.first else { return }
+//            hitNode.position = SCNVector3(hitPlane.worldTransform.columns.3.x, hitNode.position.y, hitPlane.worldTransform.columns.3.z)
+//        }
     }
 
     @IBAction func backAction(_ sender: UIButton) {
@@ -193,7 +203,6 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
         case "showPopover":
             guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
             popover.isSolarSystem = true
-            print(self.solarSystem)
             popover.solarSystem = self.solarSystem
             popover.planetSelected = { [weak self] data in
                 self?.planet = data

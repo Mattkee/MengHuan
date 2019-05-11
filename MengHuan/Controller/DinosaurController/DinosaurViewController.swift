@@ -59,6 +59,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         fixedFocus.removeFromParentNode()
         sceneView.scene.rootNode.addChildNode(focus)
         selectedDinosaur = nil
+        positions = [SCNVector3]()
     }
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
@@ -75,7 +76,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
                 guard let results = hitTest.first else {return}
                 let node = results.node
                 guard let name = node.name else {return}
-                guard let pageId = Constant.idDictio[name] else {return}
+                guard let pageId = Constant.idDinosaurDictio[name] else {return}
                 self.pageId = pageId
                 performSegue(withIdentifier: "wikiInformation", sender: self)
             } else {
