@@ -11,13 +11,15 @@ import UIKit
 class StatusViewController: UIViewController {
 
     @IBOutlet var statusView: StatusView!
+    var refresh: () -> Void = {}
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func refreshButton(_ sender: UIButton) {
 
+    @IBAction func refreshButton(_ sender: UIButton) {
+        refresh()
     }
 }

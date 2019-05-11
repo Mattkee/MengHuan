@@ -34,10 +34,13 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
     let focus = SCNScene(named: "Dinosaur.scnassets/focus.scn")!.rootNode
     var positions = [SCNVector3]()
     var fixedFocus = SCNScene(named: "Dinosaur.scnassets/fixedFocus.scn")!.rootNode
-
+    lazy var statusViewController: StatusViewController = {
+        return children.lazy.compactMap({ $0 as? StatusViewController }).first!
+    }()
 //    var focusSquare = FocusSquare()
     var nodePosition: SCNNode?
     var isDetected: Bool = false
+    var pageId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,24 +51,39 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         center = view.center
         sceneView.scene.rootNode.addChildNode(focus)
         // Do any additional setup after loading the view.
+        statusViewController.refresh = { [unowned self] in
+            self.refresh()
+        }
+    }
+    func refresh() {
+        fixedFocus.removeFromParentNode()
+        sceneView.scene.rootNode.addChildNode(focus)
+        selectedDinosaur = nil
     }
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        guard let sceneViewTappedOn = sender.view as? SCNView else { return }
-        let touchCoordinates = sender.location(in: sceneViewTappedOn)
-        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
-        if !hitTest.isEmpty {
-            guard let results = hitTest.first else {return}
-            let node = results.node
-            guard let name = node.name else {return}
-            guard let pageId = Constant.idDictio[name] else {return}
-//            self.pageId = pageId
-            performSegue(withIdentifier: "wikiInformation", sender: self)
+        if isDetected && selectedDinosaur == nil {
+            dinosaurView.dinosaurSelectButton.isHidden = false
+            fixedFocus.position = focus.position
+            sceneView.scene.rootNode.addChildNode(fixedFocus)
+            focus.removeFromParentNode()
         } else {
-            print("didn't touch anything")
+            guard let sceneViewTappedOn = sender.view as? SCNView else { return }
+            let touchCoordinates = sender.location(in: sceneViewTappedOn)
+            let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+            if !hitTest.isEmpty {
+                guard let results = hitTest.first else {return}
+                let node = results.node
+                guard let name = node.name else {return}
+                guard let pageId = Constant.idDictio[name] else {return}
+                self.pageId = pageId
+                performSegue(withIdentifier: "wikiInformation", sender: self)
+            } else {
+                print("didn't touch anything")
+            }
         }
     }
-    
+
     @IBAction func returnToHome(_ sender: UIScreenEdgePanGestureRecognizer) {
         dismiss(animated: false, completion: nil)
     }
@@ -78,6 +96,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         configuration.planeDetection = .horizontal
         // Run the view's session
         sceneView.session.run(configuration)
+        dinosaurView.dinosaurSelectButton.isHidden = true
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,15 +118,6 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         focus.position = getAveragePosition(from: lastTenPositions)
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if isDetected {
-            dinosaurView.dinosaurSelectButton.isHidden = false
-            fixedFocus.position = focus.position
-            sceneView.scene.rootNode.addChildNode(fixedFocus)
-            focus.removeFromParentNode()
-        }
-    }
-
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else { return }
         isDetected = true
@@ -116,9 +126,6 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
 
 extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
 
-    enum SegueIdentifier: String {
-        case showObjects
-    }
     // MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
@@ -131,37 +138,35 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
             popoverController.sourceView = button
             popoverController.sourceRect = button.bounds
         }
-        if segue.identifier == "showObjects" {
-            guard let popup = segue.destination as? PopoverSelectorTableViewController else { return }
-            popup.isDinosaur = true
-            popup.dinosaur = self.dinosaur
-            popup.dinosaurSelected = { [weak self] data in
+        switch segue.identifier {
+        case "showPopover":
+            guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
+            popover.isDinosaur = true
+            popover.dinosaur = self.dinosaur
+            popover.dinosaurSelected = { [weak self] data in
                 self?.selectedDinosaur = data
                 if self?.selectedDinosaur != nil {
                     guard let position = self?.fixedFocus.position else {return}
                     self?.addItem(position)
-//                    print(self?.dinosaur)
                 }
             }
+        case "wikiInformation":
+            guard let popup = segue.destination as? InformationPopUpViewController else { return }
+            popup.pageId = self.pageId
+        default :
+            print("error")
         }
-
-        guard let identifier = segue.identifier,
-            let segueIdentifer = SegueIdentifier(rawValue: identifier),
-            segueIdentifer == .showObjects else { return }
     }
-
 //    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
 //        objectsViewController = nil
 //    }
     func addItem(_ postion: SCNVector3) {
         if let selectedItem = self.selectedDinosaur {
-            print(selectedItem)
-            let scene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn")
-            guard let newScene = scene else {return}
-            sceneView.scene = newScene
-            guard let node = scene?.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
+            let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn")
+            guard let node = dinosaurScene?.rootNode else { return }
             node.position = postion
-            self.sceneView.scene.rootNode.addChildNode(node)
+            self.fixedFocus.addChildNode(node)
+            self.dinosaurView.dinosaurSelectButton.isHidden = true
         }
     }
 

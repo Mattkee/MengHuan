@@ -91,7 +91,6 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         guard let sceneViewTappedOn = sender.view as? SCNView else { return }
-        print("ok")
         let touchCoordinates = sender.location(in: sceneViewTappedOn)
         let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
         if !hitTest.isEmpty {
@@ -113,13 +112,22 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         sender.scale = 1.0
     }
 
-    @IBAction func panGesture(_ sender: UIPanGestureRecognizer) {
+    @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
+        guard let senderView = sender.view as? ARSCNView else { return }
+        let touch = sender.location(in: senderView)
+        var selectedNode: SCNNode?
         if sender.state == .began {
-            let translation = sender.translation(in: sceneView)
-            
-//            let move = SCNAction.move(by: SCNVector3, duration: <#T##TimeInterval#>)
-            guard let node = nodes["System"] else { return }
-            node.transform = SCNMatrix4MakeTranslation(Float(translation.x), Float(translation.y), 0)
+            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
+            guard let hitNode = hitTestResult.first?.node else { return }
+            selectedNode = hitNode
+            //            let translation = sender.translation(in: sceneView)
+            //            guard let node = nodes["System"] else { return }
+            //            node.transform = SCNMatrix4MakeTranslation(Float(translation.x), Float(translation.y), 0)
+        } else if sender.state == .changed {
+            guard let hitNode = selectedNode else { return }
+            let hitTestPlane = self.sceneView.hitTest(touch, types: .existingPlane)
+            guard let hitPlane = hitTestPlane.first else { return }
+            hitNode.position = SCNVector3(hitPlane.worldTransform.columns.3.x, hitNode.position.y, hitPlane.worldTransform.columns.3.z)
         }
     }
 
@@ -164,10 +172,10 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
 extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
 
-    enum SegueIdentifier: String {
-        case showPopover
-        case wikiInformation
-    }
+//    enum SegueIdentifier: String {
+//        case showPopover
+//        case wikiInformation
+//    }
 
     // MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -185,6 +193,7 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
         case "showPopover":
             guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
             popover.isSolarSystem = true
+            print(self.solarSystem)
             popover.solarSystem = self.solarSystem
             popover.planetSelected = { [weak self] data in
                 self?.planet = data
@@ -195,8 +204,8 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
         default :
             print("error")
         }
-        guard let identifier = segue.identifier,
-            let segueIdentifer = SegueIdentifier(rawValue: identifier),
-            segueIdentifer == .showPopover else { return }
+//        guard let identifier = segue.identifier,
+//            let segueIdentifer = SegueIdentifier(rawValue: identifier),
+//            segueIdentifer == .showPopover else { return }
     }
 }

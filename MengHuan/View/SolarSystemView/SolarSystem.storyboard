@@ -23,7 +23,7 @@
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="L3T-Wc-Xhy"/>
                                     <outletCollection property="gestureRecognizers" destination="n9X-VH-kyh" appends="YES" id="nqX-d5-Xmh"/>
-                                    <outletCollection property="gestureRecognizers" destination="CKb-Bz-sb3" appends="YES" id="hUU-7c-lVP"/>
+                                    <outletCollection property="gestureRecognizers" destination="ipc-Cr-FZX" appends="YES" id="xGB-SZ-doS"/>
                                 </connections>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-mP-3tu">
@@ -85,23 +85,23 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="CKb-Bz-sb3">
-                    <connections>
-                        <action selector="panGesture:" destination="BV1-FR-VrT" id="JAG-PF-5o6"/>
-                    </connections>
-                </panGestureRecognizer>
                 <pinchGestureRecognizer id="n9X-VH-kyh">
                     <connections>
                         <action selector="pinch:" destination="BV1-FR-VrT" id="eaE-Vw-RNl"/>
                     </connections>
                 </pinchGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ipc-Cr-FZX">
+                    <connections>
+                        <action selector="longPressed:" destination="BV1-FR-VrT" id="goH-TF-eKf"/>
+                    </connections>
+                </pongPressGestureRecognizer>
                 <tapGestureRecognizer id="JYZ-Dg-cgX">
                     <connections>
                         <action selector="tapped:" destination="BV1-FR-VrT" id="YHn-ah-yyP"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="283" y="139"/>
+            <point key="canvasLocation" x="213" y="151"/>
         </scene>
         <!--Popover-->
         <scene sceneID="pJk-33-OKe">
