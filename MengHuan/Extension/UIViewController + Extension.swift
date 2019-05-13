@@ -29,4 +29,7 @@ extension UIViewController: DisplayAlert {
         let position = SCNVector3Make(thirdColumn.x, thirdColumn.y, thirdColumn.z)
         return position
     }
+    func verctorAddition(vector isFirst: SCNVector3, vector isSecond: SCNVector3) -> SCNVector3 {
+        return SCNVector3Make(isFirst.x + isSecond.x, isFirst.y + isSecond.y, isFirst.z + isSecond.z)
+    }
 }

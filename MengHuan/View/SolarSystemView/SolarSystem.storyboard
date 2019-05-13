@@ -95,7 +95,7 @@
                         <action selector="longPressed:" destination="BV1-FR-VrT" id="goH-TF-eKf"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <tapGestureRecognizer id="JYZ-Dg-cgX">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="JYZ-Dg-cgX">
                     <connections>
                         <action selector="tapped:" destination="BV1-FR-VrT" id="YHn-ah-yyP"/>
                     </connections>

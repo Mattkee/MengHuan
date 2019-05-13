@@ -55,8 +55,12 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
             self.refresh()
         }
     }
+
     func refresh() {
-        fixedFocus.removeFromParentNode()
+        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+        dinosaurView.dinosaurSelectButton.isHidden = true
         sceneView.scene.rootNode.addChildNode(focus)
         selectedDinosaur = nil
         positions = [SCNVector3]()
@@ -123,6 +127,30 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         guard anchor is ARPlaneAnchor else { return }
         isDetected = true
     }
+
+    func addItem(_ postion: SCNVector3) {
+        if let selectedItem = self.selectedDinosaur {
+            guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn") else { return }
+            guard let node = dinosaurScene.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
+            node.position = postion
+            sceneView.scene.rootNode.addChildNode(node)
+            self.dinosaurView.dinosaurSelectButton.isHidden = true
+        }
+    }
+
+    func getAveragePosition(from positions: ArraySlice<SCNVector3>) -> SCNVector3 {
+        var averageX: Float = 0
+        var averageY: Float = 0
+        var averageZ: Float = 0
+
+        for position in positions {
+            averageX += position.x
+            averageY += position.y
+            averageZ += position.z
+        }
+        let count = Float(positions.count)
+        return SCNVector3Make(averageX / count, averageY / count, averageZ / count)
+    }
 }
 
 extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
@@ -161,27 +189,4 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
 //    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
 //        objectsViewController = nil
 //    }
-    func addItem(_ postion: SCNVector3) {
-        if let selectedItem = self.selectedDinosaur {
-            let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn")
-            guard let node = dinosaurScene?.rootNode else { return }
-            node.position = postion
-            self.fixedFocus.addChildNode(node)
-            self.dinosaurView.dinosaurSelectButton.isHidden = true
-        }
-    }
-
-    func getAveragePosition(from positions: ArraySlice<SCNVector3>) -> SCNVector3 {
-        var averageX: Float = 0
-        var averageY: Float = 0
-        var averageZ: Float = 0
-
-        for position in positions {
-            averageX += position.x
-            averageY += position.y
-            averageZ += position.z
-        }
-        let count = Float(positions.count)
-        return SCNVector3Make(averageX / count, averageY / count, averageZ / count)
-    }
 }

@@ -17,28 +17,18 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var selectedPlanetButton: UIButton!
 
     var nodes = [String: SCNNode]()
+
     var center: CGPoint?
-    var planet: String? {
+    var planet: String = "System" {
         didSet {
-            if self.planet == "System" {
-                guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
-                sceneView.scene = scene
+            if oldValue != "System" {
+                self.addRemoveNode(oldValue)
             } else {
-                guard let system = sceneView.scene.rootNode.childNode(withName: "System", recursively: false) else { return }
-                system.enumerateChildNodes { (node, _) in
-                    node.removeFromParentNode()
-                }
-                guard let nodeName = self.planet else { return }
-                guard let node = nodes[nodeName] else { return }
-                node.position = SCNVector3(0, 0, -1)
-                node.scale = SCNVector3(1, 1, 1)
-                system.addChildNode(node)
+                self.addRemoveNode("System")
             }
             selectedPlanetButton.setTitle(self.planet, for: .normal)
         }
     }
-
-    private let solarSystemService = SolarSystemService()
 
     var pageId: String?
 
@@ -62,12 +52,10 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         // Set the view's delegate
         sceneView.delegate = self
 
-        // Show statistics such as fps and timing information
-//        sceneView.showsStatistics = true
         guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
-        // Create a new scene
+        guard let system = scene.rootNode.childNode(withName: "System", recursively: false) else { return }
         // Set the scene to the view
-        sceneView.scene = scene
+        sceneView.scene.rootNode.addChildNode(system)
         nameNodes()
     }
 
@@ -88,23 +76,30 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     }
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        guard let sceneViewTappedOn = sender.view as? SCNView else { return }
-        let touchCoordinates = sender.location(in: sceneViewTappedOn)
-        let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
-        if !hitTest.isEmpty {
-            guard let results = hitTest.first else {return}
-            let node = results.node
-            guard let name = node.name else {return}
-            guard let pageId = Constant.idDictio[name] else {return}
-            self.pageId = pageId
-            performSegue(withIdentifier: "wikiInformation", sender: self)
+        if sender.numberOfTapsRequired == 1 {
+            guard let sceneViewTappedOn = sender.view as? SCNView else { return }
+            let touchCoordinates = sender.location(in: sceneViewTappedOn)
+            let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+            if !hitTest.isEmpty {
+                guard let results = hitTest.first else {return}
+                let node = results.node
+                guard let name = node.name else {return}
+                guard let pageId = Constant.idDictio[name] else {return}
+                self.pageId = pageId
+                performSegue(withIdentifier: "wikiInformation", sender: self)
+            } else {
+                print("didn't touch anything")
+            }
         } else {
-            print("didn't touch anything")
+            guard let hitNode = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
+            guard let centerPoint = center else { return }
+            hitNode.scale = SCNVector3(1, 1, 1)
+            hitNode.position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
         }
     }
 
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
-        if planet != nil && planet != "System" {
+        if planet != "System" {
             guard let sceneView = sender.view as? ARSCNView else { return }
             let pinchLocation = sender.location(in: sceneView)
             let hitTest = sceneView.hitTest(pinchLocation)
@@ -123,22 +118,14 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     }
 
     @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
-//        guard let senderView = sender.view as? ARSCNView else { return }
-//        let touch = sender.location(in: senderView)
-//        var selectedNode: SCNNode?
-//        if sender.state == .began {
-//            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
-//            guard let hitNode = hitTestResult.first?.node else { return }
-//            selectedNode = hitNode
-//            //            let translation = sender.translation(in: sceneView)
-//            //            guard let node = nodes["System"] else { return }
-//            //            node.transform = SCNMatrix4MakeTranslation(Float(translation.x), Float(translation.y), 0)
-//        } else if sender.state == .changed {
-//            guard let hitNode = selectedNode else { return }
-//            let hitTestPlane = self.sceneView.hitTest(touch, types: .existingPlane)
-//            guard let hitPlane = hitTestPlane.first else { return }
-//            hitNode.position = SCNVector3(hitPlane.worldTransform.columns.3.x, hitNode.position.y, hitPlane.worldTransform.columns.3.z)
-//        }
+        guard let senderView = sender.view as? ARSCNView else { return }
+        let touch = sender.location(in: senderView)
+        if sender.state == .began {
+            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
+            guard let hitNode = hitTestResult.first?.node else { return }
+            guard let planetName = hitNode.name else { return }
+            self.planet = planetName
+        }
     }
 
     @IBAction func backAction(_ sender: UIButton) {
@@ -155,19 +142,20 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
-    func session(_ session: ARSession, didFailWithError error: Error) {
-        // Present an error message to the user
-
-    }
-
-    func sessionWasInterrupted(_ session: ARSession) {
-        // Inform the user that the session has been interrupted, for example, by presenting an overlay
-
-    }
-
-    func sessionInterruptionEnded(_ session: ARSession) {
-        // Reset tracking and/or remove existing anchors if consistent tracking is required
-
+    func addRemoveNode(_ nodeToDelete: String) {
+        guard let oldSystem = sceneView.scene.rootNode.childNode(withName: nodeToDelete, recursively: false) else { return }
+        oldSystem.removeFromParentNode()
+        let nodeName = self.planet
+        if nodeName == "System" {
+            guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
+            guard let system = scene.rootNode.childNode(withName: "System", recursively: false) else { return }
+            sceneView.scene.rootNode.addChildNode(system)
+        } else {
+            guard let newNode = nodes[nodeName] else { return }
+            newNode.position = SCNVector3(0, 0, -1)
+            newNode.scale = SCNVector3(0.3, 0.3, 0.3)
+            sceneView.scene.rootNode.addChildNode(newNode)
+        }
     }
 
     func nameNodes() {
@@ -181,11 +169,6 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 }
 
 extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
-
-//    enum SegueIdentifier: String {
-//        case showPopover
-//        case wikiInformation
-//    }
 
     // MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -213,8 +196,5 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
         default :
             print("error")
         }
-//        guard let identifier = segue.identifier,
-//            let segueIdentifer = SegueIdentifier(rawValue: identifier),
-//            segueIdentifer == .showPopover else { return }
     }
 }
