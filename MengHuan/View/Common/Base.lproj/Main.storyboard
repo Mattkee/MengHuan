@@ -111,7 +111,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tyranosaurus" translatesAutoresizingMaskIntoConstraints="NO" id="ind-Ui-PQo">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tyrannosaurus" translatesAutoresizingMaskIntoConstraints="NO" id="ind-Ui-PQo">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dinosaure" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QV1-M4-ao0">
@@ -170,7 +170,7 @@
         <image name="Earth Planet" width="658" height="659"/>
         <image name="Logo" width="637" height="166"/>
         <image name="Solar system" width="960" height="600"/>
-        <image name="Tyranosaurus" width="1421" height="800"/>
         <image name="Virtuel reality" width="960" height="640"/>
+        <image name="tyrannosaurus" width="1421" height="800"/>
     </resources>
 </document>

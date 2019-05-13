@@ -24,6 +24,7 @@
                                     <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="L3T-Wc-Xhy"/>
                                     <outletCollection property="gestureRecognizers" destination="n9X-VH-kyh" appends="YES" id="nqX-d5-Xmh"/>
                                     <outletCollection property="gestureRecognizers" destination="ipc-Cr-FZX" appends="YES" id="xGB-SZ-doS"/>
+                                    <outletCollection property="gestureRecognizers" destination="aoe-7C-Dh2" appends="YES" id="64j-Nc-aYd"/>
                                 </connections>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-mP-3tu">
@@ -95,9 +96,14 @@
                         <action selector="longPressed:" destination="BV1-FR-VrT" id="goH-TF-eKf"/>
                     </connections>
                 </pongPressGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="JYZ-Dg-cgX">
+                <tapGestureRecognizer id="JYZ-Dg-cgX">
                     <connections>
                         <action selector="tapped:" destination="BV1-FR-VrT" id="YHn-ah-yyP"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="aoe-7C-Dh2">
+                    <connections>
+                        <action selector="tapped:" destination="BV1-FR-VrT" id="e3a-O8-pBh"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

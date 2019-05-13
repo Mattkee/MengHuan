@@ -31,9 +31,10 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         }
     }()
 
-    let focus = SCNScene(named: "Dinosaur.scnassets/focus.scn")!.rootNode
     var positions = [SCNVector3]()
-    var fixedFocus = SCNScene(named: "Dinosaur.scnassets/fixedFocus.scn")!.rootNode
+
+    var staticFocus: SCNNode?
+
     lazy var statusViewController: StatusViewController = {
         return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
@@ -49,6 +50,8 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
 
         center = view.center
+        guard let focusScene = SCNScene(named: "Dinosaur.scnassets/focus.scn") else { return }
+        guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         sceneView.scene.rootNode.addChildNode(focus)
         // Do any additional setup after loading the view.
         statusViewController.refresh = { [unowned self] in
@@ -56,11 +59,23 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
+    func addStaticFocus() {
+        guard let staticFocusScene = SCNScene(named: "Dinosaur.scnassets/fixedFocus.scn") else { return }
+        guard let oldFocus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
+        let newStaticFocus = staticFocusScene.rootNode
+        newStaticFocus.position = oldFocus.position
+        oldFocus.removeFromParentNode()
+        self.staticFocus = newStaticFocus
+        sceneView.scene.rootNode.addChildNode(newStaticFocus)
+    }
+
     func refresh() {
         sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
             node.removeFromParentNode()
         }
         dinosaurView.dinosaurSelectButton.isHidden = true
+        guard let focusScene = SCNScene(named: "Dinosaur.scnassets/focus.scn") else { return }
+        guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         sceneView.scene.rootNode.addChildNode(focus)
         selectedDinosaur = nil
         positions = [SCNVector3]()
@@ -69,9 +84,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         if isDetected && selectedDinosaur == nil {
             dinosaurView.dinosaurSelectButton.isHidden = false
-            fixedFocus.position = focus.position
-            sceneView.scene.rootNode.addChildNode(fixedFocus)
-            focus.removeFromParentNode()
+            addStaticFocus()
         } else {
             guard let sceneViewTappedOn = sender.view as? SCNView else { return }
             let touchCoordinates = sender.location(in: sceneViewTappedOn)
@@ -120,6 +133,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         let position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
         positions.append(position)
         let lastTenPositions = positions.suffix(10)
+        guard let focus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         focus.position = getAveragePosition(from: lastTenPositions)
     }
 
@@ -175,8 +189,9 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
             popover.dinosaurSelected = { [weak self] data in
                 self?.selectedDinosaur = data
                 if self?.selectedDinosaur != nil {
-                    guard let position = self?.fixedFocus.position else {return}
-                    self?.addItem(position)
+                    guard let position = self?.staticFocus?.position else { return }
+                    let dinosaurPosition = position
+                    self?.addItem(dinosaurPosition)
                 }
             }
         case "wikiInformation":
