@@ -114,9 +114,14 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
                 guard let results = hitTest.first else {return}
                 let node = results.node
                 guard let name = node.name else {return}
-                guard let pageId = Constant.idDinosaurDictio[name] else {return}
-                self.pageId = pageId
-                performSegue(withIdentifier: "wikiInformation", sender: self)
+                if name != "focus" && name != "fixedFocus" {
+                    guard let pageId = Constant.idDinosaurDictio[name] else {
+                        performSegue(withIdentifier: "wikiInformation", sender: self)
+                        return
+                    }
+                    self.pageId = pageId
+                    performSegue(withIdentifier: "wikiInformation", sender: self)
+                }
             } else {
                 print("didn't touch anything")
             }
@@ -256,7 +261,11 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
             }
         case "wikiInformation":
             guard let popup = segue.destination as? InformationPopUpViewController else { return }
-            popup.pageId = self.pageId
+            if self.pageId != nil {
+                popup.pageId = self.pageId
+            } else {
+                popup.elementName = self.selectedDinosaur
+            }
         default :
             print("error")
         }

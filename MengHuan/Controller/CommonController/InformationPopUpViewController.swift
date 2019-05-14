@@ -14,6 +14,17 @@ class InformationPopUpViewController: UIViewController {
 
     @IBOutlet var popUpView: PopUpView!
     var pageId: String?
+    var elementName: String?
+
+    var isFalseDinosaur: Bool = false {
+        didSet {
+            if self.isFalseDinosaur {
+                displayHiddenInfo(false)
+                guard let name = elementName else { return }
+                withoutWikiInfo(title: name, description: Constant.wikiDescription, bodyText: Constant.wikiText)
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +75,13 @@ class InformationPopUpViewController: UIViewController {
         self.popUpView.wikiTitle.isHidden = isReady
         self.popUpView.wikiDescription.isHidden = isReady
         self.popUpView.wikiText.isHidden = isReady
+    }
+
+    func withoutWikiInfo(title: String, description: String, bodyText: String) {
+        popUpView.imageWiki.image = UIImage(imageLiteralResourceName: title)
+        popUpView.wikiTitle.text = title
+        popUpView.wikiDescription.text = description
+        popUpView.wikiText.text = bodyText
     }
     /*
     // MARK: - Navigation

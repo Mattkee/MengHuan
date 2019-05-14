@@ -13,9 +13,9 @@ struct Constant {
     static let titleAlert = "Echec Appel réseau"
     static var wikiTitle = ""
     static var imageWiki = ""
-    static var wikiDescription = ""
-    static var wikiText = ""
+    static var wikiDescription = "Fiction"
+    static var wikiText = "Animal ou élément de fiction"
 
     static var idDictio = ["Saturn": "2874", "System": "1769188", "Sun": "5411", "Mercury": "4916", "Venus": "3163", "Earth": "3027", "Mars": "2813916", "Jupiter": "13428", "Uranus": "3096", "Neptune": "13943", "Moon": "1893"]
-    static var idDinosaurDictio = ["tyrannosaurus": "88654"]
+    static var idDinosaurDictio = ["tyrannosaurus": "88654", "deinonychus": "195659", "dilophosaurus": "187974"]
 }
