@@ -39,7 +39,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
     lazy var statusViewController: StatusViewController = {
         return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
-//    var focusSquare = FocusSquare()
+
     var currentNode: SCNNode?
     var isDetected: Bool = false
     var pageId: String?
@@ -115,10 +115,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
                 let node = results.node
                 guard let name = node.name else {return}
                 if name != "focus" && name != "fixedFocus" {
-                    guard let pageId = Constant.idDinosaurDictio[name] else {
-                        performSegue(withIdentifier: "wikiInformation", sender: self)
-                        return
-                    }
+                    guard let pageId = Constant.idDinosaurDictio[name] else { return }
                     self.pageId = pageId
                     performSegue(withIdentifier: "wikiInformation", sender: self)
                 }
@@ -199,10 +196,13 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         guard anchor is ARPlaneAnchor else { return }
         self.anchor = anchor
         isDetected = true
-        DispatchQueue.main.async {
-            self.statusViewController.statusView.refreshButton.isHidden = false
-            self.statusViewController.statusView.blurView.isHidden = false
-            self.statusViewController.statusView.statusLabel.text = "Surface détectée"
+
+        if staticFocus == nil {
+            DispatchQueue.main.async {
+                self.statusViewController.statusView.refreshButton.isHidden = false
+                self.statusViewController.statusView.blurView.isHidden = false
+                self.statusViewController.statusView.statusLabel.text = "Surface détectée"
+            }
         }
     }
 

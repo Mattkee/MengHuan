@@ -30,7 +30,7 @@ class PopUpView: UIView {
         didSet {
             self.wikiTitle.text = self.wikiInfo?.query.idPages[0].title
             self.wikiText.text = self.wikiInfo?.query.idPages[0].extract
-            self.wikiDescription.text = self.wikiInfo?.query.idPages[0].description
+            self.wikiDescription.text = self.wikiInfo?.query.idPages[0].description ?? ""
             guard let image = self.wikiInfo?.query.idPages[0].original.source else {return}
             self.imageWiki.image = UIImage.displayImage(image)
         }

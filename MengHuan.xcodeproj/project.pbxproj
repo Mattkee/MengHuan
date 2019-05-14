@@ -43,6 +43,20 @@
 		AF150B962266415400AF0155 /* Deinonychus Eye2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF150B952266415400AF0155 /* Deinonychus Eye2.jpg */; };
 		AF1C5E7322647F9700296E6D /* Dinosaur.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1C5E7222647F9700296E6D /* Dinosaur.storyboard */; };
 		AF1C5E75226484DC00296E6D /* SolarSystem.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF1C5E74226484DC00296E6D /* SolarSystem.storyboard */; };
+		AF6AD8BC228B59FA00F77E3C /* lizard-skin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8B8228B59F900F77E3C /* lizard-skin.jpg */; };
+		AF6AD8BD228B59FA00F77E3C /* velociraptor Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8B9228B59FA00F77E3C /* velociraptor Diffuse.png */; };
+		AF6AD8BE228B59FA00F77E3C /* velociraptor Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8BA228B59FA00F77E3C /* velociraptor Specular.png */; };
+		AF6AD8BF228B59FA00F77E3C /* velociraptor Illumination.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8BB228B59FA00F77E3C /* velociraptor Illumination.png */; };
+		AF6AD8CA228B668900F77E3C /* triceratops Eyes Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C0228B668400F77E3C /* triceratops Eyes Normal.png */; };
+		AF6AD8CB228B668900F77E3C /* triceratops body Roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C1228B668400F77E3C /* triceratops body Roughness.png */; };
+		AF6AD8CC228B668900F77E3C /* triceratops body Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C2228B668500F77E3C /* triceratops body Diffuse.png */; };
+		AF6AD8CD228B668900F77E3C /* triceratops Eyes Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C3228B668600F77E3C /* triceratops Eyes Diffuse.png */; };
+		AF6AD8CE228B668900F77E3C /* triceratops Eyes Roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C4228B668600F77E3C /* triceratops Eyes Roughness.png */; };
+		AF6AD8CF228B668900F77E3C /* triceratops Eyes Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C5228B668600F77E3C /* triceratops Eyes Specular.png */; };
+		AF6AD8D0228B668900F77E3C /* triceratops body Specular.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C6228B668700F77E3C /* triceratops body Specular.png */; };
+		AF6AD8D1228B668900F77E3C /* triceratops body Metallic.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C7228B668700F77E3C /* triceratops body Metallic.png */; };
+		AF6AD8D2228B668900F77E3C /* triceratops body Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C8228B668800F77E3C /* triceratops body Normal.png */; };
+		AF6AD8D3228B668900F77E3C /* triceratops Eyes Metallic.png in Resources */ = {isa = PBXBuildFile; fileRef = AF6AD8C9228B668900F77E3C /* triceratops Eyes Metallic.png */; };
 		AF8311B92257615C004D3426 /* SolarSystem.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AF8311B82257615C004D3426 /* SolarSystem.scnassets */; };
 		AF8311BB225777D4004D3426 /* InformationPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8311BA225777D4004D3426 /* InformationPopUpViewController.swift */; };
 		AF84627922786ED600D9BE12 /* PopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF84627822786ED600D9BE12 /* PopUpView.swift */; };
@@ -133,6 +147,20 @@
 		AF150B952266415400AF0155 /* Deinonychus Eye2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Deinonychus Eye2.jpg"; sourceTree = "<group>"; };
 		AF1C5E7222647F9700296E6D /* Dinosaur.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dinosaur.storyboard; sourceTree = "<group>"; };
 		AF1C5E74226484DC00296E6D /* SolarSystem.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SolarSystem.storyboard; sourceTree = "<group>"; };
+		AF6AD8B8228B59F900F77E3C /* lizard-skin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lizard-skin.jpg"; sourceTree = "<group>"; };
+		AF6AD8B9228B59FA00F77E3C /* velociraptor Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velociraptor Diffuse.png"; sourceTree = "<group>"; };
+		AF6AD8BA228B59FA00F77E3C /* velociraptor Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velociraptor Specular.png"; sourceTree = "<group>"; };
+		AF6AD8BB228B59FA00F77E3C /* velociraptor Illumination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "velociraptor Illumination.png"; sourceTree = "<group>"; };
+		AF6AD8C0228B668400F77E3C /* triceratops Eyes Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops Eyes Normal.png"; sourceTree = "<group>"; };
+		AF6AD8C1228B668400F77E3C /* triceratops body Roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Roughness.png"; sourceTree = "<group>"; };
+		AF6AD8C2228B668500F77E3C /* triceratops body Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Diffuse.png"; sourceTree = "<group>"; };
+		AF6AD8C3228B668600F77E3C /* triceratops Eyes Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops Eyes Diffuse.png"; sourceTree = "<group>"; };
+		AF6AD8C4228B668600F77E3C /* triceratops Eyes Roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops Eyes Roughness.png"; sourceTree = "<group>"; };
+		AF6AD8C5228B668600F77E3C /* triceratops Eyes Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops Eyes Specular.png"; sourceTree = "<group>"; };
+		AF6AD8C6228B668700F77E3C /* triceratops body Specular.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Specular.png"; sourceTree = "<group>"; };
+		AF6AD8C7228B668700F77E3C /* triceratops body Metallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Metallic.png"; sourceTree = "<group>"; };
+		AF6AD8C8228B668800F77E3C /* triceratops body Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Normal.png"; sourceTree = "<group>"; };
+		AF6AD8C9228B668900F77E3C /* triceratops Eyes Metallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops Eyes Metallic.png"; sourceTree = "<group>"; };
 		AF8311B82257615C004D3426 /* SolarSystem.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = SolarSystem.scnassets; sourceTree = "<group>"; };
 		AF8311BA225777D4004D3426 /* InformationPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPopUpViewController.swift; sourceTree = "<group>"; };
 		AF84627822786ED600D9BE12 /* PopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpView.swift; sourceTree = "<group>"; };
@@ -220,6 +248,11 @@
 		AF150B542265D90100AF0155 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
+				AF6AD8D4228B669600F77E3C /* triceratops */,
+				AF6AD8B8228B59F900F77E3C /* lizard-skin.jpg */,
+				AF6AD8B9228B59FA00F77E3C /* velociraptor Diffuse.png */,
+				AF6AD8BB228B59FA00F77E3C /* velociraptor Illumination.png */,
+				AF6AD8BA228B59FA00F77E3C /* velociraptor Specular.png */,
 				AF0D73EC2284271D0005E377 /* irex claw spiked Diffuse.png */,
 				AF0D73F22284271D0005E377 /* irex claw spiked Normal.png */,
 				AF0D73F52284271E0005E377 /* irex Diffuse.png */,
@@ -254,6 +287,23 @@
 				AF150B572265D97700AF0155 /* Tyrex Specular.png */,
 			);
 			path = Textures;
+			sourceTree = "<group>";
+		};
+		AF6AD8D4228B669600F77E3C /* triceratops */ = {
+			isa = PBXGroup;
+			children = (
+				AF6AD8C2228B668500F77E3C /* triceratops body Diffuse.png */,
+				AF6AD8C7228B668700F77E3C /* triceratops body Metallic.png */,
+				AF6AD8C8228B668800F77E3C /* triceratops body Normal.png */,
+				AF6AD8C1228B668400F77E3C /* triceratops body Roughness.png */,
+				AF6AD8C6228B668700F77E3C /* triceratops body Specular.png */,
+				AF6AD8C3228B668600F77E3C /* triceratops Eyes Diffuse.png */,
+				AF6AD8C9228B668900F77E3C /* triceratops Eyes Metallic.png */,
+				AF6AD8C0228B668400F77E3C /* triceratops Eyes Normal.png */,
+				AF6AD8C4228B668600F77E3C /* triceratops Eyes Roughness.png */,
+				AF6AD8C5228B668600F77E3C /* triceratops Eyes Specular.png */,
+			);
+			path = triceratops;
 			sourceTree = "<group>";
 		};
 		AF9A9AF7225C8CB500975672 /* Extension */ = {
@@ -555,6 +605,7 @@
 			files = (
 				AF0D73F62284271E0005E377 /* irex teeth Normal.png in Resources */,
 				AFF17028225365C4008F8414 /* Sun.png in Resources */,
+				AF6AD8BC228B59FA00F77E3C /* lizard-skin.jpg in Resources */,
 				AFF17030225365C4008F8414 /* Earth Emission.png in Resources */,
 				AF9EA7A522817C3E001E5E71 /* .swiftlint.yml in Resources */,
 				AF0D74002284271E0005E377 /* irex Normal.png in Resources */,
@@ -564,35 +615,45 @@
 				AF0D73FD2284271E0005E377 /* irex teeth Diffuse.png in Resources */,
 				AF150B962266415400AF0155 /* Deinonychus Eye2.jpg in Resources */,
 				AF1C5E7322647F9700296E6D /* Dinosaur.storyboard in Resources */,
+				AF6AD8CD228B668900F77E3C /* triceratops Eyes Diffuse.png in Resources */,
 				AF0D73FE2284271E0005E377 /* irex tongue Normal.png in Resources */,
 				AF0D74012284271E0005E377 /* irex eye Membrane Diffuse.png in Resources */,
+				AF6AD8D3228B668900F77E3C /* triceratops Eyes Metallic.png in Resources */,
 				AF8311B92257615C004D3426 /* SolarSystem.scnassets in Resources */,
 				AFF17023225365C4008F8414 /* Saturn Ring Alpha.png in Resources */,
 				AFF17025225365C4008F8414 /* Earth Specular.png in Resources */,
+				AF6AD8CC228B668900F77E3C /* triceratops body Diffuse.png in Resources */,
 				AF150B712266364000AF0155 /* Dilpoh Frill Diffuse.jpg in Resources */,
 				AFF1700622534907008F8414 /* LaunchScreen.storyboard in Resources */,
+				AF6AD8CE228B668900F77E3C /* triceratops Eyes Roughness.png in Resources */,
 				AFF17026225365C4008F8414 /* Moon.png in Resources */,
 				AF0D74022284271E0005E377 /* irex Diffuse.png in Resources */,
 				AFF1700322534907008F8414 /* Assets.xcassets in Resources */,
 				AF150B6F2266364000AF0155 /* Dilpoh Frill Specular.jpg in Resources */,
+				AF6AD8CB228B668900F77E3C /* triceratops body Roughness.png in Resources */,
+				AF6AD8D1228B668900F77E3C /* triceratops body Metallic.png in Resources */,
 				AF1C5E75226484DC00296E6D /* SolarSystem.storyboard in Resources */,
 				AF150B5D2265D97A00AF0155 /* Tyrex Phong Diffuse Normal.png in Resources */,
 				AF150B722266364000AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg in Resources */,
 				AF0D73FF2284271E0005E377 /* irex claw spiked Normal.png in Resources */,
+				AF6AD8BF228B59FA00F77E3C /* velociraptor Illumination.png in Resources */,
 				AF150B942266413800AF0155 /* Deinonychus Eye.JPG in Resources */,
 				AF150B6E2266364000AF0155 /* Dilpoh Eye Diffuse.jpg in Resources */,
 				AF0D73F82284271E0005E377 /* irex Specular.png in Resources */,
 				AF150B91226640DF00AF0155 /* Deinonychus Displacement.png in Resources */,
+				AF6AD8D2228B668900F77E3C /* triceratops body Normal.png in Resources */,
 				AF94D11222575EC7005D2B25 /* InformationPopUp.storyboard in Resources */,
 				AF150B90226640DF00AF0155 /* Deinonychus Normal.png in Resources */,
 				AFF17034225366D5008F8414 /* spark.png in Resources */,
 				AF0D73F72284271E0005E377 /* irex eye Membrane Normal.png in Resources */,
 				AF0D73FA2284271E0005E377 /* irex eye Diffuse.png in Resources */,
 				AF150B702266364000AF0155 /* Dilpoh Frill Normal.jpg in Resources */,
+				AF6AD8BD228B59FA00F77E3C /* velociraptor Diffuse.png in Resources */,
 				AFCAEBBC22830ECD0079EE26 /* Popover.storyboard in Resources */,
 				AFF1702C225365C4008F8414 /* Neptune.png in Resources */,
 				AFF17029225365C4008F8414 /* Uranus.png in Resources */,
 				AF150B742266364000AF0155 /* Dilpoh Diffuse.jpg in Resources */,
+				AF6AD8D0228B668900F77E3C /* triceratops body Specular.png in Resources */,
 				AFF17027225365C4008F8414 /* Mercury.png in Resources */,
 				AFF17031225365C4008F8414 /* Earth Diffuse.png in Resources */,
 				AF150B6D2266364000AF0155 /* Dilpoh Specular.jpg in Resources */,
@@ -602,14 +663,17 @@
 				AFF1702A225365C4008F8414 /* Venus Emission.png in Resources */,
 				AFF1700122534904008F8414 /* Main.storyboard in Resources */,
 				AF150B732266364000AF0155 /* Dilpoh Normal.jpg in Resources */,
+				AF6AD8BE228B59FA00F77E3C /* velociraptor Specular.png in Resources */,
 				AF150B602265D97A00AF0155 /* Tyrex Diffuse.jpg in Resources */,
 				AF150B92226640DF00AF0155 /* Deinonychus Diffuse.png in Resources */,
 				AF150B5F2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg in Resources */,
 				AF0D73F92284271E0005E377 /* irex claw spiked Diffuse.png in Resources */,
 				AFF1702E225365C4008F8414 /* Mars.png in Resources */,
 				AFF17024225365C4008F8414 /* Stars.png in Resources */,
+				AF6AD8CF228B668900F77E3C /* triceratops Eyes Specular.png in Resources */,
 				AF150B5C2265D97A00AF0155 /* Tyrex Specular.png in Resources */,
 				AF150B8F226640DF00AF0155 /* Deinonychus Specular.png in Resources */,
+				AF6AD8CA228B668900F77E3C /* triceratops Eyes Normal.png in Resources */,
 				AFF17032225365C4008F8414 /* Venus Diffuse.png in Resources */,
 				AF0D73FC2284271E0005E377 /* irex tongue Diffuse.png in Resources */,
 			);

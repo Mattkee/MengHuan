@@ -16,16 +16,6 @@ class InformationPopUpViewController: UIViewController {
     var pageId: String?
     var elementName: String?
 
-    var isFalseDinosaur: Bool = false {
-        didSet {
-            if self.isFalseDinosaur {
-                displayHiddenInfo(false)
-                guard let name = elementName else { return }
-                withoutWikiInfo(title: name, description: Constant.wikiDescription, bodyText: Constant.wikiText)
-            }
-        }
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
         displayHiddenInfo(true)
@@ -33,8 +23,14 @@ class InformationPopUpViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        guard let searchId = pageId else {return}
-        search(searchId)
+        if pageId != nil {
+            guard let searchId = pageId else {return}
+            search(searchId)
+        } else {
+            displayHiddenInfo(false)
+            guard let name = elementName else { return }
+            withoutWikiInfo(title: name, description: Constant.wikiDescription, bodyText: Constant.wikiText)
+        }
     }
 
     @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {

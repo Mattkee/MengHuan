@@ -38,7 +38,7 @@ struct WikiInfo: Decodable {
         var title: String
         var extract: String
         var original: Original
-        var description: String
+        var description: String?
         var fullurl: String
 
         private enum CodingKeys: String, CodingKey {
