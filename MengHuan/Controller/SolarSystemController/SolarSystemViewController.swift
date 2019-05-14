@@ -64,7 +64,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-
+        sceneView.autoenablesDefaultLighting = true
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -125,6 +125,25 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
             guard let hitNode = hitTestResult.first?.node else { return }
             guard let planetName = hitNode.name else { return }
             self.planet = planetName
+        }
+    }
+
+    @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
+        guard let sceneView = sender.view as? ARSCNView else { return }
+        guard let node = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
+
+        sender.minimumNumberOfTouches = 2
+        if sender.state == .began {
+            sceneView.scene.isPaused = false
+        }
+        if sender.state == .changed {
+            let xPan = sender.velocity(in: sceneView).x/10000
+            node.runAction(SCNAction.rotateBy(x: 0, y: xPan, z: 0, duration: 0.1))
+        }
+        if sender.state == .ended {
+            if playButton.isSelected == true {
+                sceneView.scene.isPaused = true
+            }
         }
     }
 

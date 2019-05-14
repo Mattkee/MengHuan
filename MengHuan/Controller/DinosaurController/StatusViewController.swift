@@ -12,11 +12,16 @@ class StatusViewController: UIViewController {
 
     @IBOutlet var statusView: StatusView!
     var refresh: () -> Void = {}
+    var backAction: () -> Void = {}
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    @IBAction func backAction(_ sender: UIButton) {
+        backAction()
     }
 
     @IBAction func refreshButton(_ sender: UIButton) {

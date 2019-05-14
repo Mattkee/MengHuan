@@ -15,6 +15,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     @IBOutlet var dinosaurView: DinosaurView!
 
+    var anchor: ARAnchor?
     var center: CGPoint?
     var selectedDinosaur: String?
 
@@ -39,7 +40,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
 //    var focusSquare = FocusSquare()
-    var nodePosition: SCNNode?
+    var currentNode: SCNNode?
     var isDetected: Bool = false
     var pageId: String?
 
@@ -50,24 +51,33 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
 
         center = view.center
-        guard let focusScene = SCNScene(named: "Dinosaur.scnassets/focus.scn") else { return }
-        guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
-        sceneView.scene.rootNode.addChildNode(focus)
+        addFocus()
         // Do any additional setup after loading the view.
-        statusViewController.statusView.isHidden = true
+        statusViewController.statusView.blurView.isHidden = true
+        statusViewController.statusView.refreshButton.isHidden = true
+
         statusViewController.refresh = { [unowned self] in
             self.refresh()
         }
+        statusViewController.backAction = { [unowned self] in
+            self.backAction()
+        }
+    }
+
+    func addFocus() {
+        guard let focusScene = SCNScene(named: "Dinosaur.scnassets/focus.scn") else { return }
+        guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
+        sceneView.scene.rootNode.addChildNode(focus)
     }
 
     func addStaticFocus() {
         guard let staticFocusScene = SCNScene(named: "Dinosaur.scnassets/fixedFocus.scn") else { return }
+        guard let staticFocus = staticFocusScene.rootNode.childNode(withName: "fixedFocus", recursively: false) else { return }
         guard let oldFocus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
-        let newStaticFocus = staticFocusScene.rootNode
-        newStaticFocus.position = oldFocus.position
+        staticFocus.position = oldFocus.position
         oldFocus.removeFromParentNode()
-        self.staticFocus = newStaticFocus
-        sceneView.scene.rootNode.addChildNode(newStaticFocus)
+        self.staticFocus = staticFocus
+        sceneView.scene.rootNode.addChildNode(staticFocus)
         statusViewController.statusView.blurView.isHidden = true
     }
 
@@ -76,17 +86,26 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
             node.removeFromParentNode()
         }
         dinosaurView.dinosaurSelectButton.isHidden = true
-        guard let focusScene = SCNScene(named: "Dinosaur.scnassets/focus.scn") else { return }
-        guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
-        sceneView.scene.rootNode.addChildNode(focus)
+        addFocus()
         selectedDinosaur = nil
         positions = [SCNVector3]()
     }
 
+    func backAction() {
+        dismiss(animated: false, completion: nil)
+    }
+
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        if isDetected && selectedDinosaur == nil {
+        if isDetected && selectedDinosaur == nil && currentNode == nil {
             dinosaurView.dinosaurSelectButton.isHidden = false
             addStaticFocus()
+        } else if currentNode != nil {
+            addStaticFocus()
+            guard let node = currentNode else { return }
+            guard let position = self.staticFocus?.position else { return }
+            node.position = position
+            sceneView.scene.rootNode.addChildNode(node)
+            self.currentNode = nil
         } else {
             guard let sceneViewTappedOn = sender.view as? SCNView else { return }
             let touchCoordinates = sender.location(in: sceneViewTappedOn)
@@ -104,8 +123,39 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
-    @IBAction func returnToHome(_ sender: UIScreenEdgePanGestureRecognizer) {
-        dismiss(animated: false, completion: nil)
+    @IBAction func dinosaurScale(_ sender: UIPinchGestureRecognizer) {
+        guard let sceneView = sender.view as? ARSCNView else { return }
+        let pinchLocation = sender.location(in: sceneView)
+        let hitTest = sceneView.hitTest(pinchLocation)
+        guard let results = hitTest.first else { return }
+        let node = results.node
+        if !hitTest.isEmpty {
+            let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
+            node.runAction(pinchAction)
+            sender.scale = 1.0
+        }
+    }
+
+    @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
+        guard let sceneView = sender.view as? ARSCNView else { return }
+        guard let dinosaur = self.selectedDinosaur else { return }
+        guard let node = sceneView.scene.rootNode.childNode(withName: dinosaur, recursively: false) else { return }
+
+        sender.minimumNumberOfTouches = 2
+        //1. Get The Current Rotation From The Gesture
+        let xPan = sender.velocity(in: sceneView).x/10000
+        node.runAction(SCNAction.rotateBy(x: 0, y: xPan, z: 0, duration: 0.1))
+    }
+
+    @IBAction func dinosaurMove(_ sender: UILongPressGestureRecognizer) {
+        guard let sceneView = sender.view as? ARSCNView else { return }
+        guard let dinosaur = self.selectedDinosaur else { return }
+        guard let node = sceneView.scene.rootNode.childNode(withName: dinosaur, recursively: false) else { return }
+        self.currentNode = node
+        node.removeFromParentNode()
+        guard let staticFocus = sceneView.scene.rootNode.childNode(withName: "fixedFocus", recursively: false) else { return }
+        staticFocus.removeFromParentNode()
+        addFocus()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -114,6 +164,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = .horizontal
+        sceneView.autoenablesDefaultLighting = true
         // Run the view's session
         sceneView.session.run(configuration)
         dinosaurView.dinosaurSelectButton.isHidden = true
@@ -141,9 +192,11 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
 
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else { return }
+        self.anchor = anchor
         isDetected = true
         DispatchQueue.main.async {
-            self.statusViewController.statusView.isHidden = false
+            self.statusViewController.statusView.refreshButton.isHidden = false
+            self.statusViewController.statusView.blurView.isHidden = false
             self.statusViewController.statusView.statusLabel.text = "Surface détectée"
         }
     }

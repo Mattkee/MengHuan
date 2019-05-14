@@ -20,10 +20,10 @@ class PopUpView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        activityIndicator.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        activityIndicator.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         activityIndicator.transform = CGAffineTransform(scaleX: 3, y: 3)
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        label.textColor = .black
+        label.textColor = .white
     }
 
     var wikiInfo: WikiInfo? {

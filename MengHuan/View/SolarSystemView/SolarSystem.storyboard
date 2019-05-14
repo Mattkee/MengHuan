@@ -21,10 +21,11 @@
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="L3T-Wc-Xhy"/>
                                     <outletCollection property="gestureRecognizers" destination="n9X-VH-kyh" appends="YES" id="nqX-d5-Xmh"/>
                                     <outletCollection property="gestureRecognizers" destination="ipc-Cr-FZX" appends="YES" id="xGB-SZ-doS"/>
-                                    <outletCollection property="gestureRecognizers" destination="aoe-7C-Dh2" appends="YES" id="64j-Nc-aYd"/>
+                                    <outletCollection property="gestureRecognizers" destination="JYZ-Dg-cgX" appends="YES" id="4cS-nX-yiE"/>
+                                    <outletCollection property="gestureRecognizers" destination="vAC-vQ-m5i" appends="YES" id="suR-LU-Usi"/>
+                                    <outletCollection property="gestureRecognizers" destination="QDe-nN-t1S" appends="YES" id="eJ2-0m-c8q"/>
                                 </connections>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCp-mP-3tu">
@@ -98,14 +99,19 @@
                 </pongPressGestureRecognizer>
                 <tapGestureRecognizer id="JYZ-Dg-cgX">
                     <connections>
-                        <action selector="tapped:" destination="BV1-FR-VrT" id="YHn-ah-yyP"/>
+                        <action selector="tapped:" destination="BV1-FR-VrT" id="OmT-HA-uBH"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer numberOfTapsRequired="2" id="aoe-7C-Dh2">
+                <tapGestureRecognizer numberOfTapsRequired="2" id="vAC-vQ-m5i">
                     <connections>
-                        <action selector="tapped:" destination="BV1-FR-VrT" id="e3a-O8-pBh"/>
+                        <action selector="tapped:" destination="BV1-FR-VrT" id="DZe-ay-0Ib"/>
                     </connections>
                 </tapGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="QDe-nN-t1S">
+                    <connections>
+                        <action selector="rotateNode:" destination="BV1-FR-VrT" id="zYM-RS-RQE"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="213" y="151"/>
         </scene>
