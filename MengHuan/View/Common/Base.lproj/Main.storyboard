@@ -72,7 +72,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Z66-Li-HpA" kind="presentation" modalTransitionStyle="flipHorizontal" id="lJo-TA-hj5"/>
+                                            <segue destination="Z66-Li-HpA" kind="presentation" identifier="presentSolarSystem" modalTransitionStyle="flipHorizontal" id="lJo-TA-hj5"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="aQL-IF-bSi">
@@ -132,7 +132,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Lb8-WD-brr" kind="presentation" modalTransitionStyle="flipHorizontal" id="oSj-pk-W2l"/>
+                                            <segue destination="Lb8-WD-brr" kind="presentation" identifier="presentDinosaur" modalTransitionStyle="flipHorizontal" id="oSj-pk-W2l"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

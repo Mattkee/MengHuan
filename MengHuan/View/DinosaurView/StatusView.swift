@@ -13,5 +13,6 @@ class StatusView: UIView {
 
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
+    @IBOutlet weak var blurView: UIVisualEffectView!
 
 }

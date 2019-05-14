@@ -54,6 +54,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         sceneView.scene.rootNode.addChildNode(focus)
         // Do any additional setup after loading the view.
+        statusViewController.statusView.isHidden = true
         statusViewController.refresh = { [unowned self] in
             self.refresh()
         }
@@ -67,6 +68,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         oldFocus.removeFromParentNode()
         self.staticFocus = newStaticFocus
         sceneView.scene.rootNode.addChildNode(newStaticFocus)
+        statusViewController.statusView.blurView.isHidden = true
     }
 
     func refresh() {
@@ -140,6 +142,10 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
     func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
         guard anchor is ARPlaneAnchor else { return }
         isDetected = true
+        DispatchQueue.main.async {
+            self.statusViewController.statusView.isHidden = false
+            self.statusViewController.statusView.statusLabel.text = "Surface détectée"
+        }
     }
 
     func addItem(_ postion: SCNVector3) {
@@ -149,6 +155,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
             node.position = postion
             sceneView.scene.rootNode.addChildNode(node)
             self.dinosaurView.dinosaurSelectButton.isHidden = true
+            self.statusViewController.statusView.blurView.isHidden = true
         }
     }
 
