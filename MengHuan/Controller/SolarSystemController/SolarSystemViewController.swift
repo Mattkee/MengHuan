@@ -219,14 +219,12 @@ extension SolarSystemViewController {
     }
 
     @IBAction func playPauseAction(_ sender: UIButton) {
-        self.element = "Terre"
-        performSegue(withIdentifier: "wikiInformation", sender: self)
-//        if sender.isSelected {
-//            sceneView.scene.isPaused = false
-//            sender.isSelected = false
-//        } else {
-//            sceneView.scene.isPaused = true
-//            sender.isSelected = true
-//        }
+        if sender.isSelected {
+            sceneView.scene.isPaused = false
+            sender.isSelected = false
+        } else {
+            sceneView.scene.isPaused = true
+            sender.isSelected = true
+        }
     }
 }
