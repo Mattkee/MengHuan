@@ -108,6 +108,12 @@
 		AFD91129228C411D005FD41E /* SHC m17 Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91126228C411D005FD41E /* SHC m17 Diffuse.jpg */; };
 		AFD9112B228C839E005FD41E /* WikiIdAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9112A228C839E005FD41E /* WikiIdAPI.swift */; };
 		AFD9112D228C84EF005FD41E /* WikiIdPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9112C228C84EF005FD41E /* WikiIdPage.swift */; };
+		AFD9113D228CB11C005FD41E /* WikiInfoServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9113C228CB11C005FD41E /* WikiInfoServiceTestCase.swift */; };
+		AFD9113F228CB1C4005FD41E /* WikiInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = AFD9113E228CB1C4005FD41E /* WikiInfo.json */; };
+		AFD91141228CB1F4005FD41E /* WikiIdPage.json in Resources */ = {isa = PBXBuildFile; fileRef = AFD91140228CB1F4005FD41E /* WikiIdPage.json */; };
+		AFD91143228CB23B005FD41E /* FakeWikiInfoResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91142228CB23B005FD41E /* FakeWikiInfoResponseData.swift */; };
+		AFD91145228CB250005FD41E /* FakeWikiIdPageResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91144228CB250005FD41E /* FakeWikiIdPageResponseData.swift */; };
+		AFD91147228CB913005FD41E /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD91146228CB913005FD41E /* URLSessionFake.swift */; };
 		AFF16FFA22534904008F8414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF16FF922534904008F8414 /* AppDelegate.swift */; };
 		AFF16FFE22534904008F8414 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */; };
 		AFF1700122534904008F8414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF16FFF22534904008F8414 /* Main.storyboard */; };
@@ -133,6 +139,16 @@
 		AFF1703622536A12008F8414 /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1703522536A12008F8414 /* HomeTableViewController.swift */; };
 		AFF1703A22536A60008F8414 /* DinosaurViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF1703922536A60008F8414 /* DinosaurViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFD91137228CB08F005FD41E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFF16FEE22534904008F8414 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFF16FF522534904008F8414;
+			remoteInfo = MengHuan;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		AF0D73E92284271D0005E377 /* irex teeth Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irex teeth Normal.png"; sourceTree = "<group>"; };
@@ -237,6 +253,14 @@
 		AFD91126228C411D005FD41E /* SHC m17 Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SHC m17 Diffuse.jpg"; sourceTree = "<group>"; };
 		AFD9112A228C839E005FD41E /* WikiIdAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiIdAPI.swift; sourceTree = "<group>"; };
 		AFD9112C228C84EF005FD41E /* WikiIdPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiIdPage.swift; sourceTree = "<group>"; };
+		AFD91132228CB08F005FD41E /* MengHuanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MengHuanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFD91136228CB08F005FD41E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AFD9113C228CB11C005FD41E /* WikiInfoServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfoServiceTestCase.swift; sourceTree = "<group>"; };
+		AFD9113E228CB1C4005FD41E /* WikiInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WikiInfo.json; sourceTree = "<group>"; };
+		AFD91140228CB1F4005FD41E /* WikiIdPage.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = WikiIdPage.json; sourceTree = "<group>"; };
+		AFD91142228CB23B005FD41E /* FakeWikiInfoResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWikiInfoResponseData.swift; sourceTree = "<group>"; };
+		AFD91144228CB250005FD41E /* FakeWikiIdPageResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeWikiIdPageResponseData.swift; sourceTree = "<group>"; };
+		AFD91146228CB913005FD41E /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		AFF16FF622534904008F8414 /* MengHuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MengHuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF16FF922534904008F8414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
@@ -266,6 +290,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AFD9112F228CB08F005FD41E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFF16FF322534904008F8414 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -373,14 +404,15 @@
 			path = SolarSystemView;
 			sourceTree = "<group>";
 		};
-		AF9FDF9D225904C0009E58C7 /* Solar system */ = {
+		AF9FDF9D225904C0009E58C7 /* Wikipédia Service */ = {
 			isa = PBXGroup;
 			children = (
 				AF9FDF9E22590525009E58C7 /* WikiInfoService.swift */,
 				AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */,
 				AFD9112C228C84EF005FD41E /* WikiIdPage.swift */,
 			);
-			path = "Solar system";
+			name = "Wikipédia Service";
+			path = "Wikipédia Service";
 			sourceTree = "<group>";
 		};
 		AFD2BC8D2255E26300292DFE /* Networking */ = {
@@ -595,10 +627,25 @@
 			path = "SHC X";
 			sourceTree = "<group>";
 		};
+		AFD91133228CB08F005FD41E /* MengHuanTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFD9113C228CB11C005FD41E /* WikiInfoServiceTestCase.swift */,
+				AFD91136228CB08F005FD41E /* Info.plist */,
+				AFD9113E228CB1C4005FD41E /* WikiInfo.json */,
+				AFD91140228CB1F4005FD41E /* WikiIdPage.json */,
+				AFD91142228CB23B005FD41E /* FakeWikiInfoResponseData.swift */,
+				AFD91144228CB250005FD41E /* FakeWikiIdPageResponseData.swift */,
+				AFD91146228CB913005FD41E /* URLSessionFake.swift */,
+			);
+			path = MengHuanTests;
+			sourceTree = "<group>";
+		};
 		AFF16FED22534904008F8414 = {
 			isa = PBXGroup;
 			children = (
 				AFF16FF822534904008F8414 /* MengHuan */,
+				AFD91133228CB08F005FD41E /* MengHuanTests */,
 				AFF16FF722534904008F8414 /* Products */,
 				AF9EA7A422817C3E001E5E71 /* .swiftlint.yml */,
 			);
@@ -608,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				AFF16FF622534904008F8414 /* MengHuan.app */,
+				AFD91132228CB08F005FD41E /* MengHuanTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -661,7 +709,7 @@
 		AFF170102253499B008F8414 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				AF9FDF9D225904C0009E58C7 /* Solar system */,
+				AF9FDF9D225904C0009E58C7 /* Wikipédia Service */,
 				AFD2BC8D2255E26300292DFE /* Networking */,
 				AF9A9AFA225C8DE400975672 /* Alert */,
 			);
@@ -733,6 +781,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AFD91131228CB08F005FD41E /* MengHuanTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFD91139228CB08F005FD41E /* Build configuration list for PBXNativeTarget "MengHuanTests" */;
+			buildPhases = (
+				AFD9112E228CB08F005FD41E /* Sources */,
+				AFD9112F228CB08F005FD41E /* Frameworks */,
+				AFD91130228CB08F005FD41E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFD91138228CB08F005FD41E /* PBXTargetDependency */,
+			);
+			name = MengHuanTests;
+			productName = MengHuanTests;
+			productReference = AFD91132228CB08F005FD41E /* MengHuanTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AFF16FF522534904008F8414 /* MengHuan */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFF1700A22534907008F8414 /* Build configuration list for PBXNativeTarget "MengHuan" */;
@@ -761,6 +827,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = Mattkee;
 				TargetAttributes = {
+					AFD91131228CB08F005FD41E = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = AFF16FF522534904008F8414;
+					};
 					AFF16FF522534904008F8414 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -780,11 +850,21 @@
 			projectRoot = "";
 			targets = (
 				AFF16FF522534904008F8414 /* MengHuan */,
+				AFD91131228CB08F005FD41E /* MengHuanTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AFD91130228CB08F005FD41E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFD9113F228CB1C4005FD41E /* WikiInfo.json in Resources */,
+				AFD91141228CB1F4005FD41E /* WikiIdPage.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFF16FF422534904008F8414 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -910,6 +990,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AFD9112E228CB08F005FD41E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFD91143228CB23B005FD41E /* FakeWikiInfoResponseData.swift in Sources */,
+				AFD91145228CB250005FD41E /* FakeWikiIdPageResponseData.swift in Sources */,
+				AFD91147228CB913005FD41E /* URLSessionFake.swift in Sources */,
+				AFD9113D228CB11C005FD41E /* WikiInfoServiceTestCase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AFF16FF222534904008F8414 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -950,6 +1041,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AFD91138228CB08F005FD41E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFF16FF522534904008F8414 /* MengHuan */;
+			targetProxy = AFD91137228CB08F005FD41E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		AFF16FFF22534904008F8414 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -970,6 +1069,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AFD9113A228CB08F005FD41E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4DJJREAZ7Y;
+				INFOPLIST_FILE = MengHuanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattkee.MengHuanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MengHuan.app/MengHuan";
+			};
+			name = Debug;
+		};
+		AFD9113B228CB08F005FD41E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4DJJREAZ7Y;
+				INFOPLIST_FILE = MengHuanTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mattkee.MengHuanTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MengHuan.app/MengHuan";
+			};
+			name = Release;
+		};
 		AFF1700822534907008F8414 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1125,6 +1264,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AFD91139228CB08F005FD41E /* Build configuration list for PBXNativeTarget "MengHuanTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFD9113A228CB08F005FD41E /* Debug */,
+				AFD9113B228CB08F005FD41E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AFF16FF122534904008F8414 /* Build configuration list for PBXProject "MengHuan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

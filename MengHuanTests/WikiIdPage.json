@@ -1,0 +1,23 @@
+{
+    "batchcomplete": "",
+    "continue": {
+        "sroffset": 1,
+        "continue": "-||"
+    },
+    "query": {
+        "searchinfo": {
+            "totalhits": 479282
+        },
+        "search": [
+            {
+                "ns": 0,
+                "title": "Terre",
+                "pageid": 3027,
+                "size": 143657,
+                "wordcount": 14778,
+                "snippet": "Pour les articles homonymes, voir <span class=\"searchmatch\">Terre</span> (homonymie). La <span class=\"searchmatch\">Terre</span> est une planète du Système solaire, la troisième plus proche du Soleil et la cinquième plus",
+                "timestamp": "2019-05-06T17:48:58Z"
+            }
+        ]
+    }
+}

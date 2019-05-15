@@ -12,8 +12,6 @@ import ARKit
 
 class DinosaurViewController: UIViewController, ARSCNViewDelegate {
 
-    
-
     // MARK: - Properties
     var center: CGPoint?
     var positions = [SCNVector3]()
@@ -200,7 +198,7 @@ extension DinosaurViewController {
         var averageX: Float = 0
         var averageY: Float = 0
         var averageZ: Float = 0
-        
+
         for position in positions {
             averageX += position.x
             averageY += position.y

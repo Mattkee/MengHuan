@@ -26,15 +26,13 @@ class InformationPopUpViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         guard let elementName = element else { return }
-        if typeElement != nil {
-            guard let elementType = typeElement else { return }
-            search(elementName, type: elementType)
-        } else if typeElement == "fiction" {
+        if typeElement == "fiction" {
             displayHiddenInfo(false)
             guard let name = element else { return }
             withoutWikiInfo(title: name, description: Constant.wikiDescription, bodyText: Constant.wikiText)
         } else {
-            search(elementName, type: "")
+            guard let elementType = typeElement else { return }
+            search(elementName, type: elementType)
         }
     }
 }
@@ -54,7 +52,7 @@ extension InformationPopUpViewController {
             self.displayHiddenInfo(false)
         }
     }
-    
+
     func displayHiddenInfo(_ isReady: Bool) {
         self.popUpView.activityIndicator.isHidden = !isReady
         self.popUpView.label.isHidden = !isReady
@@ -63,7 +61,7 @@ extension InformationPopUpViewController {
         self.popUpView.wikiDescription.isHidden = isReady
         self.popUpView.wikiText.isHidden = isReady
     }
-    
+
     func withoutWikiInfo(title: String, description: String, bodyText: String) {
         popUpView.imageWiki.image = UIImage(imageLiteralResourceName: title)
         popUpView.wikiTitle.text = title

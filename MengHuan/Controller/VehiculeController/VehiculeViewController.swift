@@ -161,7 +161,7 @@ extension VehiculeViewController {
         guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         sceneView.scene.rootNode.addChildNode(focus)
     }
-    
+
     func addStaticFocus() {
         guard let staticFocusScene = SCNScene(named: "Common.scnassets/fixedFocus.scn") else { return }
         guard let staticFocus = staticFocusScene.rootNode.childNode(withName: "fixedFocus", recursively: false) else { return }
@@ -172,7 +172,7 @@ extension VehiculeViewController {
         sceneView.scene.rootNode.addChildNode(staticFocus)
         statusViewController.statusView.blurView.isHidden = true
     }
-    
+
     func refresh() {
         sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
             node.removeFromParentNode()
@@ -182,7 +182,7 @@ extension VehiculeViewController {
         selectedVehicule = nil
         positions = [SCNVector3]()
     }
-    
+
     func backAction() {
         dismiss(animated: false, completion: nil)
     }
@@ -203,7 +203,7 @@ extension VehiculeViewController {
         var averageX: Float = 0
         var averageY: Float = 0
         var averageZ: Float = 0
-        
+
         for position in positions {
             averageX += position.x
             averageY += position.y
@@ -245,7 +245,7 @@ extension VehiculeViewController {
             }
         }
     }
-    
+
     @IBAction func vehiculeScale(_ sender: UIPinchGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else { return }
         let pinchLocation = sender.location(in: sceneView)
@@ -258,18 +258,18 @@ extension VehiculeViewController {
             sender.scale = 1.0
         }
     }
-    
+
     @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else { return }
         guard let vehicule = self.selectedVehicule else { return }
         guard let node = sceneView.scene.rootNode.childNode(withName: vehicule, recursively: false) else { return }
-        
+
         sender.minimumNumberOfTouches = 2
         //1. Get The Current Rotation From The Gesture
         let xPan = sender.velocity(in: sceneView).x/10000
         node.runAction(SCNAction.rotateBy(x: 0, y: xPan, z: 0, duration: 0.1))
     }
-    
+
     @IBAction func vehiculeMove(_ sender: UILongPressGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else { return }
         guard let vehicule = self.selectedVehicule else { return }

@@ -75,7 +75,7 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     }
 }
 
-//MARK: - Methods
+// MARK: - Methods
 extension SolarSystemViewController {
 
     func addRemoveNode(_ nodeToDelete: String) {
@@ -104,7 +104,7 @@ extension SolarSystemViewController {
     }
 }
 
-//MARK: - Navigations
+// MARK: - Navigations
 extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
     // MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
@@ -129,10 +129,10 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
             guard let popup = segue.destination as? InformationPopUpViewController else { return }
             if element == "Soleil" || element == "Lune" || element == "Systeme Solaire" {
                 popup.element = self.element
-                popup.typeElement = "planet"
+                popup.typeElement = ""
             } else {
                 popup.element = self.element
-                popup.typeElement = ""
+                popup.typeElement = "planet"
             }
         default :
             print("error")
@@ -164,7 +164,7 @@ extension SolarSystemViewController {
             hitNode.position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
         }
     }
-    
+
     @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
         if planet != "Systeme Solaire" {
             guard let sceneView = sender.view as? ARSCNView else { return }
@@ -183,7 +183,7 @@ extension SolarSystemViewController {
             }
         }
     }
-    
+
     @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
         guard let senderView = sender.view as? ARSCNView else { return }
         let touch = sender.location(in: senderView)
@@ -194,11 +194,11 @@ extension SolarSystemViewController {
             self.planet = planetName
         }
     }
-    
+
     @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
         guard let sceneView = sender.view as? ARSCNView else { return }
         guard let node = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
-        
+
         sender.minimumNumberOfTouches = 2
         if sender.state == .began {
             sceneView.scene.isPaused = false
@@ -213,18 +213,20 @@ extension SolarSystemViewController {
             }
         }
     }
-    
+
     @IBAction func backAction(_ sender: UIButton) {
         dismiss(animated: false, completion: nil)
     }
-    
+
     @IBAction func playPauseAction(_ sender: UIButton) {
-        if sender.isSelected {
-            sceneView.scene.isPaused = false
-            sender.isSelected = false
-        } else {
-            sceneView.scene.isPaused = true
-            sender.isSelected = true
-        }
+        self.element = "Terre"
+        performSegue(withIdentifier: "wikiInformation", sender: self)
+//        if sender.isSelected {
+//            sceneView.scene.isPaused = false
+//            sender.isSelected = false
+//        } else {
+//            sceneView.scene.isPaused = true
+//            sender.isSelected = true
+//        }
     }
 }

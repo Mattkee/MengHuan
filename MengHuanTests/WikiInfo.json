@@ -1,0 +1,30 @@
+{
+    "batchcomplete": "",
+    "query": {
+        "pages": {
+            "3027": {
+                "pageid": 3027,
+                "ns": 0,
+                "title": "Terre",
+                "extract": "La Terre est une planète du Système solaire, la troisième plus proche du Soleil et la cinquième plus grande, tant en taille qu'en masse, de ce système planétaire dont elle est également la plus massive des planètes telluriques.",
+                "original": {
+                    "source": "https://upload.wikimedia.org/wikipedia/commons/d/d9/Earth_by_the_EPIC_Team_on_21_April_2018.png",
+                    "width": 2048,
+                    "height": 2048
+                },
+                "description": "troisième planète du Système solaire, laquelle abrite la vie",
+                "descriptionsource": "central",
+                "contentmodel": "wikitext",
+                "pagelanguage": "fr",
+                "pagelanguagehtmlcode": "fr",
+                "pagelanguagedir": "ltr",
+                "touched": "2019-05-11T11:23:51Z",
+                "lastrevid": 159053981,
+                "length": 143657,
+                "fullurl": "https://fr.wikipedia.org/wiki/Terre",
+                "editurl": "https://fr.wikipedia.org/w/index.php?title=Terre&action=edit",
+                "canonicalurl": "https://fr.wikipedia.org/wiki/Terre"
+            }
+        }
+    }
+}
