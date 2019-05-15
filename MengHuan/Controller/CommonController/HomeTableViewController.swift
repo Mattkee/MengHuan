@@ -28,8 +28,11 @@ class HomeTableViewController: UITableViewController {
         return 200
     }
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "footerCell")
-        cell?.textLabel?.text = "Que voulez vous découvrir?"
-        return cell
+        let emptyLabel = UILabel()
+        emptyLabel.text = "Que voulez vous apprendre ?"
+        emptyLabel.textColor = UIColor.white
+        emptyLabel.font = UIFont.systemFont(ofSize: 17, weight: .semibold)
+        emptyLabel.textAlignment = .center
+        return emptyLabel
     }
 }

@@ -8,8 +8,10 @@
 
 import UIKit
 
+// MARK: - vehicule display view
 class VehiculeView: UIView {
 
+    // MARK: - Outlets
      @IBOutlet weak var vehiculeSelectButton: UIButton!
 
 }

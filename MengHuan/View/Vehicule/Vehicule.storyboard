@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="85" id="ADb-SH-xH5"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="pvL-4o-uWQ" kind="embed" id="2Uw-8z-HD8"/>
+                                    <segue destination="pvL-4o-uWQ" kind="embed" identifier="statusSegue" id="2Uw-8z-HD8"/>
                                 </connections>
                             </containerView>
                         </subviews>

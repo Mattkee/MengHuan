@@ -9,7 +9,8 @@
 import Foundation
 import UIKit
 
+// MARK: - dinosaur display view
 class DinosaurView: UIView {
+    // MARK: - Outlets
     @IBOutlet weak var dinosaurSelectButton: UIButton!
-
 }

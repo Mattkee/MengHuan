@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - Decodable object
 struct WikiInfo: Decodable {
 
     let query: Query

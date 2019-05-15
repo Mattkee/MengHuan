@@ -9,8 +9,10 @@
 import Foundation
 import UIKit
 
+// MARK: - Status Bar display view
 class StatusView: UIView {
 
+    // MARK: - Outlets
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var refreshButton: UIButton!
     @IBOutlet weak var blurView: UIVisualEffectView!

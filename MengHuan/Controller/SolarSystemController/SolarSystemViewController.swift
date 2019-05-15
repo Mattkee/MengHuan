@@ -12,25 +12,21 @@ import ARKit
 
 class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var selectedPlanetButton: UIButton!
-
+    // MARK: - Properties
     var nodes = [String: SCNNode]()
-
     var center: CGPoint?
-    var planet: String = "System" {
+    var element: String?
+
+    var planet: String = "Systeme Solaire" {
         didSet {
-            if oldValue != "System" {
+            if oldValue != "System Solaire" {
                 self.addRemoveNode(oldValue)
             } else {
-                self.addRemoveNode("System")
+                self.addRemoveNode("Systeme Solaire")
             }
             selectedPlanetButton.setTitle(self.planet, for: .normal)
         }
     }
-
-    var pageId: String?
 
     var solarSystem: [String] = {
         guard let solarSystem = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return []}
@@ -44,16 +40,21 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
         return nodesList
     }()
 
+    // MARK: - Outlets
+    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var selectedPlanetButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         center = view.center
         playButton.setImage(#imageLiteral(resourceName: "Pause Button"), for: .normal)
         playButton.setImage(#imageLiteral(resourceName: "Play Button"), for: .selected)
+
         // Set the view's delegate
         sceneView.delegate = self
-
         guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
-        guard let system = scene.rootNode.childNode(withName: "System", recursively: false) else { return }
+        guard let system = scene.rootNode.childNode(withName: "Systeme Solaire", recursively: false) else { return }
         // Set the scene to the view
         sceneView.scene.rootNode.addChildNode(system)
         nameNodes()
@@ -61,113 +62,29 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
         sceneView.autoenablesDefaultLighting = true
         // Run the view's session
         sceneView.session.run(configuration)
     }
-
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // Pause the view's session
         sceneView.session.pause()
     }
+}
 
-    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        if sender.numberOfTapsRequired == 1 {
-            guard let sceneViewTappedOn = sender.view as? SCNView else { return }
-            let touchCoordinates = sender.location(in: sceneViewTappedOn)
-            let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
-            if !hitTest.isEmpty {
-                guard let results = hitTest.first else {return}
-                let node = results.node
-                guard let name = node.name else {return}
-                guard let pageId = Constant.idDictio[name] else {return}
-                self.pageId = pageId
-                performSegue(withIdentifier: "wikiInformation", sender: self)
-            } else {
-                print("didn't touch anything")
-            }
-        } else {
-            guard let hitNode = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
-            guard let centerPoint = center else { return }
-            hitNode.scale = SCNVector3(1, 1, 1)
-            hitNode.position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
-        }
-    }
-
-    @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
-        if planet != "System" {
-            guard let sceneView = sender.view as? ARSCNView else { return }
-            let pinchLocation = sender.location(in: sceneView)
-            let hitTest = sceneView.hitTest(pinchLocation)
-            guard let results = hitTest.first else { return }
-            let node = results.node
-            if sceneView.scene.isPaused == true {
-                node.scale = SCNVector3(sender.scale, sender.scale, sender.scale)
-            } else {
-                if !hitTest.isEmpty {
-                    let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
-                    node.runAction(pinchAction)
-                    sender.scale = 1.0
-                }
-            }
-        }
-    }
-
-    @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
-        guard let senderView = sender.view as? ARSCNView else { return }
-        let touch = sender.location(in: senderView)
-        if sender.state == .began {
-            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
-            guard let hitNode = hitTestResult.first?.node else { return }
-            guard let planetName = hitNode.name else { return }
-            self.planet = planetName
-        }
-    }
-
-    @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
-        guard let sceneView = sender.view as? ARSCNView else { return }
-        guard let node = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
-
-        sender.minimumNumberOfTouches = 2
-        if sender.state == .began {
-            sceneView.scene.isPaused = false
-        }
-        if sender.state == .changed {
-            let xPan = sender.velocity(in: sceneView).x/10000
-            node.runAction(SCNAction.rotateBy(x: 0, y: xPan, z: 0, duration: 0.1))
-        }
-        if sender.state == .ended {
-            if playButton.isSelected == true {
-                sceneView.scene.isPaused = true
-            }
-        }
-    }
-
-    @IBAction func backAction(_ sender: UIButton) {
-        dismiss(animated: false, completion: nil)
-    }
-
-    @IBAction func playPauseAction(_ sender: UIButton) {
-        if sender.isSelected {
-            sceneView.scene.isPaused = false
-            sender.isSelected = false
-        } else {
-            sceneView.scene.isPaused = true
-            sender.isSelected = true
-        }
-    }
+//MARK: - Methods
+extension SolarSystemViewController {
 
     func addRemoveNode(_ nodeToDelete: String) {
         guard let oldSystem = sceneView.scene.rootNode.childNode(withName: nodeToDelete, recursively: false) else { return }
         oldSystem.removeFromParentNode()
         let nodeName = self.planet
-        if nodeName == "System" {
+        if nodeName == "Systeme Solaire" {
             guard let scene = SCNScene(named: "SolarSystem.scnassets/solarSystem.scn") else { return }
-            guard let system = scene.rootNode.childNode(withName: "System", recursively: false) else { return }
+            guard let system = scene.rootNode.childNode(withName: "Systeme Solaire", recursively: false) else { return }
             sceneView.scene.rootNode.addChildNode(system)
         } else {
             guard let newNode = nodes[nodeName] else { return }
@@ -187,8 +104,8 @@ class SolarSystemViewController: UIViewController, ARSCNViewDelegate {
     }
 }
 
+//MARK: - Navigations
 extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
-
     // MARK: - UIPopoverPresentationControllerDelegate
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
@@ -210,9 +127,104 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
             }
         case "wikiInformation":
             guard let popup = segue.destination as? InformationPopUpViewController else { return }
-            popup.pageId = self.pageId
+            if element == "Soleil" || element == "Lune" || element == "Systeme Solaire" {
+                popup.element = self.element
+                popup.typeElement = "planet"
+            } else {
+                popup.element = self.element
+                popup.typeElement = ""
+            }
         default :
             print("error")
+        }
+    }
+}
+
+// MARK: - Actions
+extension SolarSystemViewController {
+
+    @IBAction func tapped(_ sender: UITapGestureRecognizer) {
+        if sender.numberOfTapsRequired == 1 {
+            guard let sceneViewTappedOn = sender.view as? SCNView else { return }
+            let touchCoordinates = sender.location(in: sceneViewTappedOn)
+            let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
+            if !hitTest.isEmpty {
+                guard let results = hitTest.first else {return}
+                let node = results.node
+                guard let name = node.name else { return }
+                self.element = name
+                performSegue(withIdentifier: "wikiInformation", sender: self)
+            } else {
+                print("didn't touch anything")
+            }
+        } else {
+            guard let hitNode = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
+            guard let centerPoint = center else { return }
+            hitNode.scale = SCNVector3(1, 1, 1)
+            hitNode.position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
+        }
+    }
+    
+    @IBAction func pinch(_ sender: UIPinchGestureRecognizer) {
+        if planet != "Systeme Solaire" {
+            guard let sceneView = sender.view as? ARSCNView else { return }
+            let pinchLocation = sender.location(in: sceneView)
+            let hitTest = sceneView.hitTest(pinchLocation)
+            guard let results = hitTest.first else { return }
+            let node = results.node
+            if sceneView.scene.isPaused == true {
+                node.scale = SCNVector3(sender.scale, sender.scale, sender.scale)
+            } else {
+                if !hitTest.isEmpty {
+                    let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
+                    node.runAction(pinchAction)
+                    sender.scale = 1.0
+                }
+            }
+        }
+    }
+    
+    @IBAction func longPressed(_ sender: UILongPressGestureRecognizer) {
+        guard let senderView = sender.view as? ARSCNView else { return }
+        let touch = sender.location(in: senderView)
+        if sender.state == .began {
+            let hitTestResult = self.sceneView.hitTest(touch, options: nil)
+            guard let hitNode = hitTestResult.first?.node else { return }
+            guard let planetName = hitNode.name else { return }
+            self.planet = planetName
+        }
+    }
+    
+    @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
+        guard let sceneView = sender.view as? ARSCNView else { return }
+        guard let node = sceneView.scene.rootNode.childNode(withName: self.planet, recursively: false) else { return }
+        
+        sender.minimumNumberOfTouches = 2
+        if sender.state == .began {
+            sceneView.scene.isPaused = false
+        }
+        if sender.state == .changed {
+            let xPan = sender.velocity(in: sceneView).x/10000
+            node.runAction(SCNAction.rotateBy(x: 0, y: xPan, z: 0, duration: 0.1))
+        }
+        if sender.state == .ended {
+            if playButton.isSelected == true {
+                sceneView.scene.isPaused = true
+            }
+        }
+    }
+    
+    @IBAction func backAction(_ sender: UIButton) {
+        dismiss(animated: false, completion: nil)
+    }
+    
+    @IBAction func playPauseAction(_ sender: UIButton) {
+        if sender.isSelected {
+            sceneView.scene.isPaused = false
+            sender.isSelected = false
+        } else {
+            sceneView.scene.isPaused = true
+            sender.isSelected = true
         }
     }
 }

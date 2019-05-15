@@ -10,11 +10,13 @@ import UIKit
 
 class InformationPopUpViewController: UIViewController {
 
-    private let solarSystemService = SolarSystemService()
+    // MARK: - Properties
+    private let solarSystemService = WikiInfoService()
+    var element: String?
+    var typeElement: String?
 
+    // MARK: - Outlets
     @IBOutlet var popUpView: PopUpView!
-    var pageId: String?
-    var elementName: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +25,55 @@ class InformationPopUpViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if pageId != nil {
-            guard let searchId = pageId else {return}
-            search(searchId)
-        } else {
+        guard let elementName = element else { return }
+        if typeElement != nil {
+            guard let elementType = typeElement else { return }
+            search(elementName, type: elementType)
+        } else if typeElement == "fiction" {
             displayHiddenInfo(false)
-            guard let name = elementName else { return }
+            guard let name = element else { return }
             withoutWikiInfo(title: name, description: Constant.wikiDescription, bodyText: Constant.wikiText)
+        } else {
+            search(elementName, type: "")
         }
     }
+}
 
+// MARK: Methods
+extension InformationPopUpViewController {
+    func search(_ elementName: String, type: String) {
+        solarSystemService.getWikiInfo(elementName, type: type) { (error, wiki) in
+            guard error == nil else {
+                guard let error = error else {
+                    return
+                }
+                self.showAlert(title: Constant.titleAlert, message: error)
+                return
+            }
+            self.popUpView.wikiInfo = wiki
+            self.displayHiddenInfo(false)
+        }
+    }
+    
+    func displayHiddenInfo(_ isReady: Bool) {
+        self.popUpView.activityIndicator.isHidden = !isReady
+        self.popUpView.label.isHidden = !isReady
+        self.popUpView.imageWiki.isHidden = isReady
+        self.popUpView.wikiTitle.isHidden = isReady
+        self.popUpView.wikiDescription.isHidden = isReady
+        self.popUpView.wikiText.isHidden = isReady
+    }
+    
+    func withoutWikiInfo(title: String, description: String, bodyText: String) {
+        popUpView.imageWiki.image = UIImage(imageLiteralResourceName: title)
+        popUpView.wikiTitle.text = title
+        popUpView.wikiDescription.text = description
+        popUpView.wikiText.text = bodyText
+    }
+}
+
+// MARK: - Actions
+extension InformationPopUpViewController {
     @IBAction func tapGestureRecognizer(_ sender: UITapGestureRecognizer) {
         guard let gestureView = sender.view else {return}
         let tapCoordonate = sender.location(in: gestureView)
@@ -49,43 +90,4 @@ class InformationPopUpViewController: UIViewController {
             dismiss(animated: false, completion: nil)
         }
     }
-
-    func search(_ searchId: String) {
-        solarSystemService.getWikiInfo(searchId) { (error, wiki) in
-            guard error == nil else {
-                guard let error = error else {
-                    return
-                }
-                self.showAlert(title: Constant.titleAlert, message: error)
-                return
-            }
-            self.popUpView.wikiInfo = wiki
-            self.displayHiddenInfo(false)
-        }
-    }
-
-    func displayHiddenInfo(_ isReady: Bool) {
-        self.popUpView.activityIndicator.isHidden = !isReady
-        self.popUpView.label.isHidden = !isReady
-        self.popUpView.imageWiki.isHidden = isReady
-        self.popUpView.wikiTitle.isHidden = isReady
-        self.popUpView.wikiDescription.isHidden = isReady
-        self.popUpView.wikiText.isHidden = isReady
-    }
-
-    func withoutWikiInfo(title: String, description: String, bodyText: String) {
-        popUpView.imageWiki.image = UIImage(imageLiteralResourceName: title)
-        popUpView.wikiTitle.text = title
-        popUpView.wikiDescription.text = description
-        popUpView.wikiText.text = bodyText
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }

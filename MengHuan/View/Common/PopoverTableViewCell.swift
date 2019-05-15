@@ -8,8 +8,10 @@
 
 import UIKit
 
+// MARK: - popover cell view
 class PopoverTableViewCell: UITableViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var popoverImage: UIImageView!
     @IBOutlet weak var popoverName: UILabel!
 
@@ -28,6 +30,7 @@ class PopoverTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    // MARK: - elementToDisplay String allow to display view data
     var elementToDisplay: String? {
         didSet {
             self.popoverName.text = elementToDisplay

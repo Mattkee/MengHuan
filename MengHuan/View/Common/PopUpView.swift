@@ -8,8 +8,9 @@
 import Foundation
 import UIKit
 
+// MARK: - popup display view
 class PopUpView: UIView {
-
+    // MARK: - Outlets
     @IBOutlet weak var imageWiki: UIImageView!
     @IBOutlet weak var wikiTitle: UILabel!
     @IBOutlet weak var wikiDescription: UILabel!
@@ -26,6 +27,7 @@ class PopUpView: UIView {
         label.textColor = .white
     }
 
+    // MARK: - wikiInfo object allow to display view data
     var wikiInfo: WikiInfo? {
         didSet {
             self.wikiTitle.text = self.wikiInfo?.query.idPages[0].title

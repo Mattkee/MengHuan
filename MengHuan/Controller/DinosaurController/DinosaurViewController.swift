@@ -12,11 +12,16 @@ import ARKit
 
 class DinosaurViewController: UIViewController, ARSCNViewDelegate {
 
-    @IBOutlet var sceneView: ARSCNView!
-    @IBOutlet var dinosaurView: DinosaurView!
+    
 
-    var anchor: ARAnchor?
+    // MARK: - Properties
     var center: CGPoint?
+    var positions = [SCNVector3]()
+    var staticFocus: SCNNode?
+    var currentNode: SCNNode?
+    var isDetected: Bool = false
+    var element: String?
+
     var selectedDinosaur: String? {
         didSet {
             if self.selectedDinosaur != nil {
@@ -38,21 +43,16 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         }
     }()
 
-    var positions = [SCNVector3]()
-
-    var staticFocus: SCNNode?
-
     lazy var statusViewController: StatusViewController = {
         return children.lazy.compactMap({ $0 as? StatusViewController }).first!
     }()
 
-    var currentNode: SCNNode?
-    var isDetected: Bool = false
-    var pageId: String?
+    // MARK: - Outlets
+    @IBOutlet var sceneView: ARSCNView!
+    @IBOutlet var dinosaurView: DinosaurView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Set the view's delegate
         sceneView.delegate = self
 
@@ -69,6 +69,89 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
             self.backAction()
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // Create a session configuration
+        let configuration = ARWorldTrackingConfiguration()
+        configuration.planeDetection = .horizontal
+        sceneView.autoenablesDefaultLighting = true
+        // Run the view's session
+        sceneView.session.run(configuration)
+        dinosaurView.dinosaurSelectButton.isHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
+        // Pause the view's session
+        sceneView.session.pause()
+    }
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        center = view.center
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
+        guard let centerPoint = center else { return }
+        let position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
+        positions.append(position)
+        let lastTenPositions = positions.suffix(10)
+        guard let focus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
+        focus.position = getAveragePosition(from: lastTenPositions)
+    }
+
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        guard anchor is ARPlaneAnchor else { return }
+        isDetected = true
+
+        if staticFocus == nil {
+            DispatchQueue.main.async {
+                self.statusViewController.statusView.refreshButton.isHidden = false
+                self.statusViewController.statusView.blurView.isHidden = false
+                self.statusViewController.statusView.statusLabel.text = "Surface détectée"
+            }
+        }
+    }
+}
+
+// MARK: - Navigations
+extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
+    // MARK: - UIPopoverPresentationControllerDelegate
+    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // All menus should be popovers (even on iPhone).
+        if let popoverController = segue.destination.popoverPresentationController, let button = sender as? UIButton {
+            popoverController.delegate = self
+            popoverController.sourceView = button
+            popoverController.sourceRect = button.bounds
+        }
+        switch segue.identifier {
+        case "showPopover":
+            guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
+            popover.isFixedElement = true
+            popover.element = self.dinosaur
+            popover.elementSelected = { [weak self] data in
+                self?.selectedDinosaur = data
+            }
+        case "wikiInformation":
+            guard let popup = segue.destination as? InformationPopUpViewController else { return }
+                popup.element = self.element
+                popup.typeElement = ""
+        case "statusSegue":
+            print("status bar ok")
+        default :
+            print("error")
+        }
+    }
+//    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
+//        objectsViewController = nil
+//    }
+}
+
+// MARK: - Methods
+extension DinosaurViewController {
 
     func addFocus() {
         guard let focusScene = SCNScene(named: "Common.scnassets/focus.scn") else { return }
@@ -101,6 +184,36 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         dismiss(animated: false, completion: nil)
     }
 
+    func addItem() {
+        if let selectedItem = self.selectedDinosaur {
+            guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn") else { return }
+            guard let node = dinosaurScene.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
+            guard let position = self.staticFocus?.position else { return }
+            node.position = position
+            sceneView.scene.rootNode.addChildNode(node)
+            self.dinosaurView.dinosaurSelectButton.isHidden = true
+            self.statusViewController.statusView.blurView.isHidden = true
+        }
+    }
+
+    func getAveragePosition(from positions: ArraySlice<SCNVector3>) -> SCNVector3 {
+        var averageX: Float = 0
+        var averageY: Float = 0
+        var averageZ: Float = 0
+        
+        for position in positions {
+            averageX += position.x
+            averageY += position.y
+            averageZ += position.z
+        }
+        let count = Float(positions.count)
+        return SCNVector3Make(averageX / count, averageY / count, averageZ / count)
+    }
+}
+
+// MARK: - Actions
+extension DinosaurViewController {
+
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
         if isDetected && selectedDinosaur == nil && currentNode == nil {
             dinosaurView.dinosaurSelectButton.isHidden = false
@@ -121,8 +234,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
                 let node = results.node
                 guard let name = node.name else {return}
                 if name != "focus" && name != "fixedFocus" {
-                    guard let pageId = Constant.idDinosaurDictio[name] else { return }
-                    self.pageId = pageId
+                    self.element = name
                     performSegue(withIdentifier: "wikiInformation", sender: self)
                 }
             } else {
@@ -148,7 +260,6 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         guard let sceneView = sender.view as? ARSCNView else { return }
         guard let dinosaur = self.selectedDinosaur else { return }
         guard let node = sceneView.scene.rootNode.childNode(withName: dinosaur, recursively: false) else { return }
-
         sender.minimumNumberOfTouches = 2
         //1. Get The Current Rotation From The Gesture
         let xPan = sender.velocity(in: sceneView).x/10000
@@ -165,116 +276,4 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         staticFocus.removeFromParentNode()
         addFocus()
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
-        sceneView.autoenablesDefaultLighting = true
-        // Run the view's session
-        sceneView.session.run(configuration)
-        dinosaurView.dinosaurSelectButton.isHidden = true
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-        // Pause the view's session
-        sceneView.session.pause()
-    }
-
-    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
-        center = view.center
-    }
-
-    func renderer(_ renderer: SCNSceneRenderer, updateAtTime time: TimeInterval) {
-        guard let centerPoint = center else { return }
-        let position = centerPosition(sceneView: sceneView, centerPoint: centerPoint)
-        positions.append(position)
-        let lastTenPositions = positions.suffix(10)
-        guard let focus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
-        focus.position = getAveragePosition(from: lastTenPositions)
-    }
-
-    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
-        guard anchor is ARPlaneAnchor else { return }
-        self.anchor = anchor
-        isDetected = true
-
-        if staticFocus == nil {
-            DispatchQueue.main.async {
-                self.statusViewController.statusView.refreshButton.isHidden = false
-                self.statusViewController.statusView.blurView.isHidden = false
-                self.statusViewController.statusView.statusLabel.text = "Surface détectée"
-            }
-        }
-    }
-
-    func addItem() {
-        if let selectedItem = self.selectedDinosaur {
-            guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn") else { return }
-            guard let node = dinosaurScene.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
-            guard let position = self.staticFocus?.position else { return }
-            node.position = position
-            sceneView.scene.rootNode.addChildNode(node)
-            self.dinosaurView.dinosaurSelectButton.isHidden = true
-            self.statusViewController.statusView.blurView.isHidden = true
-        }
-    }
-
-    func getAveragePosition(from positions: ArraySlice<SCNVector3>) -> SCNVector3 {
-        var averageX: Float = 0
-        var averageY: Float = 0
-        var averageZ: Float = 0
-
-        for position in positions {
-            averageX += position.x
-            averageY += position.y
-            averageZ += position.z
-        }
-        let count = Float(positions.count)
-        return SCNVector3Make(averageX / count, averageY / count, averageZ / count)
-    }
-}
-
-extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
-
-    // MARK: - UIPopoverPresentationControllerDelegate
-    func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
-        return .none
-    }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // All menus should be popovers (even on iPhone).
-        if let popoverController = segue.destination.popoverPresentationController, let button = sender as? UIButton {
-            popoverController.delegate = self
-            popoverController.sourceView = button
-            popoverController.sourceRect = button.bounds
-        }
-        switch segue.identifier {
-        case "showPopover":
-            guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
-            popover.isDinosaur = true
-            popover.element = self.dinosaur
-            popover.elementSelected = { [weak self] data in
-                self?.selectedDinosaur = data
-            }
-        case "wikiInformation":
-            guard let popup = segue.destination as? InformationPopUpViewController else { return }
-            if self.pageId != nil {
-                popup.pageId = self.pageId
-            } else {
-                popup.elementName = self.selectedDinosaur
-            }
-        case "statusSegue":
-            print("status bar ok")
-        default :
-            print("error")
-        }
-    }
-//    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-//        objectsViewController = nil
-//    }
 }
