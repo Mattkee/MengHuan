@@ -66,6 +66,7 @@
                     <connections>
                         <outlet property="sceneView" destination="HHt-KY-nJX" id="fe5-Fy-FQr"/>
                         <outlet property="vehiculeView" destination="7zU-El-VBd" id="Kl6-x5-pyo"/>
+                        <segue destination="G1w-E3-dh0" kind="presentation" identifier="wikiInformation" modalPresentationStyle="overCurrentContext" modalTransitionStyle="coverVertical" id="YwH-u5-zJb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1ts-3v-Ehk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -90,7 +91,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="112" y="99"/>
+            <point key="canvasLocation" x="97" y="101"/>
         </scene>
         <!--Popover-->
         <scene sceneID="FY9-Ae-jgH">
@@ -99,6 +100,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oHf-Lk-DOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="899" y="67"/>
+        </scene>
+        <!--InformationPopUp-->
+        <scene sceneID="1kg-yO-9Cv">
+            <objects>
+                <viewControllerPlaceholder storyboardName="InformationPopUp" id="G1w-E3-dh0" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAq-dy-Q0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="167"/>
         </scene>
         <!--StatusView-->
         <scene sceneID="Rck-TX-sfY">
