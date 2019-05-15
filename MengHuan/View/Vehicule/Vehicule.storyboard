@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aAV-eq-bEI">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Vehicule View Controller-->
+        <scene sceneID="yN3-ly-LI7">
+            <objects>
+                <viewController id="aAV-eq-bEI" customClass="VehiculeViewController" customModule="MengHuan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7zU-El-VBd" customClass="VehiculeView" customModule="MengHuan" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HHt-KY-nJX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Ibn-5s-MBp" appends="YES" id="L3K-sh-xuO"/>
+                                    <outletCollection property="gestureRecognizers" destination="aUI-ah-wzM" appends="YES" id="QP2-VG-MyE"/>
+                                    <outletCollection property="gestureRecognizers" destination="05x-U9-ARN" appends="YES" id="Yb9-qE-Ukm"/>
+                                    <outletCollection property="gestureRecognizers" destination="ucD-qb-6qA" appends="YES" id="WO0-2Z-llM"/>
+                                </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JYm-oV-0XW" userLabel="Add">
+                                <rect key="frame" x="183" y="779" width="48" height="48"/>
+                                <state key="normal" image="add"/>
+                                <connections>
+                                    <segue destination="fnr-kw-pHg" kind="popoverPresentation" identifier="showPopover" popoverAnchorView="JYm-oV-0XW" id="WWu-xW-K82">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kej-XP-ExN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="85"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="85" id="ADb-SH-xH5"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="pvL-4o-uWQ" kind="embed" id="2Uw-8z-HD8"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Kej-XP-ExN" firstAttribute="top" secondItem="B5S-7Z-DUJ" secondAttribute="top" id="7JL-zQ-RtP"/>
+                            <constraint firstItem="JYm-oV-0XW" firstAttribute="centerX" secondItem="7zU-El-VBd" secondAttribute="centerX" id="A8n-7j-A4O"/>
+                            <constraint firstItem="HHt-KY-nJX" firstAttribute="leading" secondItem="B5S-7Z-DUJ" secondAttribute="leading" id="D2b-71-VZg"/>
+                            <constraint firstItem="HHt-KY-nJX" firstAttribute="trailing" secondItem="B5S-7Z-DUJ" secondAttribute="trailing" id="LmV-Ms-7Mh"/>
+                            <constraint firstItem="Kej-XP-ExN" firstAttribute="leading" secondItem="B5S-7Z-DUJ" secondAttribute="leading" id="Y4U-uI-nnq"/>
+                            <constraint firstAttribute="bottom" secondItem="HHt-KY-nJX" secondAttribute="bottom" id="aCX-Q1-XVc"/>
+                            <constraint firstItem="B5S-7Z-DUJ" firstAttribute="trailing" secondItem="Kej-XP-ExN" secondAttribute="trailing" id="cqP-0w-YwW"/>
+                            <constraint firstItem="HHt-KY-nJX" firstAttribute="top" secondItem="7zU-El-VBd" secondAttribute="top" id="iFi-en-3ON"/>
+                            <constraint firstItem="B5S-7Z-DUJ" firstAttribute="bottom" secondItem="JYm-oV-0XW" secondAttribute="bottom" constant="35" id="ybe-dy-58a"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="B5S-7Z-DUJ"/>
+                        <connections>
+                            <outlet property="vehiculeSelectButton" destination="JYm-oV-0XW" id="epg-GX-P64"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="HHt-KY-nJX" id="fe5-Fy-FQr"/>
+                        <outlet property="vehiculeView" destination="7zU-El-VBd" id="Kl6-x5-pyo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ts-3v-Ehk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ibn-5s-MBp">
+                    <connections>
+                        <action selector="tapped:" destination="aAV-eq-bEI" id="RzG-CG-80O"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <pinchGestureRecognizer id="aUI-ah-wzM">
+                    <connections>
+                        <action selector="dinosaurScale:" destination="aAV-eq-bEI" id="TbO-fI-ISU"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="05x-U9-ARN">
+                    <connections>
+                        <action selector="rotateNode:" destination="aAV-eq-bEI" id="yRt-pa-xhg"/>
+                    </connections>
+                </panGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ucD-qb-6qA">
+                    <connections>
+                        <action selector="dinosaurMove:" destination="aAV-eq-bEI" id="hod-RW-i6x"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="112" y="99"/>
+        </scene>
+        <!--Popover-->
+        <scene sceneID="FY9-Ae-jgH">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Popover" id="fnr-kw-pHg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oHf-Lk-DOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="899" y="67"/>
+        </scene>
+        <!--StatusView-->
+        <scene sceneID="Rck-TX-sfY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StatusView" id="pvL-4o-uWQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2TS-Dg-z1W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="98" y="-321"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="add" width="48" height="48"/>
+    </resources>
+</document>

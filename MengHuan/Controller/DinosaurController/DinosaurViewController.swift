@@ -25,7 +25,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         return fileEnumerator.compactMap { element in
             guard let url = element as? URL else { return nil }
 
-            guard url.pathExtension == "scn" && !url.path.contains("lighting") && !url.path.contains("focus") && !url.path.contains("fixedFocus") else { return nil }
+            guard url.pathExtension == "scn" && !url.path.contains("lighting") else { return nil }
             let dinosaur = url.lastPathComponent.replacingOccurrences(of: ".scn", with: "")
 
             return String(dinosaur)
@@ -65,13 +65,13 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
     }
 
     func addFocus() {
-        guard let focusScene = SCNScene(named: "Dinosaur.scnassets/focus.scn") else { return }
+        guard let focusScene = SCNScene(named: "Common.scnassets/focus.scn") else { return }
         guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         sceneView.scene.rootNode.addChildNode(focus)
     }
 
     func addStaticFocus() {
-        guard let staticFocusScene = SCNScene(named: "Dinosaur.scnassets/fixedFocus.scn") else { return }
+        guard let staticFocusScene = SCNScene(named: "Common.scnassets/fixedFocus.scn") else { return }
         guard let staticFocus = staticFocusScene.rootNode.childNode(withName: "fixedFocus", recursively: false) else { return }
         guard let oldFocus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
         staticFocus.position = oldFocus.position
@@ -250,8 +250,8 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
         case "showPopover":
             guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
             popover.isDinosaur = true
-            popover.dinosaur = self.dinosaur
-            popover.dinosaurSelected = { [weak self] data in
+            popover.element = self.dinosaur
+            popover.elementSelected = { [weak self] data in
                 self?.selectedDinosaur = data
                 if self?.selectedDinosaur != nil {
                     guard let position = self?.staticFocus?.position else { return }

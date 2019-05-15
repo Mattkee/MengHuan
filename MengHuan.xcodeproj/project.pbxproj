@@ -83,6 +83,35 @@
 		AFD910CA228BEE43005FD41E /* triceratops Eyes Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910C0228BEE43005FD41E /* triceratops Eyes Normal.png */; };
 		AFD910CB228BEE43005FD41E /* triceratops body Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910C1228BEE43005FD41E /* triceratops body Diffuse.png */; };
 		AFD910CC228BEE43005FD41E /* triceratops body Roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910C2228BEE43005FD41E /* triceratops body Roughness.png */; };
+		AFD910D4228BF7A9005FD41E /* PlanetEarth.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD910D3228BF7A9005FD41E /* PlanetEarth.scnassets */; };
+		AFD910E7228BFDD9005FD41E /* globe Albedo.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910E2228BFDD7005FD41E /* globe Albedo.png */; };
+		AFD910E8228BFDD9005FD41E /* globe Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910E3228BFDD7005FD41E /* globe Normal.png */; };
+		AFD910E9228BFDD9005FD41E /* globe Ambient Occlusion.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910E4228BFDD8005FD41E /* globe Ambient Occlusion.png */; };
+		AFD910EA228BFDD9005FD41E /* globe Roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910E5228BFDD9005FD41E /* globe Roughness.png */; };
+		AFD910EB228BFDD9005FD41E /* globe Metalness.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910E6228BFDD9005FD41E /* globe Metalness.png */; };
+		AFD910EE228C1124005FD41E /* Vehicule.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD910ED228C1124005FD41E /* Vehicule.scnassets */; };
+		AFD910F4228C1226005FD41E /* SF Fighter Albedo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD910F1228C1225005FD41E /* SF Fighter Albedo.jpg */; };
+		AFD910F5228C1226005FD41E /* SF Fighter Glow.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD910F2228C1225005FD41E /* SF Fighter Glow.jpg */; };
+		AFD910F6228C1226005FD41E /* SF Fighter Normal.tga in Resources */ = {isa = PBXBuildFile; fileRef = AFD910F3228C1226005FD41E /* SF Fighter Normal.tga */; };
+		AFD910FD228C148D005FD41E /* submarine Metallic.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910F8228C148B005FD41E /* submarine Metallic.png */; };
+		AFD910FE228C148D005FD41E /* submarine Ambient Occlusion.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910F9228C148B005FD41E /* submarine Ambient Occlusion.png */; };
+		AFD910FF228C148D005FD41E /* submarine Normal.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910FA228C148C005FD41E /* submarine Normal.png */; };
+		AFD91100228C148D005FD41E /* submarine Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910FB228C148D005FD41E /* submarine Diffuse.png */; };
+		AFD91101228C148D005FD41E /* submarine Roughness.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD910FC228C148D005FD41E /* submarine Roughness.png */; };
+		AFD91106228C1D18005FD41E /* lamborginhi Aventador Specular.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91103228C1D16005FD41E /* lamborginhi Aventador Specular.jpeg */; };
+		AFD91107228C1D18005FD41E /* lamborginhi Aventador Diffuse.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91104228C1D17005FD41E /* lamborginhi Aventador Diffuse.jpeg */; };
+		AFD91108228C1D18005FD41E /* lamborginhi Aventador Transparent.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91105228C1D18005FD41E /* lamborginhi Aventador Transparent.jpeg */; };
+		AFD91113228C246A005FD41E /* piper Reflective.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91110228C2467005FD41E /* piper Reflective.jpg */; };
+		AFD91114228C246A005FD41E /* piper Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91111228C2469005FD41E /* piper Diffuse.jpg */; };
+		AFD91115228C246A005FD41E /* piper Specular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91112228C246A005FD41E /* piper Specular.jpg */; };
+		AFD91118228C25CE005FD41E /* Vehicule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD91117228C25CE005FD41E /* Vehicule.storyboard */; };
+		AFD9111B228C27ED005FD41E /* VehiculeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9111A228C27ED005FD41E /* VehiculeViewController.swift */; };
+		AFD9111D228C288E005FD41E /* VehiculeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD9111C228C288E005FD41E /* VehiculeView.swift */; };
+		AFD9111F228C290F005FD41E /* StatusView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFD9111E228C290F005FD41E /* StatusView.storyboard */; };
+		AFD91122228C2FBE005FD41E /* Common.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = AFD91121228C2FBE005FD41E /* Common.scnassets */; };
+		AFD91127228C411D005FD41E /* SHC m9 Diffuse.png in Resources */ = {isa = PBXBuildFile; fileRef = AFD91124228C411B005FD41E /* SHC m9 Diffuse.png */; };
+		AFD91128228C411D005FD41E /* SHC m10 Diffuse .png in Resources */ = {isa = PBXBuildFile; fileRef = AFD91125228C411C005FD41E /* SHC m10 Diffuse .png */; };
+		AFD91129228C411D005FD41E /* SHC m17 Diffuse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AFD91126228C411D005FD41E /* SHC m17 Diffuse.jpg */; };
 		AFF16FFA22534904008F8414 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF16FF922534904008F8414 /* AppDelegate.swift */; };
 		AFF16FFE22534904008F8414 /* SolarSystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */; };
 		AFF1700122534904008F8414 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFF16FFF22534904008F8414 /* Main.storyboard */; };
@@ -187,6 +216,36 @@
 		AFD910C0228BEE43005FD41E /* triceratops Eyes Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops Eyes Normal.png"; sourceTree = "<group>"; };
 		AFD910C1228BEE43005FD41E /* triceratops body Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Diffuse.png"; sourceTree = "<group>"; };
 		AFD910C2228BEE43005FD41E /* triceratops body Roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "triceratops body Roughness.png"; sourceTree = "<group>"; };
+		AFD910D3228BF7A9005FD41E /* PlanetEarth.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = PlanetEarth.scnassets; sourceTree = "<group>"; };
+		AFD910E2228BFDD7005FD41E /* globe Albedo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe Albedo.png"; sourceTree = "<group>"; };
+		AFD910E3228BFDD7005FD41E /* globe Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe Normal.png"; sourceTree = "<group>"; };
+		AFD910E4228BFDD8005FD41E /* globe Ambient Occlusion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe Ambient Occlusion.png"; sourceTree = "<group>"; };
+		AFD910E5228BFDD9005FD41E /* globe Roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe Roughness.png"; sourceTree = "<group>"; };
+		AFD910E6228BFDD9005FD41E /* globe Metalness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "globe Metalness.png"; sourceTree = "<group>"; };
+		AFD910ED228C1124005FD41E /* Vehicule.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Vehicule.scnassets; sourceTree = "<group>"; };
+		AFD910F1228C1225005FD41E /* SF Fighter Albedo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SF Fighter Albedo.jpg"; sourceTree = "<group>"; };
+		AFD910F2228C1225005FD41E /* SF Fighter Glow.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SF Fighter Glow.jpg"; sourceTree = "<group>"; };
+		AFD910F3228C1226005FD41E /* SF Fighter Normal.tga */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF Fighter Normal.tga"; sourceTree = "<group>"; };
+		AFD910F8228C148B005FD41E /* submarine Metallic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submarine Metallic.png"; sourceTree = "<group>"; };
+		AFD910F9228C148B005FD41E /* submarine Ambient Occlusion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submarine Ambient Occlusion.png"; sourceTree = "<group>"; };
+		AFD910FA228C148C005FD41E /* submarine Normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submarine Normal.png"; sourceTree = "<group>"; };
+		AFD910FB228C148D005FD41E /* submarine Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submarine Diffuse.png"; sourceTree = "<group>"; };
+		AFD910FC228C148D005FD41E /* submarine Roughness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "submarine Roughness.png"; sourceTree = "<group>"; };
+		AFD91103228C1D16005FD41E /* lamborginhi Aventador Specular.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lamborginhi Aventador Specular.jpeg"; sourceTree = "<group>"; };
+		AFD91104228C1D17005FD41E /* lamborginhi Aventador Diffuse.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lamborginhi Aventador Diffuse.jpeg"; sourceTree = "<group>"; };
+		AFD91105228C1D18005FD41E /* lamborginhi Aventador Transparent.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "lamborginhi Aventador Transparent.jpeg"; sourceTree = "<group>"; };
+		AFD91109228C1DEC005FD41E /* lamborginhi Aventador Ambient Occlusion.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lamborginhi Aventador Ambient Occlusion.psd"; sourceTree = "<group>"; };
+		AFD91110228C2467005FD41E /* piper Reflective.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "piper Reflective.jpg"; sourceTree = "<group>"; };
+		AFD91111228C2469005FD41E /* piper Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "piper Diffuse.jpg"; sourceTree = "<group>"; };
+		AFD91112228C246A005FD41E /* piper Specular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "piper Specular.jpg"; sourceTree = "<group>"; };
+		AFD91117228C25CE005FD41E /* Vehicule.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Vehicule.storyboard; sourceTree = "<group>"; };
+		AFD9111A228C27ED005FD41E /* VehiculeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiculeViewController.swift; sourceTree = "<group>"; };
+		AFD9111C228C288E005FD41E /* VehiculeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiculeView.swift; sourceTree = "<group>"; };
+		AFD9111E228C290F005FD41E /* StatusView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = StatusView.storyboard; sourceTree = "<group>"; };
+		AFD91121228C2FBE005FD41E /* Common.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Common.scnassets; sourceTree = "<group>"; };
+		AFD91124228C411B005FD41E /* SHC m9 Diffuse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHC m9 Diffuse.png"; sourceTree = "<group>"; };
+		AFD91125228C411C005FD41E /* SHC m10 Diffuse .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SHC m10 Diffuse .png"; sourceTree = "<group>"; };
+		AFD91126228C411D005FD41E /* SHC m17 Diffuse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "SHC m17 Diffuse.jpg"; sourceTree = "<group>"; };
 		AFF16FF622534904008F8414 /* MengHuan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MengHuan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFF16FF922534904008F8414 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFF16FFD22534904008F8414 /* SolarSystemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolarSystemViewController.swift; sourceTree = "<group>"; };
@@ -301,6 +360,8 @@
 				AF84627822786ED600D9BE12 /* PopUpView.swift */,
 				AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */,
 				AF9587D022671ACF00E7FDBB /* PopoverTableViewCell.swift */,
+				AFD9111E228C290F005FD41E /* StatusView.storyboard */,
+				AF9EA7A82281D35D001E5E71 /* StatusView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -310,7 +371,6 @@
 			children = (
 				AF1C5E7222647F9700296E6D /* Dinosaur.storyboard */,
 				AF9EA7A62281D2BC001E5E71 /* DinosaurView.swift */,
-				AF9EA7A82281D35D001E5E71 /* StatusView.swift */,
 			);
 			path = DinosaurView;
 			sourceTree = "<group>";
@@ -444,6 +504,126 @@
 			path = tyrannosaurus;
 			sourceTree = "<group>";
 		};
+		AFD910D2228BF748005FD41E /* PlanetEarth */ = {
+			isa = PBXGroup;
+			children = (
+				AFD910D5228BF7C9005FD41E /* Textures */,
+				AFD910D3228BF7A9005FD41E /* PlanetEarth.scnassets */,
+			);
+			path = PlanetEarth;
+			sourceTree = "<group>";
+		};
+		AFD910D5228BF7C9005FD41E /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				AFD910E2228BFDD7005FD41E /* globe Albedo.png */,
+				AFD910E4228BFDD8005FD41E /* globe Ambient Occlusion.png */,
+				AFD910E6228BFDD9005FD41E /* globe Metalness.png */,
+				AFD910E3228BFDD7005FD41E /* globe Normal.png */,
+				AFD910E5228BFDD9005FD41E /* globe Roughness.png */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		AFD910EC228C1108005FD41E /* Vehicule */ = {
+			isa = PBXGroup;
+			children = (
+				AFD910EF228C1129005FD41E /* Textures */,
+				AFD910ED228C1124005FD41E /* Vehicule.scnassets */,
+			);
+			path = Vehicule;
+			sourceTree = "<group>";
+		};
+		AFD910EF228C1129005FD41E /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91123228C40FE005FD41E /* SHC X */,
+				AFD9110F228C2458005FD41E /* piper */,
+				AFD91102228C1D09005FD41E /* lamborginhi Aventador */,
+				AFD910F7228C1472005FD41E /* submarine */,
+				AFD910F0228C1215005FD41E /* SF Fighter */,
+			);
+			path = Textures;
+			sourceTree = "<group>";
+		};
+		AFD910F0228C1215005FD41E /* SF Fighter */ = {
+			isa = PBXGroup;
+			children = (
+				AFD910F1228C1225005FD41E /* SF Fighter Albedo.jpg */,
+				AFD910F2228C1225005FD41E /* SF Fighter Glow.jpg */,
+				AFD910F3228C1226005FD41E /* SF Fighter Normal.tga */,
+			);
+			path = "SF Fighter";
+			sourceTree = "<group>";
+		};
+		AFD910F7228C1472005FD41E /* submarine */ = {
+			isa = PBXGroup;
+			children = (
+				AFD910F9228C148B005FD41E /* submarine Ambient Occlusion.png */,
+				AFD910FB228C148D005FD41E /* submarine Diffuse.png */,
+				AFD910F8228C148B005FD41E /* submarine Metallic.png */,
+				AFD910FA228C148C005FD41E /* submarine Normal.png */,
+				AFD910FC228C148D005FD41E /* submarine Roughness.png */,
+			);
+			path = submarine;
+			sourceTree = "<group>";
+		};
+		AFD91102228C1D09005FD41E /* lamborginhi Aventador */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91104228C1D17005FD41E /* lamborginhi Aventador Diffuse.jpeg */,
+				AFD91103228C1D16005FD41E /* lamborginhi Aventador Specular.jpeg */,
+				AFD91105228C1D18005FD41E /* lamborginhi Aventador Transparent.jpeg */,
+				AFD91109228C1DEC005FD41E /* lamborginhi Aventador Ambient Occlusion.psd */,
+			);
+			path = "lamborginhi Aventador";
+			sourceTree = "<group>";
+		};
+		AFD9110F228C2458005FD41E /* piper */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91111228C2469005FD41E /* piper Diffuse.jpg */,
+				AFD91110228C2467005FD41E /* piper Reflective.jpg */,
+				AFD91112228C246A005FD41E /* piper Specular.jpg */,
+			);
+			path = piper;
+			sourceTree = "<group>";
+		};
+		AFD91116228C24ED005FD41E /* Vehicule */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91117228C25CE005FD41E /* Vehicule.storyboard */,
+				AFD9111C228C288E005FD41E /* VehiculeView.swift */,
+			);
+			path = Vehicule;
+			sourceTree = "<group>";
+		};
+		AFD91119228C26F5005FD41E /* VehiculeController */ = {
+			isa = PBXGroup;
+			children = (
+				AFD9111A228C27ED005FD41E /* VehiculeViewController.swift */,
+			);
+			path = VehiculeController;
+			sourceTree = "<group>";
+		};
+		AFD91120228C2F8A005FD41E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91121228C2FBE005FD41E /* Common.scnassets */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		AFD91123228C40FE005FD41E /* SHC X */ = {
+			isa = PBXGroup;
+			children = (
+				AFD91124228C411B005FD41E /* SHC m9 Diffuse.png */,
+				AFD91125228C411C005FD41E /* SHC m10 Diffuse .png */,
+				AFD91126228C411D005FD41E /* SHC m17 Diffuse.jpg */,
+			);
+			path = "SHC X";
+			sourceTree = "<group>";
+		};
 		AFF16FED22534904008F8414 = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +671,7 @@
 				AFFCAF58226F18250086E770 /* CommonController */,
 				AFFCAF55226F17330086E770 /* SolarSystemController */,
 				AFFCAF56226F17650086E770 /* PlanetEarthController */,
+				AFD91119228C26F5005FD41E /* VehiculeController */,
 				AFFCAF57226F17DA0086E770 /* DinosaurController */,
 			);
 			path = Controller;
@@ -501,6 +682,7 @@
 			children = (
 				AF9EA7AA2281D6C3001E5E71 /* Common */,
 				AF9EA7AC2281D738001E5E71 /* SolarSystemView */,
+				AFD91116228C24ED005FD41E /* Vehicule */,
 				AF9EA7AB2281D6F6001E5E71 /* DinosaurView */,
 			);
 			path = View;
@@ -519,8 +701,11 @@
 		AFF17011225349B0008F8414 /* ARKit */ = {
 			isa = PBXGroup;
 			children = (
+				AFD91120228C2F8A005FD41E /* Common */,
+				AFD910EC228C1108005FD41E /* Vehicule */,
 				AF150B532265D87F00AF0155 /* Dinosaur */,
 				AF150B522265D84F00AF0155 /* SolarSystem */,
+				AFD910D2228BF748005FD41E /* PlanetEarth */,
 			);
 			path = ARKit;
 			sourceTree = "<group>";
@@ -649,30 +834,45 @@
 				AF6AD8BC228B59FA00F77E3C /* lizard-skin.jpg in Resources */,
 				AFF17030225365C4008F8414 /* Earth Emission.png in Resources */,
 				AF9EA7A522817C3E001E5E71 /* .swiftlint.yml in Resources */,
+				AFD91122228C2FBE005FD41E /* Common.scnassets in Resources */,
+				AFD91100228C148D005FD41E /* submarine Diffuse.png in Resources */,
+				AFD91114228C246A005FD41E /* piper Diffuse.jpg in Resources */,
 				AF0D74002284271E0005E377 /* irex Normal.png in Resources */,
+				AFD910E7228BFDD9005FD41E /* globe Albedo.png in Resources */,
 				AFF1702F225365C4008F8414 /* Earth Normal.png in Resources */,
 				AFF1702D225365C4008F8414 /* Saturn.png in Resources */,
+				AFD910FF228C148D005FD41E /* submarine Normal.png in Resources */,
+				AFD91106228C1D18005FD41E /* lamborginhi Aventador Specular.jpeg in Resources */,
+				AFD91127228C411D005FD41E /* SHC m9 Diffuse.png in Resources */,
 				AF150B5E2265D97A00AF0155 /* Tyrex Normal.jpg in Resources */,
 				AF0D73FD2284271E0005E377 /* irex teeth Diffuse.png in Resources */,
 				AF150B962266415400AF0155 /* Deinonychus Eye2.jpg in Resources */,
 				AF1C5E7322647F9700296E6D /* Dinosaur.storyboard in Resources */,
 				AF0D73FE2284271E0005E377 /* irex tongue Normal.png in Resources */,
+				AFD910D4228BF7A9005FD41E /* PlanetEarth.scnassets in Resources */,
 				AF0D74012284271E0005E377 /* irex eye Membrane Diffuse.png in Resources */,
 				AF8311B92257615C004D3426 /* SolarSystem.scnassets in Resources */,
 				AFF17023225365C4008F8414 /* Saturn Ring Alpha.png in Resources */,
+				AFD910E9228BFDD9005FD41E /* globe Ambient Occlusion.png in Resources */,
+				AFD91101228C148D005FD41E /* submarine Roughness.png in Resources */,
+				AFD91129228C411D005FD41E /* SHC m17 Diffuse.jpg in Resources */,
 				AFF17025225365C4008F8414 /* Earth Specular.png in Resources */,
+				AFD910EA228BFDD9005FD41E /* globe Roughness.png in Resources */,
 				AF150B712266364000AF0155 /* Dilpoh Frill Diffuse.jpg in Resources */,
 				AFD910C9228BEE43005FD41E /* triceratops Eyes Specular.png in Resources */,
+				AFD91113228C246A005FD41E /* piper Reflective.jpg in Resources */,
 				AFF1700622534907008F8414 /* LaunchScreen.storyboard in Resources */,
 				AFF17026225365C4008F8414 /* Moon.png in Resources */,
 				AF0D74022284271E0005E377 /* irex Diffuse.png in Resources */,
 				AFF1700322534907008F8414 /* Assets.xcassets in Resources */,
+				AFD91108228C1D18005FD41E /* lamborginhi Aventador Transparent.jpeg in Resources */,
 				AF150B6F2266364000AF0155 /* Dilpoh Frill Specular.jpg in Resources */,
 				AF1C5E75226484DC00296E6D /* SolarSystem.storyboard in Resources */,
 				AF150B5D2265D97A00AF0155 /* Tyrex Phong Diffuse Normal.png in Resources */,
 				AF150B722266364000AF0155 /* Dilpoh Mouth & Webbing Diffuse.jpg in Resources */,
 				AF0D73FF2284271E0005E377 /* irex claw spiked Normal.png in Resources */,
 				AF6AD8BF228B59FA00F77E3C /* velociraptor Illumination.png in Resources */,
+				AFD910FD228C148D005FD41E /* submarine Metallic.png in Resources */,
 				AFD910C7228BEE43005FD41E /* triceratops body Specular.png in Resources */,
 				AF150B942266413800AF0155 /* Deinonychus Eye.JPG in Resources */,
 				AFD910C8228BEE43005FD41E /* triceratops body Metallic.png in Resources */,
@@ -681,9 +881,11 @@
 				AF150B91226640DF00AF0155 /* Deinonychus Displacement.png in Resources */,
 				AFD910C6228BEE43005FD41E /* triceratops body Normal.png in Resources */,
 				AF94D11222575EC7005D2B25 /* InformationPopUp.storyboard in Resources */,
+				AFD91128228C411D005FD41E /* SHC m10 Diffuse .png in Resources */,
 				AF150B90226640DF00AF0155 /* Deinonychus Normal.png in Resources */,
 				AFF17034225366D5008F8414 /* spark.png in Resources */,
 				AF0D73F72284271E0005E377 /* irex eye Membrane Normal.png in Resources */,
+				AFD910F5228C1226005FD41E /* SF Fighter Glow.jpg in Resources */,
 				AF0D73FA2284271E0005E377 /* irex eye Diffuse.png in Resources */,
 				AF150B702266364000AF0155 /* Dilpoh Frill Normal.jpg in Resources */,
 				AF6AD8BD228B59FA00F77E3C /* velociraptor Diffuse.png in Resources */,
@@ -694,24 +896,34 @@
 				AF150B742266364000AF0155 /* Dilpoh Diffuse.jpg in Resources */,
 				AFF17027225365C4008F8414 /* Mercury.png in Resources */,
 				AFF17031225365C4008F8414 /* Earth Diffuse.png in Resources */,
+				AFD91115228C246A005FD41E /* piper Specular.jpg in Resources */,
 				AF150B6D2266364000AF0155 /* Dilpoh Specular.jpg in Resources */,
 				AF150B562265D92900AF0155 /* Dinosaur.scnassets in Resources */,
 				AF0D73FB2284271E0005E377 /* irex eye Normal.png in Resources */,
 				AFF1702B225365C4008F8414 /* Jupiter.png in Resources */,
 				AFF1702A225365C4008F8414 /* Venus Emission.png in Resources */,
+				AFD910EE228C1124005FD41E /* Vehicule.scnassets in Resources */,
+				AFD9111F228C290F005FD41E /* StatusView.storyboard in Resources */,
 				AFF1700122534904008F8414 /* Main.storyboard in Resources */,
 				AF150B732266364000AF0155 /* Dilpoh Normal.jpg in Resources */,
+				AFD910F4228C1226005FD41E /* SF Fighter Albedo.jpg in Resources */,
+				AFD91118228C25CE005FD41E /* Vehicule.storyboard in Resources */,
 				AF6AD8BE228B59FA00F77E3C /* velociraptor Specular.png in Resources */,
 				AF150B602265D97A00AF0155 /* Tyrex Diffuse.jpg in Resources */,
 				AFD910CB228BEE43005FD41E /* triceratops body Diffuse.png in Resources */,
 				AFD910C5228BEE43005FD41E /* triceratops Eyes Roughness.png in Resources */,
+				AFD91107228C1D18005FD41E /* lamborginhi Aventador Diffuse.jpeg in Resources */,
+				AFD910F6228C1226005FD41E /* SF Fighter Normal.tga in Resources */,
 				AF150B92226640DF00AF0155 /* Deinonychus Diffuse.png in Resources */,
+				AFD910E8228BFDD9005FD41E /* globe Normal.png in Resources */,
 				AF150B5F2265D97A00AF0155 /* Tyrex eyes Diffuse.jpg in Resources */,
 				AFD910CA228BEE43005FD41E /* triceratops Eyes Normal.png in Resources */,
 				AF0D73F92284271E0005E377 /* irex claw spiked Diffuse.png in Resources */,
 				AFF1702E225365C4008F8414 /* Mars.png in Resources */,
 				AFD910C4228BEE43005FD41E /* triceratops Eyes Diffuse.png in Resources */,
+				AFD910FE228C148D005FD41E /* submarine Ambient Occlusion.png in Resources */,
 				AFF17024225365C4008F8414 /* Stars.png in Resources */,
+				AFD910EB228BFDD9005FD41E /* globe Metalness.png in Resources */,
 				AF150B5C2265D97A00AF0155 /* Tyrex Specular.png in Resources */,
 				AF150B8F226640DF00AF0155 /* Deinonychus Specular.png in Resources */,
 				AFF17032225365C4008F8414 /* Venus Diffuse.png in Resources */,
@@ -748,6 +960,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9EA7AE2281D7FC001E5E71 /* StatusViewController.swift in Sources */,
+				AFD9111B228C27ED005FD41E /* VehiculeViewController.swift in Sources */,
 				AF9587D122671ACF00E7FDBB /* PopoverTableViewCell.swift in Sources */,
 				AFD2BC9E225629BF00292DFE /* HTTPTask.swift in Sources */,
 				AF9EA7A92281D35D001E5E71 /* StatusView.swift in Sources */,
@@ -767,6 +980,7 @@
 				AFF16FFE22534904008F8414 /* SolarSystemViewController.swift in Sources */,
 				AFD2BC94225628DA00292DFE /* URLParameterEncoder.swift in Sources */,
 				AF9A9AFE225C95A900975672 /* Constant.swift in Sources */,
+				AFD9111D228C288E005FD41E /* VehiculeView.swift in Sources */,
 				AFF16FFA22534904008F8414 /* AppDelegate.swift in Sources */,
 				AF9EA7A72281D2BC001E5E71 /* DinosaurView.swift in Sources */,
 				AFD2BC982256295E00292DFE /* WikiAPI.swift in Sources */,

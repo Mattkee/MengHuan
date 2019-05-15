@@ -204,9 +204,8 @@ extension SolarSystemViewController: UIPopoverPresentationControllerDelegate {
         switch segue.identifier {
         case "showPopover":
             guard let popover = segue.destination as? PopoverSelectorTableViewController else { return }
-            popover.isSolarSystem = true
-            popover.solarSystem = self.solarSystem
-            popover.planetSelected = { [weak self] data in
+            popover.element = self.solarSystem
+            popover.elementSelected = { [weak self] data in
                 self?.planet = data
             }
         case "wikiInformation":

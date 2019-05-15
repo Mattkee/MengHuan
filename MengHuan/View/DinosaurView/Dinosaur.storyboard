@@ -42,7 +42,7 @@
                                     <constraint firstAttribute="height" constant="85" id="jUN-ge-15f"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="FhW-FU-Ljb" kind="embed" identifier="statusSegue" id="feN-g2-Jwa"/>
+                                    <segue destination="Vmm-n5-oEq" kind="embed" identifier="statusSegue" id="feN-g2-Jwa"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -93,115 +93,6 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="201.5625"/>
         </scene>
-        <!--Status View Controller-->
-        <scene sceneID="ocu-Ha-sWw">
-            <objects>
-                <viewController id="FhW-FU-Ljb" customClass="StatusViewController" customModule="MengHuan" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="q3k-N9-iT3" customClass="StatusView" customModule="MengHuan" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtz-ge-C0J">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="DnH-lW-x2E">
-                                        <rect key="frame" x="25" y="20" width="364" height="45"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkG-be-B6B">
-                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="D1W-Qo-qbT"/>
-                                                    <constraint firstAttribute="width" constant="45" id="pv4-v8-eLx"/>
-                                                </constraints>
-                                                <state key="normal" image="Back Button"/>
-                                                <connections>
-                                                    <action selector="backAction:" destination="FhW-FU-Ljb" eventType="touchUpInside" id="l8w-VG-PvQ"/>
-                                                </connections>
-                                            </button>
-                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V18-ti-fUq">
-                                                <rect key="frame" x="48" y="0.0" width="268" height="45"/>
-                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pIi-Hg-wPf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="130" translatesAutoresizingMaskIntoConstraints="NO" id="2P9-Nz-YxK">
-                                                            <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gOQ-wa-Pdl">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
-                                                                    <subviews>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-Cg-RTe">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
-                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                            <nil key="highlightedColor"/>
-                                                                        </label>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="bottom" secondItem="Rpg-Cg-RTe" secondAttribute="bottom" id="BTk-qc-I9G"/>
-                                                                        <constraint firstItem="Rpg-Cg-RTe" firstAttribute="top" secondItem="gOQ-wa-Pdl" secondAttribute="top" id="bU8-qg-Unz"/>
-                                                                        <constraint firstItem="Rpg-Cg-RTe" firstAttribute="leading" secondItem="gOQ-wa-Pdl" secondAttribute="leading" id="uwh-Mt-XCn"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="Rpg-Cg-RTe" secondAttribute="trailing" id="wy0-Do-qJS"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
-                                                        </stackView>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="2P9-Nz-YxK" firstAttribute="leading" secondItem="pIi-Hg-wPf" secondAttribute="leading" id="eat-pT-wvO"/>
-                                                        <constraint firstAttribute="bottom" secondItem="2P9-Nz-YxK" secondAttribute="bottom" id="muW-2h-hAa"/>
-                                                        <constraint firstItem="2P9-Nz-YxK" firstAttribute="top" secondItem="pIi-Hg-wPf" secondAttribute="top" id="td4-Cq-Y12"/>
-                                                        <constraint firstAttribute="trailing" secondItem="2P9-Nz-YxK" secondAttribute="trailing" id="vhv-Ty-UdK"/>
-                                                    </constraints>
-                                                </view>
-                                                <blurEffect style="light"/>
-                                            </visualEffectView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOK-Qv-Act">
-                                                <rect key="frame" x="319" y="0.0" width="45" height="45"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="45" id="4mH-vZ-Gf1"/>
-                                                    <constraint firstAttribute="width" constant="45" id="V2P-cC-t2t"/>
-                                                </constraints>
-                                                <state key="normal" image="refresh"/>
-                                                <connections>
-                                                    <action selector="refreshButton:" destination="FhW-FU-Ljb" eventType="touchUpInside" id="UzH-sD-LKK"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="DnH-lW-x2E" firstAttribute="top" secondItem="dtz-ge-C0J" secondAttribute="top" constant="20" id="C7M-nw-cEq"/>
-                                    <constraint firstAttribute="trailing" secondItem="DnH-lW-x2E" secondAttribute="trailing" constant="25" id="GJL-8B-gVg"/>
-                                    <constraint firstAttribute="bottom" secondItem="DnH-lW-x2E" secondAttribute="bottom" constant="20" id="TFF-HR-1sh"/>
-                                    <constraint firstItem="DnH-lW-x2E" firstAttribute="leading" secondItem="dtz-ge-C0J" secondAttribute="leading" constant="25" id="q8f-ja-AW6"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dtz-ge-C0J" firstAttribute="leading" secondItem="uMa-6T-LTF" secondAttribute="leading" id="0ga-G6-kwx"/>
-                            <constraint firstItem="dtz-ge-C0J" firstAttribute="trailing" secondItem="uMa-6T-LTF" secondAttribute="trailing" id="1BU-fZ-exS"/>
-                            <constraint firstItem="dtz-ge-C0J" firstAttribute="top" secondItem="q3k-N9-iT3" secondAttribute="top" id="f7V-NR-LbY"/>
-                            <constraint firstAttribute="bottom" secondItem="dtz-ge-C0J" secondAttribute="bottom" id="uyk-WY-dSy"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="uMa-6T-LTF"/>
-                        <connections>
-                            <outlet property="blurView" destination="V18-ti-fUq" id="elH-Z4-bWs"/>
-                            <outlet property="refreshButton" destination="yOK-Qv-Act" id="CJE-nc-V9a"/>
-                            <outlet property="statusLabel" destination="Rpg-Cg-RTe" id="uDy-Iu-2uX"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="statusView" destination="q3k-N9-iT3" id="ypE-mM-tH9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dqb-KA-QzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="-272.87946428571428"/>
-        </scene>
         <!--Popover-->
         <scene sceneID="oSc-rP-yF4">
             <objects>
@@ -218,10 +109,16 @@
             </objects>
             <point key="canvasLocation" x="1033" y="220"/>
         </scene>
+        <!--StatusView-->
+        <scene sceneID="hgP-R8-SXN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StatusView" id="Vmm-n5-oEq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Laa-YX-Edu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="-272.87946428571428"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Back Button" width="47" height="47"/>
         <image name="add" width="48" height="48"/>
-        <image name="refresh" width="20" height="23"/>
     </resources>
 </document>

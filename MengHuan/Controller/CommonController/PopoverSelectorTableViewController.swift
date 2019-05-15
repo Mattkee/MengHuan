@@ -11,14 +11,11 @@ import UIKit
 
 class PopoverSelectorTableViewController: UITableViewController {
 
-    var dinosaurSelected: ((_ data: String) -> Void )?
-    var planetSelected: ((_ data: String) -> Void )?
+    var elementSelected: ((_ data: String) -> Void )?
 
     var isDinosaur: Bool = false
-    var isSolarSystem: Bool = false
 
-    var dinosaur = [String]()
-    var solarSystem = [String]()
+    var element = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,25 +30,19 @@ class PopoverSelectorTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        if isDinosaur {
-            return dinosaur.count
-        } else if isSolarSystem {
-            return solarSystem.count
-        } else {
-            return 0
-        }
+        return element.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DinosaurCell", for: indexPath) as? PopoverTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PopoverCell", for: indexPath) as? PopoverTableViewCell else {
             return UITableViewCell()
         }
 
         // Configure the cell...
         if isDinosaur {
-            cell.elementToDisplay = dinosaur[indexPath.row]
-        } else if isSolarSystem {
-            cell.elementToDisplay = solarSystem[indexPath.row]
+            cell.elementToDisplay = element[indexPath.row]
+        } else {
+            cell.elementToDisplay = element[indexPath.row]
             cell.popoverImage.isHidden = true
         }
 
@@ -63,14 +54,8 @@ class PopoverSelectorTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isDinosaur {
-            let selected = dinosaur[indexPath.row]
-            dinosaurSelected?(selected)
+            let selected = element[indexPath.row]
+            elementSelected?(selected)
             dismiss(animated: false, completion: nil)
-        } else if isSolarSystem {
-            let selected = solarSystem[indexPath.row]
-            planetSelected?(selected)
-            dismiss(animated: false, completion: nil)
-        }
     }
 }
