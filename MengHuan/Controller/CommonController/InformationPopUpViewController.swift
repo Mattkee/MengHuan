@@ -63,7 +63,11 @@ extension InformationPopUpViewController {
     }
 
     func withoutWikiInfo(title: String, description: String, bodyText: String) {
-        popUpView.imageWiki.image = UIImage(imageLiteralResourceName: title)
+        if title == "SF Fighter" || title == "SHC X" {
+            popUpView.imageWiki.image = UIImage(imageLiteralResourceName: "Virtuel reality")
+        } else {
+            popUpView.imageWiki.image = UIImage(imageLiteralResourceName: title)
+        }
         popUpView.wikiTitle.text = title
         popUpView.wikiDescription.text = description
         popUpView.wikiText.text = bodyText

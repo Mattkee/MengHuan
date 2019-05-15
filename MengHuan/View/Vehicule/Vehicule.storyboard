@@ -77,7 +77,7 @@
                 </tapGestureRecognizer>
                 <pinchGestureRecognizer id="aUI-ah-wzM">
                     <connections>
-                        <action selector="dinosaurScale:" destination="aAV-eq-bEI" id="TbO-fI-ISU"/>
+                        <action selector="vehiculeScale:" destination="aAV-eq-bEI" id="kos-Dt-EI1"/>
                     </connections>
                 </pinchGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="05x-U9-ARN">
@@ -87,7 +87,7 @@
                 </panGestureRecognizer>
                 <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="ucD-qb-6qA">
                     <connections>
-                        <action selector="dinosaurMove:" destination="aAV-eq-bEI" id="hod-RW-i6x"/>
+                        <action selector="vehiculeMove:" destination="aAV-eq-bEI" id="Pwq-Qd-08m"/>
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
