@@ -72,7 +72,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Z66-Li-HpA" kind="presentation" identifier="presentSolarSystem" modalTransitionStyle="flipHorizontal" id="lJo-TA-hj5"/>
+                                            <segue destination="Z66-Li-HpA" kind="presentation" identifier="showSolarSystem" modalTransitionStyle="flipHorizontal" id="lJo-TA-hj5"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="aQL-IF-bSi">
@@ -82,11 +82,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Earth Planet" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-v8-dCE">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vehicule" translatesAutoresizingMaskIntoConstraints="NO" id="YO1-v8-dCE">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="79.5"/>
                                                     <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Planète Terre" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG9-cf-yFX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Véhicule" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG9-cf-yFX">
                                                     <rect key="frame" x="40" y="22" width="334" height="36"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -104,7 +104,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="zCU-pY-w1N" kind="presentation" modalTransitionStyle="flipHorizontal" id="gZa-Zm-Osp"/>
+                                            <segue destination="zCU-pY-w1N" kind="presentation" identifier="showVehicule" modalTransitionStyle="flipHorizontal" id="gZa-Zm-Osp"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="8b3-3Q-Q2e">
@@ -135,8 +135,27 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Lb8-WD-brr" kind="presentation" identifier="presentDinosaur" modalTransitionStyle="flipHorizontal" id="oSj-pk-W2l"/>
+                                            <segue destination="Lb8-WD-brr" kind="presentation" identifier="showDinosaur" modalTransitionStyle="flipHorizontal" id="oSj-pk-W2l"/>
                                         </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="footerCell" textLabel="yqV-9Z-J2U" style="IBUITableViewCellStyleDefault" id="maO-1h-L3T">
+                                        <rect key="frame" x="0.0" y="490" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="maO-1h-L3T" id="8J2-DT-4VL">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yqV-9Z-J2U">
+                                                    <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -178,10 +197,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Earth Planet" width="658" height="659"/>
         <image name="Logo" width="637" height="166"/>
         <image name="Solar system" width="960" height="600"/>
         <image name="Virtuel reality" width="960" height="640"/>
         <image name="tyrannosaurus" width="800" height="800"/>
+        <image name="vehicule" width="1280" height="800"/>
     </resources>
 </document>

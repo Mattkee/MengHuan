@@ -17,7 +17,13 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
 
     var anchor: ARAnchor?
     var center: CGPoint?
-    var selectedDinosaur: String?
+    var selectedDinosaur: String? {
+        didSet {
+            if self.selectedDinosaur != nil {
+                self.addItem()
+            }
+        }
+    }
 
     var dinosaur: [String] = {
         guard let modelsURL = Bundle.main.url(forResource: "Dinosaur.scnassets", withExtension: nil) else {return []}
@@ -206,11 +212,12 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
-    func addItem(_ postion: SCNVector3) {
+    func addItem() {
         if let selectedItem = self.selectedDinosaur {
             guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn") else { return }
             guard let node = dinosaurScene.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
-            node.position = postion
+            guard let position = self.staticFocus?.position else { return }
+            node.position = position
             sceneView.scene.rootNode.addChildNode(node)
             self.dinosaurView.dinosaurSelectButton.isHidden = true
             self.statusViewController.statusView.blurView.isHidden = true
@@ -253,11 +260,6 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
             popover.element = self.dinosaur
             popover.elementSelected = { [weak self] data in
                 self?.selectedDinosaur = data
-                if self?.selectedDinosaur != nil {
-                    guard let position = self?.staticFocus?.position else { return }
-                    let dinosaurPosition = position
-                    self?.addItem(dinosaurPosition)
-                }
             }
         case "wikiInformation":
             guard let popup = segue.destination as? InformationPopUpViewController else { return }
@@ -266,6 +268,8 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
             } else {
                 popup.elementName = self.selectedDinosaur
             }
+        case "statusSegue":
+            print("status bar ok")
         default :
             print("error")
         }

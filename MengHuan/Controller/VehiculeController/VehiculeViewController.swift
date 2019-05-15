@@ -17,7 +17,13 @@ class VehiculeViewController: UIViewController, ARSCNViewDelegate {
 
     var anchor: ARAnchor?
     var center: CGPoint?
-    var selectedVehicule: String?
+    var selectedVehicule: String? {
+        didSet {
+            if self.selectedVehicule != nil {
+                self.addItem()
+            }
+        }
+    }
 
     var vehicule: [String] = {
         guard let modelsURL = Bundle.main.url(forResource: "Vehicule.scnassets", withExtension: nil) else {return []}
@@ -206,11 +212,12 @@ class VehiculeViewController: UIViewController, ARSCNViewDelegate {
         }
     }
 
-    func addItem(_ postion: SCNVector3) {
+    func addItem() {
         if let selectedItem = self.selectedVehicule {
             guard let vehiculeScene = SCNScene(named: "Vehicule.scnassets/\(selectedItem).scn") else { return }
             guard let node = vehiculeScene.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
-            node.position = postion
+            guard let position = self.staticFocus?.position else { return }
+            node.position = position
             sceneView.scene.rootNode.addChildNode(node)
             self.vehiculeView.vehiculeSelectButton.isHidden = true
             self.statusViewController.statusView.blurView.isHidden = true
@@ -253,11 +260,6 @@ extension VehiculeViewController: UIPopoverPresentationControllerDelegate {
             popover.element = self.vehicule
             popover.elementSelected = { [weak self] data in
                 self?.selectedVehicule = data
-                if self?.selectedVehicule != nil {
-                    guard let position = self?.staticFocus?.position else { return }
-                    let dinosaurPosition = position
-                    self?.addItem(dinosaurPosition)
-                }
             }
         case "wikiInformation":
             guard let popup = segue.destination as? InformationPopUpViewController else { return }
@@ -266,6 +268,8 @@ extension VehiculeViewController: UIPopoverPresentationControllerDelegate {
             } else {
                 popup.elementName = self.selectedVehicule
             }
+        case "statusSegue":
+            print("status bar ok")
         default :
             print("error")
         }
