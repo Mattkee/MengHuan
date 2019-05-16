@@ -43,6 +43,8 @@ Cette scène sur le même modèle que pour les dinosaures va nous permettre de p
 
 Dans MengHuan selon la scène choisie nous allons pouvoir visualiser un ou plusieurs objet 3D, c'est objets seront affichés en réalité augmentée, c'est à dire que vous allez pouvoir les visualiser chez vous dans une pièce ou pourquoi pas dans votre jardin et tourner autour afin de les étudier sous tous les angles.
 
+![élément 3D](ImagesReadme/solarSystem2.PNG)
+
 >> 2. La manipulation de ces objets en utilisant des « gestures » sur l’écran tactile
 
 Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été prévu pour facilité l'intérraction avec ces objets.
