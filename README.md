@@ -111,6 +111,8 @@ Nous pouvons arrêter la rotation des planètes à l'aide du bouton pause lectur
 
 Pour aller plus loin nous pouvons alors sélectionner une planète, soit en pressant plus longuement sur une planète, soit en la sélectionnant à l'aide du menu s'ouvrant lorsqu'on touche le bouton "système", le bouton prendra alors le nom de la planète selectionnée et seule celle-ci apparaitra.
 
-> Voici une animation présentant cette fonctionnalité.
+> Voici une animation présentant cette fonctionnalité et une image d'exemple.
 
-![selection planète](ImagesReadme/planetSelection.gif)
+![selection planète](ImagesReadme/planetSelection.gif)                  ![image Terre](ImagesReadme/earth.PNG)
+
+
