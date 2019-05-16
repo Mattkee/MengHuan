@@ -113,7 +113,8 @@ Pour aller plus loin nous pouvons alors sélectionner une planète, soit en pres
 
 > Voici une animation présentant cette fonctionnalité et une image d'exemple.
 
-![selection planète](ImagesReadme/planetSelection.gif)                  ![image Terre](ImagesReadme/earth.PNG)
+![selection planète](ImagesReadme/planetSelection.gif)  
+![image Terre](ImagesReadme/earth.PNG)
 
 Vous pouvez retourner retourner à l'écran d'accueil par le biais du bouton retour en haut à gauche.
 
@@ -131,3 +132,7 @@ Si vous touchez alors l'écran un focus fixe apparait ainsi que le bouton de sé
 Le menu qui apparait laissera apparaître uniquement les objets 3D correspondant à la scène choisie.
 
 ![image selection](ImagesReadme/dinosaurSelect.PNG)
+
+lorsque la sélection est faite seul l'élément sélectionné apparaitra sur la position du focus fixe.
+
+![element selection](ImagesReadme/triceratops.PNG)
