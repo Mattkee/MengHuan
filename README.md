@@ -50,6 +50,7 @@ Dans MengHuan selon la scène choisie nous allons pouvoir visualiser un ou plusi
 Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été prévu pour facilité l'intérraction avec ces objets.
 
 **Voici ces différentes gestures :**
+
 * La "TapGesture":
     * Elle va permettre si vous taper avec un doigt sur un élément d'obtenir des informations Wikipédia sur cette élément
     > Voici une animation présentant cette "gesture".
@@ -62,7 +63,12 @@ Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été pr
     ![image du focus](ImagesReadme/staticFocus.PNG)
 
     * Si vous tapez deux fois rapidement sur la scène du système solaire, cela va replacer l'élément là ou vous avez tapé.
+
 * La "PinchGesture": Elle va permettre si vous posez deux doigts sur l'écran, en les rapprochant ou les éloignant de modifier la taille de l'élément observé.
+> Voici une animation présentant cette "gesture".
+
+![démonstration du pinch](ImagesReadme/earthRotationPinch.gif)
+
 * La "PanGesture": Elle va permettre en posant deux doigts sur l'écran, de balayer à droite ou à gauche et ainsi faire tourner l'objet pour observer un autre angle.
 * La "LongPressGesture": Elle va permettre en restant appuyé sur un élément avec le doigt soit:
     * De séléctionner un élément pour le système solaire
