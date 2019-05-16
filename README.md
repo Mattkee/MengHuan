@@ -85,7 +85,13 @@ Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été pr
 
 Dans MengHuan en tapant sur un élément, nous pouvons obtenir des informations Wikipédia par le biais d'un volet apparaissant en bas de l'écran.
 
-![information Wikipédia](ImagesReadme/wikiResult.PNG)
+    > D'abord un film apparait nous signifiant que la recherche Wikipédia est en cours.
+
+    ![recherche wiki](ImagesReadme/search.PNG)
+
+    >  Ensuite les informations apparaîssent
+
+    ![information Wikipédia](ImagesReadme/wikiResult.PNG)
 
 >> 4. L’accès à la page Wikipédia de l’élément observé
 
