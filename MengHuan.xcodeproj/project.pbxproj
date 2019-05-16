@@ -208,6 +208,7 @@
 		AF9FDF9E22590525009E58C7 /* WikiInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfoService.swift; sourceTree = "<group>"; };
 		AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfo.swift; sourceTree = "<group>"; };
 		AFB8FA34228D3764000459F6 /* VirtualObjectInterraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInterraction.swift; sourceTree = "<group>"; };
+		AFB8FA36228D7396000459F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		AFD2BC91225628A800292DFE /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
@@ -651,6 +652,7 @@
 				AFD91133228CB08F005FD41E /* MengHuanTests */,
 				AFF16FF722534904008F8414 /* Products */,
 				AF9EA7A422817C3E001E5E71 /* .swiftlint.yml */,
+				AFB8FA36228D7396000459F6 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
