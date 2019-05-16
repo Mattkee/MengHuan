@@ -7,6 +7,8 @@ MengHuan est une application en réalité augmentée, permettant aux enfants ou 
 * Les dinosaures
 * Les véhicules
 
+![page d'accueil'](ImagesReadme/accueil.PNG)
+
 Chaque sujet va permettre d’étudier et de manipuler des scènes permettant d’en apprendre un peu plus sur des espèces disparues, notre Système, ou de voir des véhicules du quotidien sous un autre angle.
 
 **L'application se compose de plusieurs fonctionnalités principales :**
