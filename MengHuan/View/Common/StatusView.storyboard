@@ -47,7 +47,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rpg-Cg-RTe">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="268" height="45"/>
+                                                                            <rect key="frame" x="10" y="0.0" width="248" height="45"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,8 +58,8 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="bottom" secondItem="Rpg-Cg-RTe" secondAttribute="bottom" id="BTk-qc-I9G"/>
                                                                         <constraint firstItem="Rpg-Cg-RTe" firstAttribute="top" secondItem="gOQ-wa-Pdl" secondAttribute="top" id="bU8-qg-Unz"/>
-                                                                        <constraint firstItem="Rpg-Cg-RTe" firstAttribute="leading" secondItem="gOQ-wa-Pdl" secondAttribute="leading" id="uwh-Mt-XCn"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="Rpg-Cg-RTe" secondAttribute="trailing" id="wy0-Do-qJS"/>
+                                                                        <constraint firstItem="Rpg-Cg-RTe" firstAttribute="leading" secondItem="gOQ-wa-Pdl" secondAttribute="leading" constant="10" id="uwh-Mt-XCn"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="Rpg-Cg-RTe" secondAttribute="trailing" constant="10" id="wy0-Do-qJS"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>

@@ -63,6 +63,7 @@
 		AF9FDF9F22590525009E58C7 /* WikiInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9FDF9E22590525009E58C7 /* WikiInfoService.swift */; };
 		AF9FDFA1225909BE009E58C7 /* WikiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */; };
 		AFB8FA35228D3764000459F6 /* VirtualObjectInterraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8FA34228D3764000459F6 /* VirtualObjectInterraction.swift */; };
+		AFB8FA38228DA94A000459F6 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8FA37228DA94A000459F6 /* MainTableViewCell.swift */; };
 		AFCAEBBC22830ECD0079EE26 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */; };
 		AFD2BC92225628A800292DFE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC91225628A800292DFE /* ParameterEncoding.swift */; };
 		AFD2BC94225628DA00292DFE /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */; };
@@ -209,6 +210,7 @@
 		AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfo.swift; sourceTree = "<group>"; };
 		AFB8FA34228D3764000459F6 /* VirtualObjectInterraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInterraction.swift; sourceTree = "<group>"; };
 		AFB8FA36228D7396000459F6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AFB8FA37228DA94A000459F6 /* MainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		AFD2BC91225628A800292DFE /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 			isa = PBXGroup;
 			children = (
 				AFF16FFF22534904008F8414 /* Main.storyboard */,
+				AFB8FA37228DA94A000459F6 /* MainTableViewCell.swift */,
 				AFF1700422534907008F8414 /* LaunchScreen.storyboard */,
 				AF94D11122575EC7005D2B25 /* InformationPopUp.storyboard */,
 				AF84627822786ED600D9BE12 /* PopUpView.swift */,
@@ -1032,6 +1035,7 @@
 				AF8311BB225777D4004D3426 /* InformationPopUpViewController.swift in Sources */,
 				AFF16FFE22534904008F8414 /* SolarSystemViewController.swift in Sources */,
 				AFD2BC94225628DA00292DFE /* URLParameterEncoder.swift in Sources */,
+				AFB8FA38228DA94A000459F6 /* MainTableViewCell.swift in Sources */,
 				AF9A9AFE225C95A900975672 /* Constant.swift in Sources */,
 				AFD9111D228C288E005FD41E /* VehiculeView.swift in Sources */,
 				AFF16FFA22534904008F8414 /* AppDelegate.swift in Sources */,
