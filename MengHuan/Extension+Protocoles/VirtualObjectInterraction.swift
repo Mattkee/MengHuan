@@ -19,13 +19,33 @@ protocol VirtualObjectInterraction: class {
     var selectedElement: String { get set }
     // MARK: - Methods Declaration
     func addFocus(sceneView scene: ARSCNView)
+    func refresh(sceneView scene: ARSCNView, _ positions: inout [SCNVector3])
+    func addItemSceneView(sceneView scene: ARSCNView, node staticFocus: inout SCNNode?, with typeScene: String)
     func addStaticFocus(sceneView scene: ARSCNView, node staticFocus: inout SCNNode?)
     func getAveragePosition(from positions: ArraySlice<SCNVector3>) -> SCNVector3
+    func tappedSceneView(sceneView scene: ARSCNView, tapGesture sender: UITapGestureRecognizer, with currentNode: inout SCNNode?, with staticFocus: inout SCNNode?, with element: inout String)
     func pinchSceneView(sceneView scene: ARSCNView, pinchGesture sender: UIPinchGestureRecognizer)
+    func rotateSceneView(sceneView scene: ARSCNView, rotateGesture sender: UIPanGestureRecognizer, with selectedElement: String)
+    func moveNodeSceneView(sceneView scene: ARSCNView, pressGesture sender: UILongPressGestureRecognizer, with selectedElement: String, with currentNode: inout SCNNode?)
 }
 
 // MARK: - Methodes
 extension VirtualObjectInterraction {
+    func refresh(sceneView scene: ARSCNView, _ positions: inout [SCNVector3]) {
+        scene.scene.rootNode.enumerateChildNodes { (node, _) in
+            node.removeFromParentNode()
+        }
+        addFocus(sceneView: scene)
+        selectedElement = ""
+        positions = [SCNVector3]()
+    }
+    func addItemSceneView(sceneView scene: ARSCNView, node staticFocus: inout SCNNode?, with typeScene: String) {
+        guard let needScene = SCNScene(named: "\(typeScene).scnassets/\(selectedElement).scn") else { return }
+        guard let node = needScene.rootNode.childNode(withName: selectedElement, recursively: false) else { return }
+        guard let position = staticFocus?.position else { return }
+        node.position = position
+        scene.scene.rootNode.addChildNode(node)
+    }
     func addFocus(sceneView scene: ARSCNView) {
         guard let focusScene = SCNScene(named: "Common.scnassets/focus.scn") else { return }
         guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }

@@ -80,7 +80,8 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate, VirtualObject
         statusViewController.statusView.refreshButton.isHidden = true
 
         statusViewController.refresh = { [unowned self] in
-            self.refresh()
+            self.dinosaurView.dinosaurSelectButton.isHidden = true
+            self.refresh(sceneView: self.sceneView, &self.positions)
         }
         statusViewController.backAction = { [unowned self] in
             self.backAction()
@@ -166,27 +167,12 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
 
 // MARK: - Methods
 extension DinosaurViewController {
-
-    func refresh() {
-        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-            node.removeFromParentNode()
-        }
-        dinosaurView.dinosaurSelectButton.isHidden = true
-        addFocus(sceneView: sceneView)
-        selectedElement = ""
-        positions = [SCNVector3]()
-    }
-
     func backAction() {
         dismiss(animated: false, completion: nil)
     }
 
     func addItem() {
-        guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedElement).scn") else { return }
-        guard let node = dinosaurScene.rootNode.childNode(withName: selectedElement, recursively: false) else { return }
-        guard let position = self.staticFocus?.position else { return }
-        node.position = position
-        sceneView.scene.rootNode.addChildNode(node)
+        addItemSceneView(sceneView: sceneView, node: &staticFocus, with: "Dinosaur")
         self.dinosaurView.dinosaurSelectButton.isHidden = true
         self.statusViewController.statusView.blurView.isHidden = true
     }

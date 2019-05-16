@@ -80,7 +80,8 @@ class VehiculeViewController: UIViewController, ARSCNViewDelegate, VirtualObject
         statusViewController.statusView.refreshButton.isHidden = true
 
         statusViewController.refresh = { [unowned self] in
-            self.refresh()
+            self.vehiculeView.vehiculeSelectButton.isHidden = true
+            self.refresh(sceneView: self.sceneView, &self.positions)
         }
         statusViewController.backAction = { [unowned self] in
             self.backAction()
@@ -166,27 +167,12 @@ extension VehiculeViewController: UIPopoverPresentationControllerDelegate {
 
 // MARK: - Methods
 extension VehiculeViewController {
-
-    func refresh() {
-        sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
-            node.removeFromParentNode()
-        }
-        vehiculeView.vehiculeSelectButton.isHidden = true
-        addFocus(sceneView: sceneView)
-        selectedElement = ""
-        positions = [SCNVector3]()
-    }
-
     func backAction() {
         dismiss(animated: false, completion: nil)
     }
 
     func addItem() {
-        guard let vehiculeScene = SCNScene(named: "Vehicule.scnassets/\(selectedElement).scn") else { return }
-        guard let node = vehiculeScene.rootNode.childNode(withName: selectedElement, recursively: false) else { return }
-        guard let position = self.staticFocus?.position else { return }
-        node.position = position
-        sceneView.scene.rootNode.addChildNode(node)
+        addItemSceneView(sceneView: sceneView, node: &staticFocus, with: "Vehicule")
         self.vehiculeView.vehiculeSelectButton.isHidden = true
         self.statusViewController.statusView.blurView.isHidden = true
     }
