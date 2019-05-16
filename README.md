@@ -88,3 +88,5 @@ Dans MengHuan en tapant sur un élément, nous pouvons obtenir des informations 
 >> 4. L’accès à la page Wikipédia de l’élément observé
 
 Si le volet d'informations Wikipédia n'est pas suffisant, il suffit de poser le doigt dessus pour être dirigé directement sur la page Wikipédia concernée.
+
+![Wikipédia](ImagesReadme/wikiPage.PNG)
