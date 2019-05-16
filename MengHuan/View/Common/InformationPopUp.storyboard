@@ -48,6 +48,12 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="En Savoir plus..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoC-Z9-TuH">
+                                        <rect key="frame" x="146.5" y="382" width="121.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Vai-ir-N99">
                                         <rect key="frame" x="197" y="221.5" width="20" height="20"/>
                                     </activityIndicatorView>
@@ -69,7 +75,9 @@
                                     <constraint firstAttribute="trailing" secondItem="8Fn-34-EJx" secondAttribute="trailing" constant="30" id="GH2-MN-ULV"/>
                                     <constraint firstItem="OMk-QQ-JRW" firstAttribute="leading" secondItem="6gX-nq-Lkb" secondAttribute="leading" constant="20" id="P1B-0Z-Hez"/>
                                     <constraint firstItem="Vai-ir-N99" firstAttribute="centerY" secondItem="6gX-nq-Lkb" secondAttribute="centerY" id="PNx-9S-YbJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="LoC-Z9-TuH" secondAttribute="bottom" constant="60" id="YgS-VY-5VZ"/>
                                     <constraint firstAttribute="trailing" secondItem="alF-hD-Us0" secondAttribute="trailing" id="b23-NW-rJs"/>
+                                    <constraint firstItem="LoC-Z9-TuH" firstAttribute="centerX" secondItem="6gX-nq-Lkb" secondAttribute="centerX" id="cpQ-I0-cda"/>
                                     <constraint firstAttribute="bottom" secondItem="alF-hD-Us0" secondAttribute="bottom" id="efQ-Aj-ODt"/>
                                     <constraint firstItem="8Fn-34-EJx" firstAttribute="leading" secondItem="6gX-nq-Lkb" secondAttribute="leading" constant="30" id="gSb-lE-bY4"/>
                                     <constraint firstItem="Vai-ir-N99" firstAttribute="centerX" secondItem="6gX-nq-Lkb" secondAttribute="centerX" id="hRu-Tn-19b"/>
@@ -83,6 +91,7 @@
                                     <outlet property="activityIndicator" destination="Vai-ir-N99" id="xaG-t0-Dcs"/>
                                     <outlet property="imageWiki" destination="alF-hD-Us0" id="o6o-bg-vs9"/>
                                     <outlet property="label" destination="AcF-eS-Yv3" id="11g-Jx-J1J"/>
+                                    <outlet property="linkLabel" destination="LoC-Z9-TuH" id="ISX-nf-7Iu"/>
                                     <outlet property="wikiDescription" destination="OMk-QQ-JRW" id="vEQ-cG-KYO"/>
                                     <outlet property="wikiText" destination="8Fn-34-EJx" id="eI6-ur-2Kr"/>
                                     <outlet property="wikiTitle" destination="X0q-q4-MV8" id="Xwy-So-jmq"/>

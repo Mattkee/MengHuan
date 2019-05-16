@@ -60,6 +60,7 @@ extension InformationPopUpViewController {
         self.popUpView.wikiTitle.isHidden = isReady
         self.popUpView.wikiDescription.isHidden = isReady
         self.popUpView.wikiText.isHidden = isReady
+        self.popUpView.linkLabel.isHidden = isReady
     }
 
     func withoutWikiInfo(title: String, description: String, bodyText: String) {

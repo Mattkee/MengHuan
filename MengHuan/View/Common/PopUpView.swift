@@ -17,6 +17,7 @@ class PopUpView: UIView {
     @IBOutlet weak var wikiText: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var linkLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
