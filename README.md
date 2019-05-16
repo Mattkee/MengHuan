@@ -111,9 +111,12 @@ Nous pouvons arrêter la rotation des planètes à l'aide du bouton pause lectur
 
 Pour aller plus loin nous pouvons alors sélectionner une planète, soit en pressant plus longuement sur une planète, soit en la sélectionnant à l'aide du menu s'ouvrant lorsqu'on touche le bouton "système", le bouton prendra alors le nom de la planète selectionnée et seule celle-ci apparaitra.
 
-> Voici une animation présentant cette fonctionnalité et une image d'exemple.
+> Voici une animation présentant cette fonctionnalité.
 
-![selection planète](ImagesReadme/planetSelection.gif)  
+![selection planète](ImagesReadme/planetSelection.gif)
+
+> Voici une image d'exemple.
+
 ![image Terre](ImagesReadme/earth.PNG)
 
 Vous pouvez retourner retourner à l'écran d'accueil par le biais du bouton retour en haut à gauche.
@@ -136,3 +139,14 @@ Le menu qui apparait laissera apparaître uniquement les objets 3D correspondant
 lorsque la sélection est faite seul l'élément sélectionné apparaitra sur la position du focus fixe.
 
 ![element selection](ImagesReadme/triceratops.PNG)
+
+> Voici une animation présentant cette fonctionnalité.
+
+![ajout element](ImagesReadme/addVehicule.gif)
+
+Ensuite libre à vous de manipuler l'élement pour l'observer apprendre des informations à son sujet.
+Cette opération est la même quelque soit l'élément sélectionné dans les scènes dinosaures et vehicules
+
+> pour exemple une autre animation avec un dinosaure.
+
+![ajout dinosaure](ImagesReadme/addTriceratops.gif)
