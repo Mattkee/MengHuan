@@ -65,14 +65,19 @@ Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été pr
     * Si vous tapez deux fois rapidement sur la scène du système solaire, cela va replacer l'élément là ou vous avez tapé.
 
 * La "PinchGesture": Elle va permettre si vous posez deux doigts sur l'écran, en les rapprochant ou les éloignant de modifier la taille de l'élément observé.
-> Voici une animation présentant cette "gesture".
+> Voici une animation présentant la "gesture pinch et la "panGesture".
 
 ![démonstration du pinch](ImagesReadme/earthRotationPinch.gif)
 
 * La "PanGesture": Elle va permettre en posant deux doigts sur l'écran, de balayer à droite ou à gauche et ainsi faire tourner l'objet pour observer un autre angle.
+
 * La "LongPressGesture": Elle va permettre en restant appuyé sur un élément avec le doigt soit:
     * De séléctionner un élément pour le système solaire
+
     * De faire disparaitre un élément pour le reposer avec une tap à un autre endroit.
+    > Voici une animation présentant la "longPressGesture".
+    
+    ![démonstration du LongPressGesture](ImagesReadme/longPressMove.gif)
 
 >> 3. La visualisation d’information provenant de Wikipédia
 
