@@ -90,3 +90,13 @@ Dans MengHuan en tapant sur un élément, nous pouvons obtenir des informations 
 Si le volet d'informations Wikipédia n'est pas suffisant, il suffit de poser le doigt dessus pour être dirigé directement sur la page Wikipédia concernée.
 
 ![Wikipédia](ImagesReadme/wikiPage.PNG)
+
+### Fonctionnement étape par étape
+
+1. Le Système Solaire
+
+Dès l'apparition de la scène, le système solaire est affiché, il n'y a pas d'action attendu pour l'afficher.
+
+> Voici une animation présentant le démarrage de la scène.
+
+![système solaire](ImagesReadme/solarSystem.gif)
