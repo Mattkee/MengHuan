@@ -32,9 +32,8 @@ extension WikiInfoService {
         if type == "planet" {
             let searchText = search + " Planète"
             return searchText
-        } else {
-            return search
         }
+        return search
     }
 }
 

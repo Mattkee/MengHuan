@@ -62,6 +62,7 @@
 		AF9EA7AE2281D7FC001E5E71 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9EA7AD2281D7FC001E5E71 /* StatusViewController.swift */; };
 		AF9FDF9F22590525009E58C7 /* WikiInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9FDF9E22590525009E58C7 /* WikiInfoService.swift */; };
 		AF9FDFA1225909BE009E58C7 /* WikiInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */; };
+		AFB8FA35228D3764000459F6 /* VirtualObjectInterraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB8FA34228D3764000459F6 /* VirtualObjectInterraction.swift */; };
 		AFCAEBBC22830ECD0079EE26 /* Popover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */; };
 		AFD2BC92225628A800292DFE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC91225628A800292DFE /* ParameterEncoding.swift */; };
 		AFD2BC94225628DA00292DFE /* URLParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */; };
@@ -206,6 +207,7 @@
 		AF9EA7AD2281D7FC001E5E71 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		AF9FDF9E22590525009E58C7 /* WikiInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfoService.swift; sourceTree = "<group>"; };
 		AF9FDFA0225909BE009E58C7 /* WikiInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiInfo.swift; sourceTree = "<group>"; };
+		AFB8FA34228D3764000459F6 /* VirtualObjectInterraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualObjectInterraction.swift; sourceTree = "<group>"; };
 		AFCAEBBB22830ECD0079EE26 /* Popover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Popover.storyboard; sourceTree = "<group>"; };
 		AFD2BC91225628A800292DFE /* ParameterEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		AFD2BC93225628DA00292DFE /* URLParameterEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLParameterEncoder.swift; sourceTree = "<group>"; };
@@ -355,13 +357,14 @@
 			path = triceratops;
 			sourceTree = "<group>";
 		};
-		AF9A9AF7225C8CB500975672 /* Extension */ = {
+		AF9A9AF7225C8CB500975672 /* Extension+Protocoles */ = {
 			isa = PBXGroup;
 			children = (
 				AF9A9AF8225C8D1C00975672 /* UIViewController+Extension.swift */,
 				AF9A9AFF225C971F00975672 /* UIImage+Extension.swift */,
+				AFB8FA34228D3764000459F6 /* VirtualObjectInterraction.swift */,
 			);
-			path = Extension;
+			path = "Extension+Protocoles";
 			sourceTree = "<group>";
 		};
 		AF9A9AFA225C8DE400975672 /* Alert */ = {
@@ -667,7 +670,7 @@
 				AFF1700F2253498F008F8414 /* View */,
 				AFF1700E22534982008F8414 /* Controller */,
 				AFF17011225349B0008F8414 /* ARKit */,
-				AF9A9AF7225C8CB500975672 /* Extension */,
+				AF9A9AF7225C8CB500975672 /* Extension+Protocoles */,
 				AFF1700D22534963008F8414 /* Supporting Files */,
 			);
 			path = MengHuan;
@@ -1015,6 +1018,7 @@
 				AFD2BCA0225629E000292DFE /* NetworkManager.swift in Sources */,
 				AFD9112D228C84EF005FD41E /* WikiIdPage.swift in Sources */,
 				AFF1703622536A12008F8414 /* HomeTableViewController.swift in Sources */,
+				AFB8FA35228D3764000459F6 /* VirtualObjectInterraction.swift in Sources */,
 				AFD2BC9C225629A300292DFE /* HTTPMethod.swift in Sources */,
 				AF9A9AFC225C8E1800975672 /* DisplayAlert.swift in Sources */,
 				AFD9112B228C839E005FD41E /* WikiIdAPI.swift in Sources */,

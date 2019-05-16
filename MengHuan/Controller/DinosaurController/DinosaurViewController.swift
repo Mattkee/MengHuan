@@ -10,19 +10,38 @@ import UIKit
 import SceneKit
 import ARKit
 
-class DinosaurViewController: UIViewController, ARSCNViewDelegate {
+class DinosaurViewController: UIViewController, ARSCNViewDelegate, VirtualObjectInterraction {
 
     // MARK: - Properties
+    var staticFocus: SCNNode?
     var center: CGPoint?
     var positions = [SCNVector3]()
-    var staticFocus: SCNNode?
     var currentNode: SCNNode?
     var isDetected: Bool = false
-    var element: String?
+    var typeElement: String = ""
 
-    var selectedDinosaur: String? {
+    var element: String = "" {
         didSet {
-            if self.selectedDinosaur != nil {
+            if self.element == "SF Fighter" || self.element == "SHC X" {
+                typeElement = "fiction"
+                isPerform = true
+            } else if self.element != oldValue {
+                isPerform = true
+            }
+        }
+    }
+
+    var isPerform: Bool = false {
+        didSet {
+            if self.isPerform == true {
+                performSegue(withIdentifier: "wikiInformation", sender: self)
+            }
+        }
+    }
+
+    var selectedElement: String = "" {
+        didSet {
+            if self.selectedElement != "" {
                 self.addItem()
             }
         }
@@ -55,7 +74,7 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate {
         sceneView.delegate = self
 
         center = view.center
-        addFocus()
+        addFocus(sceneView: sceneView)
         // Do any additional setup after loading the view.
         statusViewController.statusView.blurView.isHidden = true
         statusViewController.statusView.refreshButton.isHidden = true
@@ -131,50 +150,30 @@ extension DinosaurViewController: UIPopoverPresentationControllerDelegate {
             popover.isFixedElement = true
             popover.element = self.dinosaur
             popover.elementSelected = { [weak self] data in
-                self?.selectedDinosaur = data
+                self?.selectedElement = data
             }
         case "wikiInformation":
             guard let popup = segue.destination as? InformationPopUpViewController else { return }
-                popup.element = self.element
-                popup.typeElement = ""
+            popup.element = self.element
+            popup.typeElement = self.typeElement
         case "statusSegue":
             print("status bar ok")
         default :
             print("error")
         }
     }
-//    func popoverPresentationControllerDidDismissPopover(_ popoverPresentationController: UIPopoverPresentationController) {
-//        objectsViewController = nil
-//    }
 }
 
 // MARK: - Methods
 extension DinosaurViewController {
-
-    func addFocus() {
-        guard let focusScene = SCNScene(named: "Common.scnassets/focus.scn") else { return }
-        guard let focus = focusScene.rootNode.childNode(withName: "focus", recursively: false) else { return }
-        sceneView.scene.rootNode.addChildNode(focus)
-    }
-
-    func addStaticFocus() {
-        guard let staticFocusScene = SCNScene(named: "Common.scnassets/fixedFocus.scn") else { return }
-        guard let staticFocus = staticFocusScene.rootNode.childNode(withName: "fixedFocus", recursively: false) else { return }
-        guard let oldFocus = sceneView.scene.rootNode.childNode(withName: "focus", recursively: false) else { return }
-        staticFocus.position = oldFocus.position
-        oldFocus.removeFromParentNode()
-        self.staticFocus = staticFocus
-        sceneView.scene.rootNode.addChildNode(staticFocus)
-        statusViewController.statusView.blurView.isHidden = true
-    }
 
     func refresh() {
         sceneView.scene.rootNode.enumerateChildNodes { (node, _) in
             node.removeFromParentNode()
         }
         dinosaurView.dinosaurSelectButton.isHidden = true
-        addFocus()
-        selectedDinosaur = nil
+        addFocus(sceneView: sceneView)
+        selectedElement = ""
         positions = [SCNVector3]()
     }
 
@@ -183,29 +182,13 @@ extension DinosaurViewController {
     }
 
     func addItem() {
-        if let selectedItem = self.selectedDinosaur {
-            guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedItem).scn") else { return }
-            guard let node = dinosaurScene.rootNode.childNode(withName: selectedItem, recursively: false) else { return }
-            guard let position = self.staticFocus?.position else { return }
-            node.position = position
-            sceneView.scene.rootNode.addChildNode(node)
-            self.dinosaurView.dinosaurSelectButton.isHidden = true
-            self.statusViewController.statusView.blurView.isHidden = true
-        }
-    }
-
-    func getAveragePosition(from positions: ArraySlice<SCNVector3>) -> SCNVector3 {
-        var averageX: Float = 0
-        var averageY: Float = 0
-        var averageZ: Float = 0
-
-        for position in positions {
-            averageX += position.x
-            averageY += position.y
-            averageZ += position.z
-        }
-        let count = Float(positions.count)
-        return SCNVector3Make(averageX / count, averageY / count, averageZ / count)
+        guard let dinosaurScene = SCNScene(named: "Dinosaur.scnassets/\(selectedElement).scn") else { return }
+        guard let node = dinosaurScene.rootNode.childNode(withName: selectedElement, recursively: false) else { return }
+        guard let position = self.staticFocus?.position else { return }
+        node.position = position
+        sceneView.scene.rootNode.addChildNode(node)
+        self.dinosaurView.dinosaurSelectButton.isHidden = true
+        self.statusViewController.statusView.blurView.isHidden = true
     }
 }
 
@@ -213,65 +196,24 @@ extension DinosaurViewController {
 extension DinosaurViewController {
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
-        if isDetected && selectedDinosaur == nil && currentNode == nil {
+        if isDetected && selectedElement == "" && currentNode == nil {
             dinosaurView.dinosaurSelectButton.isHidden = false
-            addStaticFocus()
-        } else if currentNode != nil {
-            addStaticFocus()
-            guard let node = currentNode else { return }
-            guard let position = self.staticFocus?.position else { return }
-            node.position = position
-            sceneView.scene.rootNode.addChildNode(node)
-            self.currentNode = nil
+            addStaticFocus(sceneView: sceneView, node: &staticFocus)
+            statusViewController.statusView.blurView.isHidden = true
         } else {
-            guard let sceneViewTappedOn = sender.view as? SCNView else { return }
-            let touchCoordinates = sender.location(in: sceneViewTappedOn)
-            let hitTest = sceneViewTappedOn.hitTest(touchCoordinates)
-            if !hitTest.isEmpty {
-                guard let results = hitTest.first else {return}
-                let node = results.node
-                guard let name = node.name else {return}
-                if name != "focus" && name != "fixedFocus" {
-                    self.element = name
-                    performSegue(withIdentifier: "wikiInformation", sender: self)
-                }
-            } else {
-                print("didn't touch anything")
-            }
+            tappedSceneView(sceneView: sceneView, tapGesture: sender, with: &currentNode, with: &staticFocus, with: &element)
         }
     }
 
     @IBAction func dinosaurScale(_ sender: UIPinchGestureRecognizer) {
-        guard let sceneView = sender.view as? ARSCNView else { return }
-        let pinchLocation = sender.location(in: sceneView)
-        let hitTest = sceneView.hitTest(pinchLocation)
-        guard let results = hitTest.first else { return }
-        let node = results.node
-        if !hitTest.isEmpty {
-            let pinchAction = SCNAction.scale(by: sender.scale, duration: 0)
-            node.runAction(pinchAction)
-            sender.scale = 1.0
-        }
+        pinchSceneView(sceneView: sceneView, pinchGesture: sender)
     }
 
     @IBAction func rotateNode(_ sender: UIPanGestureRecognizer) {
-        guard let sceneView = sender.view as? ARSCNView else { return }
-        guard let dinosaur = self.selectedDinosaur else { return }
-        guard let node = sceneView.scene.rootNode.childNode(withName: dinosaur, recursively: false) else { return }
-        sender.minimumNumberOfTouches = 2
-        //1. Get The Current Rotation From The Gesture
-        let xPan = sender.velocity(in: sceneView).x/10000
-        node.runAction(SCNAction.rotateBy(x: 0, y: xPan, z: 0, duration: 0.1))
+        rotateSceneView(sceneView: sceneView, rotateGesture: sender, with: selectedElement)
     }
 
     @IBAction func dinosaurMove(_ sender: UILongPressGestureRecognizer) {
-        guard let sceneView = sender.view as? ARSCNView else { return }
-        guard let dinosaur = self.selectedDinosaur else { return }
-        guard let node = sceneView.scene.rootNode.childNode(withName: dinosaur, recursively: false) else { return }
-        self.currentNode = node
-        node.removeFromParentNode()
-        guard let staticFocus = sceneView.scene.rootNode.childNode(withName: "fixedFocus", recursively: false) else { return }
-        staticFocus.removeFromParentNode()
-        addFocus()
+        moveNodeSceneView(sceneView: sceneView, pressGesture: sender, with: selectedElement, with: &currentNode)
     }
 }
