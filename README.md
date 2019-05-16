@@ -52,6 +52,10 @@ Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été pr
 **Voici ces différentes gestures :**
 * La "TapGesture":
     * Elle va permettre si vous taper avec un doigt sur un élément d'obtenir des informations Wikipédia sur cette élément
+    > Voici une animation présentant cette "gesture".
+    
+    ![démonstration du tap](ImagesReadme/searchWikiPédia.gif)
+
     * Elle va permettre d'ajouter un focus static pour déposer un objet soumis à la gravité.
     * Si vous tapez deux fois rapidement sur la scène du système solaire, cela va replacer l'élément là ou vous avez tapé.
 * La "PinchGesture": Elle va permettre si vous posez deux doigts sur l'écran, en les rapprochant ou les éloignant de modifier la taille de l'élément observé.
