@@ -7,7 +7,7 @@ MengHuan est une application en réalité augmentée, permettant aux enfants ou 
 * Les dinosaures
 * Les véhicules
 
-![page d'accueil'](ImagesReadme/accueil.PNG)
+![page d'accueil](ImagesReadme/accueil.PNG)
 
 Chaque sujet va permettre d’étudier et de manipuler des scènes permettant d’en apprendre un peu plus sur des espèces disparues, notre Système, ou de voir des véhicules du quotidien sous un autre angle.
 
@@ -23,13 +23,19 @@ Chaque sujet va permettre d’étudier et de manipuler des scènes permettant d�
 
 Cette scène va nous permettre de visualiser le Système Solaire sous tous ses angles, d'apprendre son fonctionnement et d'étudier un peu plus précisément chaque étoile ou planète qui le compose.
 
+![Système Solaire](ImagesReadme/solarSystem.PNG)
+
 >> 2. Les dinosaures
 
 Cette scène va nous permettre de mettre en scène  plusieurs dinosaures et d'en découvrir un peu plus sur leurs vies et de les observer d'un peu plus près.
 
+![Les Dinosaures](ImagesReadme/irex.PNG)
+
 >> 3. Les véhicules
 
 Cette scène sur le même modèle que pour les dinosaures va nous permettre de placer un véhicule sur un espace et de l'étudier, nous pourrons aussi intéragir avec lui.
+
+![Les Véhicules](ImagesReadme/piper.PNG)
 
 ### Les fonctionnalités
 
