@@ -152,3 +152,15 @@ Cette opération est la même quelque soit l'élément sélectionné dans les sc
 > pour exemple une autre animation avec un dinosaure.
 
 ![ajout dinosaure](ImagesReadme/addTriceratops.gif)
+
+Vous pouvez aussi déplacer l'élement comme nous l'avons vu précédement en pressant celui-ci puis en replaçant le focus à l'endroit désiré.
+
+> Voici un exemple.
+
+![deplacement](ImagesReadme/piperMove.gif)
+
+pour chaque élement vous pouvez obtenir des informations Wikipédia en touchant cet objet, pendant le temps de chargement une roue tourne pour indiquer la recherche en cours.
+
+> Une recherche Wikipédia avec un avion.
+
+![recherche](ImagesReadme/wikiResult.gif)
