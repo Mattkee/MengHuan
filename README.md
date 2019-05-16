@@ -100,3 +100,13 @@ Dès l'apparition de la scène, le système solaire est affiché, il n'y a pas d
 > Voici une animation présentant le démarrage de la scène.
 
 ![système solaire](ImagesReadme/solarSystem.gif)
+
+Ensuite nous pouvons manipuler la scène présente avec la "PanGesture" ou la déplacer avec la "longpressgesture"
+Il n'y a pas la possibilté d'utiliser la "pinchGesture" sur la scène principale pour éviter des déformations du système ce qui rendrait l'observation moins satisfaisante.
+
+Si nous touchons une planète la recherche Wikipédia se lance comme nous l'avons vu précédement.
+Nous pouvons arrêter la rotation des planètes à l'aide du bouton pause lecture présent en haut à droite.
+
+![statusBar System Solaire](ImagesReadme/statusBar.PNG)
+
+Pour aller plus loin nous pouvons alors sélectionner une planète, soit en pressant plus longuement sur une planète, soit en la sélectionnant à l'aide du menu s'ouvrant lorsqu'on touche le bouton "système", le bouton prendra alors le nom de la planète selectionnée et seule celle-ci apparaitra.
