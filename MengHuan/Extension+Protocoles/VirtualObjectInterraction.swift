@@ -75,13 +75,13 @@ extension VirtualObjectInterraction {
         return SCNVector3Make(averageX / count, averageY / count, averageZ / count)
     }
     func tappedSceneView(sceneView scene: ARSCNView, tapGesture sender: UITapGestureRecognizer, with currentNode: inout SCNNode?, with staticFocus: inout SCNNode?, with element: inout String) {
+        element = ""
         if currentNode != nil {
             addStaticFocus(sceneView: scene, node: &staticFocus)
             guard let node = currentNode else { return }
             guard let position = staticFocus?.position else { return }
             node.position = position
             scene.scene.rootNode.addChildNode(node)
-            element = ""
             currentNode = nil
         } else {
             guard let sceneViewTappedOn = sender.view as? SCNView else { return }
