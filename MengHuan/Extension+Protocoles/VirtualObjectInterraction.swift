@@ -81,6 +81,7 @@ extension VirtualObjectInterraction {
             guard let position = staticFocus?.position else { return }
             node.position = position
             scene.scene.rootNode.addChildNode(node)
+            element = ""
             currentNode = nil
         } else {
             guard let sceneViewTappedOn = sender.view as? SCNView else { return }

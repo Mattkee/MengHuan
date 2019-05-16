@@ -25,7 +25,8 @@ class DinosaurViewController: UIViewController, ARSCNViewDelegate, VirtualObject
             if self.element == "SF Fighter" || self.element == "SHC X" {
                 typeElement = "fiction"
                 isPerform = true
-            } else if self.element != oldValue {
+            } else if self.element != "" {
+                typeElement = ""
                 isPerform = true
             }
         }
@@ -182,6 +183,7 @@ extension DinosaurViewController {
 extension DinosaurViewController {
 
     @IBAction func tapped(_ sender: UITapGestureRecognizer) {
+        isPerform = false
         if isDetected && selectedElement == "" && currentNode == nil {
             dinosaurView.dinosaurSelectButton.isHidden = false
             addStaticFocus(sceneView: sceneView, node: &staticFocus)
