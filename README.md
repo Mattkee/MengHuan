@@ -183,17 +183,8 @@ en appuyant sur le bouton retour.
 ### Conclusion
 ````
 L'application va vous permettre de commencer à manipuler de la réalité augmentée.
-````
-````
 en apprenant de nombreuses choses sur des sujets variés, les possibilités futures sont nombreuses,
-````
-````
 car énormément de sujets pourraient être observés sous cette angle,
-````
-````
 des jeux pédagogiques peuvent aussi être créés en réalité augmentée,
-````
-````
 donc faites vos premiers pas avec MengHuan et découvrez un nouvel univers.
 ````
-
