@@ -57,6 +57,10 @@ Chaque élément est manipulable dans MengHuan, plusieurs "Gestures" on été pr
     ![démonstration du tap](ImagesReadme/searchWikiPedia.gif)
 
     * Elle va permettre d'ajouter un focus static pour déposer un objet soumis à la gravité.
+    > Voici une image présentant le focus static.
+    
+    ![image du focus](ImagesReadme/staticFocus.PNG)
+
     * Si vous tapez deux fois rapidement sur la scène du système solaire, cela va replacer l'élément là ou vous avez tapé.
 * La "PinchGesture": Elle va permettre si vous posez deux doigts sur l'écran, en les rapprochant ou les éloignant de modifier la taille de l'élément observé.
 * La "PanGesture": Elle va permettre en posant deux doigts sur l'écran, de balayer à droite ou à gauche et ainsi faire tourner l'objet pour observer un autre angle.
