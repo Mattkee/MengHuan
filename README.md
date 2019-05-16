@@ -115,4 +115,19 @@ Pour aller plus loin nous pouvons alors sélectionner une planète, soit en pres
 
 ![selection planète](ImagesReadme/planetSelection.gif)                  ![image Terre](ImagesReadme/earth.PNG)
 
+Vous pouvez retourner retourner à l'écran d'accueil par le biais du bouton retour en haut à gauche.
 
+2. Les scènes Dinosaures et Véhicules
+
+Dans MengHuan les scène Dinosaures fonctionnent sur le mème principe.
+
+Tout d'abord lorsque la scène se lance, un focus apparait qui se recadre en permanence sur le centre de la vue en suivant les surfaces planes.
+lorsque ce focus est présent seul le bouton retour et accessible.
+Ensuite lorsque une surface plane solide est détectée, un message signalant que la surface est détectée apparait en même temps que le bouton pour redémarrer la vue.
+
+![image focusorignine](ImagesReadme/addFocusStatic.PNG)
+
+Si vous touchez alors l'écran un focus fixe apparait ainsi que le bouton de sélections d'objets.
+Le menu qui apparait laissera apparaître uniquement les objets 3D correspondant à la scène choisie.
+
+![image selection](ImagesReadme/dinosaurSelect.PNG)
