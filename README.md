@@ -6,7 +6,9 @@ MengHuan est une application en réalité augmentée, permettant aux enfants ou 
 * Le Système Solaire
 * Les dinosaures
 * Les véhicules
+
 Chaque sujet va permettre d’étudier et de manipuler des scènes permettant d’en apprendre un peu plus sur des espèces disparues, notre Système, ou de voir des véhicules du quotidien sous un autre angle.
+
 **L'application se compose de plusieurs fonctionnalités principales :**
 * La visualisation d’objet 3D dans un espace choisi
 * La manipulation de ces objets en utilisant des « gestures » sur l’écran tactile
